@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Explorers Nursery Telford | Learning Through Play</title>
+<meta name="description" content="Welcome to Little Explorers Nursery Telford. Discover a warm, welcoming environment where little minds can learn, play and grow.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #174d3b;
+  --green-dark: #10382d;
+  --green-light: #e8f0e9;
+  --teal: #147d79;
+  --teal-dark: #105e5b;
+  --yellow: #f4c84b;
+  --cream: #fbf8ef;
+  --white: #ffffff;
+  --ink: #253b33;
+  --muted: #68776f;
+  --radius: 22px;
+  --shadow: 0 12px 35px rgba(16,56,45,.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+h1, h2, h3, .brand-name {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .78rem;
+  margin-bottom: 13px;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+/* HEADER */
+
+header {
+  background: var(--green-dark);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 5px 20px rgba(0,0,0,.12);
+}
+
+.navbar {
+  min-height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  color: white;
+  display: block;
+}
+
+.brand-subtitle {
+  font-size: .72rem;
+  color: #d4e4d8;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.nav-links a:not(.nav-button):hover { color: var(--yellow); }
+
+.nav-button {
+  background: var(--yellow);
+  color: var(--green-dark);
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: .2s;
+}
+
+.nav-button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+  background: var(--green);
+  color: white;
+  padding: 75px 0 85px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 65px solid rgba(255,255,255,.045);
+  border-radius: 50%;
+  right: -130px;
+  top: -160px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(244,200,75,.16);
+  color: var(--yellow);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(2.7rem, 5.5vw, 4.5rem);
+  margin-bottom: 22px;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span { color: var(--yellow); }
+
+.hero-copy {
+  color: #e0ebe4;
+  font-size: 1.08rem;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 23px;
+  border-radius: 30px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.button:hover { transform: translateY(-3px); }
+
+.button-yellow {
+  background: var(--yellow);
+  color: var(--green-dark);
+}
+
+.button-outline {
+  border: 2px solid rgba(255,255,255,.65);
+  color: white;
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 45% 45% 25px 25px;
+  border: 8px solid rgba(255,255,255,.13);
+  box-shadow: 0 20px 50px rgba(0,0,0,.2);
+}
+
+.image-note {
+  position: absolute;
+  bottom: 22px;
+  left: -20px;
+  background: var(--yellow);
+  color: var(--green-dark);
+  padding: 15px 22px;
+  border-radius: 17px;
+  font-weight: 900;
+  box-shadow: var(--shadow);
+}
+
+/* INTRO */
+
+.intro {
+  padding: 90px 0;
+  text-align: center;
+  background: var(--cream);
+}
+
+.intro .section-heading { max-width: 760px; margin: 0 auto 20px; }
+
+.intro .section-intro { font-size: 1.05rem; }
+
+/* FEATURE STRIP */
+
+.feature-strip {
+  background: var(--yellow);
+  padding: 27px 0;
+}
+
+.feature-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: center;
+}
+
+.feature-item {
+  color: var(--green-dark);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.feature-item span {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+}
+
+/* ABOUT */
+
+.about {
+  padding: 95px 0;
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--teal);
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+/* VALUES */
+
+.values {
+  padding: 90px 0;
+  background: var(--green-dark);
+  color: white;
+  text-align: center;
+}
+
+.values .section-heading { color: white; }
+
+.values .eyebrow { color: var(--yellow); }
+
+.values .section-intro { color: #d3e2d9; }
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+  text-align: left;
+}
+
+.value-card {
+  background: #1c5944;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: .25s;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  background: #24674f;
+}
+
+.value-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.value-card p { color: #d6e5dc; font-size: .94rem; }
+
+/* LEARNING */
+
+.learning {
+  padding: 95px 0;
+  background: var(--green-light);
+  text-align: center;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 45px;
+  text-align: left;
+}
+
+.learning-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: .25s;
+}
+
+.learning-card:hover { transform: translateY(-6px); }
+
+.learning-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.learning-card-content { padding: 25px; }
+
+.learning-card h3 {
+  color: var(--green);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.learning-card p { color: var(--muted); font-size: .94rem; }
+
+/* BANNER */
+
+.banner {
+  background: var(--teal);
+  color: white;
+  padding: 75px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.banner p {
+  color: #e0f0ed;
+  max-width: 650px;
+  margin: 0 auto 25px;
+}
+
+/* PARENTS */
+
+.parents {
+  padding: 90px 0;
+  background: white;
+}
+
+.parents-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.parents-image {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.parents p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 90px 0;
+  background: var(--cream);
+}
+
+.contact-panel {
+  background: var(--green);
+  color: white;
+  border-radius: 30px;
+  padding: 55px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.contact-panel h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 15px;
+}
+
+.contact-panel p { color: #dce9df; }
+
+.contact-details {
+  background: rgba(255,255,255,.09);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.contact-details strong { color: var(--yellow); }
+
+/* FOOTER */
+
+footer {
+  background: #0b2c23;
+  color: white;
+  padding: 55px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 40px;
+}
+
+footer h3 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--yellow);
+}
+
+footer p, footer a {
+  color: #d1dfd6;
+  font-size: .92rem;
+}
+
+footer a { display: block; margin-bottom: 8px; }
+
+footer a:hover { color: var(--yellow); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 20px;
+  color: #a9bdb1;
+  font-size: .82rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav-links { gap: 13px; font-size: .8rem; }
+  .hero-grid, .about-grid, .parents-grid { grid-template-columns: 1fr; }
+  .hero-image { height: 350px; }
+  .image-note { left: 10px; }
+  .value-grid, .learning-grid { grid-template-columns: 1fr 1fr; }
+  .contact-panel { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .navbar { padding: 12px 0; flex-wrap: wrap; }
+  .logo img { width: 55px; height: 55px; }
+  .nav-links { width: 100%; overflow-x: auto; padding-bottom: 8px; }
+  .nav-links a { white-space: nowrap; }
+  .hero { padding: 55px 0; }
+  .hero h1 { font-size: 2.7rem; }
+  .hero-image { height: 280px; }
+  .feature-items { grid-template-columns: 1fr; gap: 15px; }
+  .value-grid, .learning-grid { grid-template-columns: 1fr; }
+  .intro, .about, .values, .learning, .parents, .contact { padding: 65px 0; }
+  .contact-panel { padding: 30px 22px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#home">
+      <img src="https://static.wixstatic.com/media/5510f0_6e7d2395ba674354adc6e89a17d1a634~mv2.png/v1/crop/x_0,y_0,w_1012,h_1024/fill/w_226,h_230,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/177844189769993709%20(2).png" alt="Little Explorers Nursery logo">
+      <span>
+        <span class="brand-name">Little Explorers</span>
+        <span class="brand-subtitle">NURSERY TELFORD</span>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#learning">Learning</a>
+      <a href="#parents">Parents</a>
+      <a href="#contact" class="nav-button">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-label">Welcome to Little Explorers</span>
+      <h1>Big adventures start with <span>little steps.</span></h1>
+      <p class="hero-copy">
+        A welcoming place for little minds to discover, explore and grow.
+        We believe every child deserves the opportunity to learn, play and
+        build confidence at their own pace.
+      </p>
+      <div class="button-row">
+        <a href="#contact" class="button button-yellow">Enquire Today</a>
+        <a href="#about" class="button button-outline">Discover More</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img class="hero-image"
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1100&q=85"
+        alt="Child enjoying a playful learning experience">
+      <div class="image-note">Learn • Play • Grow</div>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <p class="eyebrow">A place to belong</p>
+    <h2 class="section-heading">Every little explorer has a big future.</h2>
+    <p class="section-intro">
+      Childhood is full of wonderful firsts. From discovering something new
+      to making a first friend, every experience is an opportunity to grow.
+      We want children to feel welcomed, supported and encouraged as they
+      take their next little steps.
+    </p>
+  </div>
+</section>
+
+<section class="feature-strip">
+  <div class="container feature-items">
+    <div class="feature-item"><span>🌱</span>Growing with confidence</div>
+    <div class="feature-item"><span>🎨</span>Discovering through play</div>
+    <div class="feature-item"><span>⭐</span>Celebrating every little step</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <img class="about-image"
+        src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1000&q=85"
+        alt="A peaceful natural outdoor environment">
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">Get to know us</p>
+      <h2 class="section-heading">A warm welcome to Little Explorers.</h2>
+      <p>
+        At Little Explorers Nursery, we understand that choosing a nursery
+        is an important decision for every family. We want children and
+        parents to feel welcome, valued and comfortable from the very start.
+      </p>
+      <p>
+        We believe that children learn through curiosity, creativity,
+        discovery and meaningful experiences. Every little moment can
+        become a chance to build confidence and develop new skills.
+      </p>
+      <a class="text-link" href="#contact">Find out more about us →</a>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <p class="eyebrow">What matters to us</p>
+    <h2 class="section-heading">Little moments. Big possibilities.</h2>
+    <p class="section-intro">
+      We believe that a positive early-years experience is built on
+      encouragement, exploration and caring relationships.
+    </p>
+
+    <div class="value-grid">
+      <article class="value-card">
+        <div class="value-icon">🌟</div>
+        <h3>Confidence</h3>
+        <p>
+          Encouraging children to try new things, express themselves
+          and feel proud of what they achieve.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-icon">🎨</div>
+        <h3>Creativity</h3>
+        <p>
+          Making space for imagination, curiosity and opportunities
+          to discover the world around them.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Belonging</h3>
+        <p>
+          Creating a welcoming environment where children and families
+          feel listened to, respected and included.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="learning" id="learning">
+  <div class="container">
+    <p class="eyebrow">Discover and explore</p>
+    <h2 class="section-heading">A world of little adventures.</h2>
+    <p class="section-intro">
+      Children learn in many different ways. We value opportunities
+      to explore, create, imagine and discover something new.
+    </p>
+
+    <div class="learning-grid">
+      <article class="learning-card">
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="Creative art activity">
+        <div class="learning-card-content">
+          <h3>Creative Discovery</h3>
+          <p>
+            Art, colour and creative activities can help children
+            express their ideas and imagination.
+          </p>
+        </div>
+      </article>
+
+      <article class="learning-card">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=85" alt="Nature and outdoor discovery">
+        <div class="learning-card-content">
+          <h3>Curious Minds</h3>
+          <p>
+            Encouraging children to ask questions, investigate
+            and discover the world around them.
+          </p>
+        </div>
+      </article>
+
+      <article class="learning-card">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=85" alt="Child enjoying an activity">
+        <div class="learning-card-content">
+          <h3>Learning Through Play</h3>
+          <p>
+            Play provides opportunities to build relationships,
+            develop skills and enjoy new experiences.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="container">
+    <h2>Every day is a new adventure.</h2>
+    <p>
+      The little things children discover today can help shape
+      the confident, curious individuals they become tomorrow.
+    </p>
+    <a href="#contact" class="button button-yellow">Start Your Journey</a>
+  </div>
+</section>
+
+<section class="parents" id="parents">
+  <div class="container parents-grid">
+    <div>
+      <p class="eyebrow">Working together</p>
+      <h2 class="section-heading">A partnership with parents.</h2>
+      <p>
+        We recognise that parents and families know their children best.
+        Building positive relationships and keeping communication open
+        are important parts of a child's nursery journey.
+      </p>
+      <p>
+        We want families to feel comfortable asking questions, sharing
+        experiences and being part of their child's development.
+      </p>
+      <a class="text-link" href="#contact">Speak to our team →</a>
+    </div>
+    <div>
+      <img class="parents-image"
+        src="https://images.unsplash.com/photo-1544776193-32d404ae6088?auto=format&fit=crop&w=1000&q=85"
+        alt="Family spending time together">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-panel">
+      <div>
+        <p class="eyebrow" style="color:var(--yellow)">Your next little adventure</p>
+        <h2>We'd love to hear from you.</h2>
+        <p>
+          If you'd like to find out more about Little Explorers Nursery,
+          please get in touch. We'd be happy to hear from you.
+        </p>
+        <br>
+        <a href="mailto:ADD-EMAIL-HERE" class="button button-yellow">Email the Nursery</a>
+      </div>
+
+      <div class="contact-details">
+        <p><strong>EMAIL</strong><br>ADD-EMAIL-HERE</p>
+        <p><strong>TELEPHONE</strong><br>ADD-TELEPHONE-NUMBER</p>
+        <p><strong>LOCATION</strong><br>Telford, Shropshire</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Little Explorers Nursery</h3>
+        <p>
+          Supporting little minds as they learn, play, discover
+          and grow. Every little step is part of a big adventure.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#learning">Learning</a>
+        <a href="#parents">Parents</a>
+      </div>
+
+      <div>
+        <h3>Get in Touch</h3>
+        <a href="#contact">Contact Us</a>
+        <a href="mailto:ADD-EMAIL-HERE">Email the Nursery</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Little Explorers Nursery Telford Ltd. All rights reserved.</span>
+      <span>Made for little adventures.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
