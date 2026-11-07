@@ -5,214 +5,623 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Explorers Nursery Telford</title>
-<meta name="description" content="Welcome to Little Explorers Nursery Telford. A caring, welcoming place where little minds grow, explore and thrive.">
+<meta name="description" content="Discover Little Explorers Nursery Telford – a welcoming place for little minds to grow, explore and thrive.">
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-  --green: #719b70;
-  --dark: #304b3b;
-  --cream: #fffaf0;
-  --yellow: #f4d77c;
-  --pink: #f4c9c3;
-  --blue: #c9e4e9;
+  --green: #759b70;
+  --green-dark: #355440;
+  --green-light: #e9f1e4;
+  --cream: #fffaf1;
+  --yellow: #f6d982;
+  --pink: #f4d1cc;
+  --blue: #d5eaf0;
+  --text: #354b3d;
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 html { scroll-behavior: smooth; }
+
 body {
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  color: var(--dark);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
   background: var(--cream);
-  line-height: 1.7;
+  overflow-x: hidden;
 }
+
+a { text-decoration: none; color: inherit; }
+
 header {
-  background: rgba(255,250,240,.96);
-  padding: 14px 7%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 12px 7%;
+  background: rgba(255,250,241,.94);
+  backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 3px 18px #304b3b12;
+  box-shadow: 0 4px 20px #354b3d0c;
 }
-.logo { display: flex; align-items: center; gap: 12px; }
-.logo img { width: 62px; height: 62px; object-fit: contain; }
-.logo strong { font-size: 18px; line-height: 1.2; }
-.logo small { display: block; font-size: 11px; letter-spacing: 2px; color: var(--green); }
-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-nav a { color: var(--dark); text-decoration: none; font-weight: bold; font-size: 14px; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.logo strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.logo small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--green);
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  font-size: 14px;
+  font-weight: 800;
+  transition: .2s;
+}
+
 nav a:hover { color: var(--green); }
+
+.nav-button {
+  background: var(--green);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 30px;
+}
+
+.nav-button:hover {
+  background: var(--green-dark);
+  color: white;
+}
+
 .hero {
-  min-height: 590px;
+  position: relative;
+  min-height: 650px;
   padding: 90px 8%;
   display: flex;
   align-items: center;
-  background:
-    radial-gradient(circle at 85% 20%, #f4d77c80 0 75px, transparent 76px),
-    radial-gradient(circle at 75% 85%, #c9e4e980 0 110px, transparent 111px),
-    linear-gradient(120deg, #fff4df, #f4f7e9);
+  overflow: hidden;
+  background: linear-gradient(125deg, #fff3dc 0%, #f6f5e8 55%, #e8f1e5 100%);
 }
-.hero-inner { max-width: 720px; animation: appear 1s ease both; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  animation: rise .9s ease both;
+}
+
 .eyebrow {
-  display: inline-block; background: #e6efdf; color: var(--dark);
-  padding: 7px 17px; border-radius: 30px; font-size: 13px;
-  font-weight: bold; letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  font-weight: 900;
+  color: var(--green-dark);
+  box-shadow: 0 5px 20px #354b3d0b;
 }
-h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.08; margin: 22px 0; }
-h1 span { color: var(--green); }
-.hero p { max-width: 570px; font-size: 18px; color: #526658; }
+
+.hero h1 {
+  font-size: clamp(46px, 6.5vw, 78px);
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 25px 0;
+}
+
+.hero h1 span { color: var(--green); }
+
+.hero p {
+  font-size: 18px;
+  max-width: 530px;
+  line-height: 1.8;
+  color: #647365;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
 .button {
-  display: inline-block; margin-top: 28px; padding: 13px 27px;
-  border-radius: 30px; background: var(--green); color: white;
-  text-decoration: none; font-weight: bold; transition: .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 900;
+  transition: .25s;
 }
-.button:hover { background: var(--dark); transform: translateY(-2px); }
-section { padding: 85px 8%; }
-.section-heading { text-align: center; max-width: 680px; margin: 0 auto 45px; }
-.section-heading h2 { font-size: clamp(30px, 4vw, 43px); margin-bottom: 12px; }
-.section-heading p { color: #68776a; }
-.about { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
-.about-art {
-  min-height: 320px; border-radius: 45% 55% 50% 40%;
-  background: linear-gradient(135deg, var(--pink), var(--yellow));
-  display: grid; place-items: center; font-size: 100px;
+
+.button-primary {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 7px 18px #759b7040;
 }
-.about h2 { font-size: 38px; line-height: 1.2; margin-bottom: 20px; }
-.about p { color: #68776a; margin-bottom: 14px; }
-.features { background: #f0f4e9; }
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.card {
-  background: white; padding: 30px 24px; border-radius: 22px;
-  text-align: center; box-shadow: 0 8px 25px #304b3b09;
-  transition: transform .25s;
+
+.button-primary:hover {
+  background: var(--green-dark);
+  transform: translateY(-3px);
 }
-.card:hover { transform: translateY(-6px); }
-.card .icon { font-size: 42px; margin-bottom: 12px; }
-.card h3 { margin-bottom: 10px; font-size: 20px; }
-.card p { color: #718071; font-size: 15px; }
-.banner {
+
+.button-secondary {
+  background: white;
+  border: 1px solid #e6e8d9;
+}
+
+.button-secondary:hover { transform: translateY(-3px); }
+
+.hero-decoration {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 390px;
+  height: 390px;
+  border-radius: 48% 52% 60% 40%;
+  background: #f6d982;
+  display: grid;
+  place-items: center;
+  font-size: 145px;
+  animation: float 5s ease-in-out infinite;
+  box-shadow: 20px 25px 0 #759b7010;
+}
+
+.hero-decoration::before {
+  content: '✿';
+  position: absolute;
+  top: -32px;
+  right: 15px;
+  color: #759b70;
+  font-size: 75px;
+}
+
+.hero-decoration::after {
+  content: '★';
+  position: absolute;
+  bottom: 15px;
+  left: -25px;
+  color: white;
+  font-size: 65px;
+}
+
+.hero-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .65;
+}
+
+.dot-one { width: 70px; height: 70px; background: var(--pink); top: 12%; right: 38%; }
+.dot-two { width: 35px; height: 35px; background: var(--blue); bottom: 12%; right: 42%; }
+
+section { padding: 95px 8%; }
+
+.section-label {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.section-heading {
   text-align: center;
-  background: linear-gradient(120deg, #e9f1dc, #f9e9d9);
-  padding: 75px 8%;
+  max-width: 680px;
+  margin: 0 auto 48px;
 }
-.banner h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 12px; }
-.banner p { max-width: 650px; margin: auto; color: #657467; }
-.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
-.contact h2 { font-size: 38px; margin-bottom: 15px; }
-.contact p { color: #68776a; margin-bottom: 12px; }
-.contact-box { background: #f0f4e9; padding: 30px; border-radius: 22px; }
-.contact-box a { color: var(--dark); font-weight: bold; }
+
+.section-heading h2 {
+  font-size: clamp(32px, 4vw, 47px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.section-heading p {
+  color: #748075;
+  font-size: 16px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.about-picture {
+  min-height: 390px;
+  background: var(--pink);
+  border-radius: 45% 55% 40% 60%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  font-size: 125px;
+}
+
+.about-picture span {
+  position: absolute;
+  background: white;
+  border-radius: 20px;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 900;
+  bottom: 28px;
+  right: -15px;
+  box-shadow: 0 8px 25px #354b3d15;
+}
+
+.about-content h2 {
+  font-size: clamp(33px, 4vw, 45px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: #748075;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.activities {
+  background: #f0f4e9;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  transition: .3s;
+  border: 1px solid #ffffff;
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px #354b3d12;
+}
+
+.activity-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  font-size: 35px;
+  margin-bottom: 22px;
+}
+
+.activity-card:nth-child(1) .activity-icon { background: #fbe7dc; }
+.activity-card:nth-child(2) .activity-icon { background: #e2eff2; }
+.activity-card:nth-child(3) .activity-icon { background: #f8edc9; }
+
+.activity-card h3 {
+  font-size: 21px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.activity-card p {
+  color: #788278;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.quote-section {
+  text-align: center;
+  background: linear-gradient(120deg, #f7e9d9, #e7f0e3);
+  padding: 85px 8%;
+}
+
+.quote-section .quote-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.quote-section h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  max-width: 750px;
+  margin: 0 auto 15px;
+  line-height: 1.2;
+}
+
+.quote-section p {
+  color: #748075;
+  font-size: 16px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.contact-grid h2 {
+  font-size: clamp(34px, 4vw, 45px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.contact-grid p {
+  color: #748075;
+  margin-bottom: 15px;
+}
+
+.contact-card {
+  background: #eaf1e5;
+  border-radius: 25px;
+  padding: 35px;
+}
+
+.contact-card h3 {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.contact-detail {
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.contact-detail strong { display: block; margin-bottom: 3px; }
+.contact-detail a { color: var(--green-dark); }
+
 footer {
-  background: var(--dark); color: white; padding: 35px 8%;
-  text-align: center; font-size: 13px;
+  background: #304b3b;
+  color: white;
+  padding: 45px 8% 25px;
+  text-align: center;
 }
-footer p { opacity: .8; }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
+
+.footer-name {
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+footer p { opacity: .75; font-size: 13px; }
+.footer-bottom { border-top: 1px solid #ffffff25; margin-top: 25px; padding-top: 20px; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@media(max-width: 750px) {
-  header { flex-direction: column; }
-  nav { justify-content: center; gap: 14px; }
-  .hero { min-height: 480px; padding: 65px 7%; }
-  section { padding: 65px 7%; }
-  .about, .contact { grid-template-columns: 1fr; }
-  .cards { grid-template-columns: 1fr; }
-  .about-art { min-height: 230px; }
+
+@keyframes float {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -15px; }
+}
+
+@media(max-width: 950px) {
+  .hero-decoration { width: 270px; height: 270px; font-size: 100px; right: 4%; opacity: .75; }
+  .hero-content { max-width: 570px; }
+}
+
+@media(max-width: 720px) {
+  header { padding: 12px 5%; flex-direction: column; gap: 12px; }
+  nav { justify-content: center; gap: 17px; flex-wrap: wrap; }
+  nav a { font-size: 12px; }
+  .nav-button { padding: 8px 14px; }
+  .hero { min-height: 650px; padding: 70px 7%; align-items: flex-start; }
+  .hero-decoration { width: 180px; height: 180px; font-size: 70px; right: 8%; top: auto; bottom: 30px; transform: none; opacity: .9; }
+  .hero h1 { font-size: 49px; }
+  .hero p { font-size: 16px; }
+  section { padding: 70px 7%; }
+  .about, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-picture { min-height: 270px; font-size: 90px; }
+  .activity-grid { grid-template-columns: 1fr; }
+  .activity-card { padding: 25px; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">
+  <a class="logo" href="#home">
     <img src="https://static.wixstatic.com/media/5510f0_6e7d2395ba674354adc6e89a17d1a634~mv2.png/v1/crop/x_0,y_0,w_1012,h_1024/fill/w_226,h_230,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/177844189769993709%20(2).png" alt="Little Explorers Nursery logo">
-    <div><strong>Little Explorers</strong><small>NURSERY TELFORD</small></div>
-  </div>
+    <div>
+      <strong>Little Explorers</strong>
+      <small>NURSERY TELFORD</small>
+    </div>
+  </a>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#activities">Our Approach</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-button">Get in Touch</a>
   </nav>
 </header>
 
 <main>
+
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <span class="eyebrow">WELCOME TO LITTLE EXPLORERS</span>
-    <h1>Big adventures start with <span>little steps.</span></h1>
-    <p>A warm, caring and inspiring place where children can discover the world around them, make friends and grow in confidence.</p>
-    <a class="button" href="#about">Discover Our Nursery</a>
+  <div class="hero-dot dot-one"></div>
+  <div class="hero-dot dot-two"></div>
+
+  <div class="hero-content">
+    <span class="eyebrow">🌿 A WORLD OF LITTLE DISCOVERIES</span>
+    <h1>Where little minds <span>grow big.</span></h1>
+    <p>A happy, welcoming place for children to discover, imagine, learn and grow. Every little explorer deserves a wonderful beginning.</p>
+
+    <div class="hero-actions">
+      <a href="#about" class="button button-primary">Discover Our Nursery →</a>
+      <a href="#contact" class="button button-secondary">Contact Us</a>
+    </div>
   </div>
+
+  <div class="hero-decoration" aria-hidden="true">🧸</div>
 </section>
 
 <section id="about">
   <div class="about">
-    <div class="about-art">🌱 🧸</div>
-    <div>
-      <h2>A little place for big possibilities.</h2>
+    <div class="about-picture reveal">
+      🌱
+      <span>Little steps. Big possibilities. ✨</span>
+    </div>
+
+    <div class="about-content reveal">
+      <div class="section-label">A LITTLE ABOUT US</div>
+      <h2>Every child has a story waiting to unfold.</h2>
       <p>At Little Explorers Nursery Telford, we believe every child deserves the opportunity to learn, discover and flourish in a happy and supportive environment.</p>
       <p>We want every little explorer to feel valued, encouraged and confident as they take their first steps on an exciting journey of discovery.</p>
-      <a class="button" href="#contact">Get in Touch</a>
+      <a href="#contact" class="button button-primary">Come and Say Hello →</a>
     </div>
   </div>
 </section>
 
-<section class="features" id="activities">
-  <div class="section-heading">
-    <h2>Every day is an adventure</h2>
-    <p>We believe children learn through curiosity, creativity, play and meaningful experiences.</p>
+<section class="activities" id="activities">
+  <div class="section-heading reveal">
+    <div class="section-label">LEARN THROUGH PLAY</div>
+    <h2>Little hands. Curious minds.</h2>
+    <p>Every day brings new opportunities to explore, create and discover the world around us.</p>
   </div>
-  <div class="cards">
-    <article class="card">
-      <div class="icon">🎨</div>
-      <h3>Creative Discovery</h3>
-      <p>Encouraging imagination and self-expression through arts, crafts, music and creative play.</p>
+
+  <div class="activity-grid">
+    <article class="activity-card reveal">
+      <div class="activity-icon">🎨</div>
+      <h3>Creative Adventures</h3>
+      <p>Encouraging imagination and self-expression through art, crafts, music and creative play.</p>
     </article>
-    <article class="card">
-      <div class="icon">🌳</div>
-      <h3>Explore & Discover</h3>
-      <p>Giving little minds opportunities to explore, ask questions and discover the world around them.</p>
+
+    <article class="activity-card reveal">
+      <div class="activity-icon">🌻</div>
+      <h3>Discover & Explore</h3>
+      <p>Inspiring little minds to ask questions, explore new ideas and discover the world around them.</p>
     </article>
-    <article class="card">
-      <div class="icon">💛</div>
-      <h3>Care & Confidence</h3>
+
+    <article class="activity-card reveal">
+      <div class="activity-icon">💛</div>
+      <h3>Growing Together</h3>
       <p>Supporting children as they build friendships, independence and confidence at their own pace.</p>
     </article>
   </div>
 </section>
 
-<section class="banner">
-  <h2>Little steps. Wonderful beginnings.</h2>
-  <p>Every child has their own story to tell. We look forward to being part of their journey, celebrating their achievements and helping them grow.</p>
+<section class="quote-section">
+  <div class="quote-icon">🌈</div>
+  <h2>Little steps today. Wonderful possibilities tomorrow.</h2>
+  <p>Because every little explorer deserves the chance to shine.</p>
 </section>
 
 <section id="contact">
-  <div class="contact">
-    <div>
-      <h2>Come and say hello!</h2>
-      <p>We would love to hear from you. If you would like to learn more about Little Explorers Nursery, please get in touch.</p>
-      <p>Whether you have a question or would like to enquire about a place, we're happy to help.</p>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="section-label">LET'S GET TO KNOW EACH OTHER</div>
+      <h2>We'd love to hear from you!</h2>
+      <p>Thinking about joining the Little Explorers family? Have a question or want to find out more about our nursery?</p>
+      <p>Get in touch and take the first step towards a wonderful new adventure.</p>
     </div>
-    <div class="contact-box">
-      <h3>Contact the Nursery</h3>
-      <p>📍 Telford, Shropshire</p>
-      <p>Please contact us to enquire about nursery places, opening times and visits.</p>
-      <p><strong>Email:</strong> Add nursery email address</p>
-      <p><strong>Telephone:</strong> Add nursery telephone number</p>
+
+    <div class="contact-card reveal">
+      <h3>Get in Touch 💌</h3>
+
+      <div class="contact-detail">
+        <strong>📍 Find Us</strong>
+        Telford, Shropshire
+      </div>
+
+      <div class="contact-detail">
+        <strong>✉️ Email Us</strong>
+        Add nursery email address
+      </div>
+
+      <div class="contact-detail">
+        <strong>📞 Give Us a Call</strong>
+        Add nursery telephone number
+      </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
-  <strong>Little Explorers Nursery Telford Ltd</strong>
-  <p>Little steps. Wonderful beginnings.</p>
-  <p>© <span id="year"></span> Little Explorers Nursery Telford Ltd. All rights reserved.</p>
+  <div class="footer-name">Little Explorers Nursery Telford Ltd</div>
+  <p>Little steps. Wonderful beginnings. 🌱</p>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Little Explorers Nursery Telford Ltd. All rights reserved.</p>
+  </div>
 </footer>
+
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
 </script>
+
 </body>
 </html>
