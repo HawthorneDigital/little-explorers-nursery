@@ -5,20 +5,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Explorers Nursery Telford</title>
-<meta name="description" content="Discover Little Explorers Nursery Telford – a welcoming place for little minds to grow, explore and thrive.">
+<meta name="description" content="Welcome to Little Explorers Nursery Telford – where little adventures lead to big beginnings.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-
 :root {
-  --green: #759b70;
-  --green-dark: #355440;
-  --green-light: #e9f1e4;
-  --cream: #fffaf1;
-  --yellow: #f6d982;
-  --pink: #f4d1cc;
-  --blue: #d5eaf0;
-  --text: #354b3d;
+  --pink: #ffb9c8;
+  --pink-light: #fff0f3;
+  --yellow: #ffe28a;
+  --yellow-light: #fff8dc;
+  --blue: #aee4f3;
+  --blue-light: #e9f9ff;
+  --purple: #d7c4f5;
+  --purple-light: #f4efff;
+  --mint: #bdebd3;
+  --mint-light: #edfff4;
+  --orange: #ffbd94;
+  --cream: #fffdf7;
+  --ink: #526477;
+  --green: #83b99b;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,130 +35,143 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: var(--text);
   background: var(--cream);
+  color: var(--ink);
   overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; }
+h1, h2, h3, .logo-name {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* NAVIGATION */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 20;
-  padding: 12px 7%;
-  background: rgba(255,250,241,.94);
-  backdrop-filter: blur(14px);
+  z-index: 100;
+  background: rgba(255,253,247,.94);
+  backdrop-filter: blur(15px);
+  padding: 12px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 20px #354b3d0c;
+  gap: 25px;
+  box-shadow: 0 4px 20px #8196a00c;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo img {
-  width: 58px;
-  height: 58px;
+  width: 59px;
+  height: 59px;
   object-fit: contain;
 }
 
-.logo strong {
-  display: block;
-  font-size: 19px;
-  font-weight: 900;
-  line-height: 1.15;
+.logo-name {
+  font-size: 21px;
+  color: #759b86;
+  line-height: 1.05;
 }
 
 .logo small {
+  display: block;
   font-size: 10px;
+  font-weight: 900;
   letter-spacing: 2px;
-  color: var(--green);
-  font-weight: 800;
+  color: #9bb4b1;
+  margin-top: 5px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 26px;
 }
 
 nav a {
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
   transition: .2s;
 }
 
-nav a:hover { color: var(--green); }
+nav a:hover { color: #e99bad; }
 
-.nav-button {
-  background: var(--green);
-  color: white;
-  padding: 11px 20px;
+.nav-cta {
+  background: var(--pink);
+  padding: 12px 21px;
   border-radius: 30px;
+  color: #74515b;
 }
 
-.nav-button:hover {
-  background: var(--green-dark);
-  color: white;
+.nav-cta:hover {
+  background: var(--yellow);
+  color: #745c36;
 }
+
+/* HERO */
 
 .hero {
   position: relative;
-  min-height: 650px;
-  padding: 90px 8%;
+  min-height: 680px;
+  padding: 95px 8%;
+  background: linear-gradient(135deg, #fff3ed 0%, #fff8e4 48%, #eaf9ff 100%);
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(125deg, #fff3dc 0%, #f6f5e8 55%, #e8f1e5 100%);
 }
 
 .hero-content {
+  max-width: 620px;
   position: relative;
-  z-index: 2;
-  max-width: 650px;
-  animation: rise .9s ease both;
+  z-index: 3;
+  animation: enter 1s ease both;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.hero-label {
+  display: inline-block;
   background: white;
-  padding: 9px 17px;
+  padding: 10px 18px;
   border-radius: 30px;
   font-size: 12px;
-  letter-spacing: 1.3px;
   font-weight: 900;
-  color: var(--green-dark);
-  box-shadow: 0 5px 20px #354b3d0b;
+  letter-spacing: 1.3px;
+  color: #91a99d;
+  box-shadow: 0 5px 20px #a2b6a515;
 }
 
 .hero h1 {
-  font-size: clamp(46px, 6.5vw, 78px);
-  line-height: 1.04;
-  font-weight: 900;
-  letter-spacing: -2px;
+  font-size: clamp(53px, 7vw, 88px);
+  line-height: .99;
+  letter-spacing: -1px;
   margin: 25px 0;
+  color: #789a89;
 }
 
-.hero h1 span { color: var(--green); }
+.hero h1 .pink { color: #ed9caf; }
+.hero h1 .blue { color: #80c4db; }
 
-.hero p {
+.hero-content p {
   font-size: 18px;
-  max-width: 530px;
-  line-height: 1.8;
-  color: #647365;
+  line-height: 1.85;
+  max-width: 490px;
+  color: #7c8992;
 }
 
-.hero-actions {
+.hero-buttons {
   display: flex;
-  flex-wrap: wrap;
   gap: 13px;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
@@ -158,102 +179,189 @@ nav a:hover { color: var(--green); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 25px;
-  border-radius: 30px;
+  padding: 15px 25px;
+  border-radius: 40px;
   font-size: 14px;
   font-weight: 900;
   transition: .25s;
 }
 
-.button-primary {
-  background: var(--green);
+.button:hover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.button-pink {
+  background: #f5afc0;
   color: white;
-  box-shadow: 0 7px 18px #759b7040;
+  box-shadow: 0 7px 18px #f5afc040;
 }
 
-.button-primary:hover {
-  background: var(--green-dark);
-  transform: translateY(-3px);
-}
-
-.button-secondary {
+.button-white {
   background: white;
-  border: 1px solid #e6e8d9;
+  color: #7c8992;
 }
 
-.button-secondary:hover { transform: translateY(-3px); }
+/* HERO ILLUSTRATION */
 
-.hero-decoration {
+.hero-scene {
   position: absolute;
-  right: 8%;
+  right: 7%;
   top: 50%;
   transform: translateY(-50%);
-  width: 390px;
-  height: 390px;
-  border-radius: 48% 52% 60% 40%;
-  background: #f6d982;
+  width: 420px;
+  height: 420px;
+  background: #ffe39b;
+  border-radius: 47% 53% 48% 52%;
   display: grid;
   place-items: center;
-  font-size: 145px;
+  font-size: 155px;
   animation: float 5s ease-in-out infinite;
-  box-shadow: 20px 25px 0 #759b7010;
 }
 
-.hero-decoration::before {
-  content: '✿';
+.hero-scene .character {
+  position: relative;
+  z-index: 2;
+}
+
+.scene-cloud {
   position: absolute;
-  top: -32px;
+  background: white;
+  border-radius: 50px;
+  width: 100px;
+  height: 35px;
+  top: 60px;
+  left: -30px;
+  opacity: .9;
+}
+
+.scene-cloud:before, .scene-cloud:after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.scene-cloud:before {
+  width: 42px;
+  height: 42px;
+  left: 15px;
+  top: -20px;
+}
+
+.scene-cloud:after {
+  width: 35px;
+  height: 35px;
   right: 15px;
-  color: #759b70;
-  font-size: 75px;
+  top: -13px;
 }
 
-.hero-decoration::after {
-  content: '★';
+.scene-flower {
   position: absolute;
-  bottom: 15px;
-  left: -25px;
-  color: white;
   font-size: 65px;
 }
 
-.hero-dot {
+.flower-one { bottom: 25px; left: -20px; }
+.flower-two { top: 0; right: 5px; }
+
+.scene-star {
+  position: absolute;
+  font-size: 45px;
+  color: white;
+}
+
+.star-one { top: 75px; right: -20px; }
+.star-two { bottom: 40px; right: 30px; }
+
+.hero-sparkle {
+  position: absolute;
+  font-size: 45px;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.sparkle-one { top: 13%; right: 43%; }
+.sparkle-two { bottom: 12%; right: 42%; animation-delay: 1s; }
+
+/* FLOATING SHAPES */
+
+.shape {
   position: absolute;
   border-radius: 50%;
   opacity: .65;
+  pointer-events: none;
 }
 
-.dot-one { width: 70px; height: 70px; background: var(--pink); top: 12%; right: 38%; }
-.dot-two { width: 35px; height: 35px; background: var(--blue); bottom: 12%; right: 42%; }
+.shape-pink {
+  width: 85px;
+  height: 85px;
+  background: var(--pink);
+  right: 5%;
+  top: 10%;
+}
 
-section { padding: 95px 8%; }
+.shape-blue {
+  width: 45px;
+  height: 45px;
+  background: var(--blue);
+  left: 4%;
+  bottom: 12%;
+}
 
-.section-label {
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
+/* INTRO STRIP */
+
+.intro-strip {
+  background: white;
+  padding: 23px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.intro-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 900;
-  margin-bottom: 12px;
+  font-size: 14px;
+  color: #82958b;
 }
 
-.section-heading {
+.intro-item span { font-size: 23px; }
+
+/* GENERAL SECTION */
+
+section { padding: 100px 8%; }
+
+.section-top {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
+  max-width: 690px;
+  margin: 0 auto 55px;
 }
 
-.section-heading h2 {
-  font-size: clamp(32px, 4vw, 47px);
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
   font-weight: 900;
-  line-height: 1.15;
-  margin-bottom: 14px;
+  color: #e69eaf;
+  margin-bottom: 13px;
 }
 
-.section-heading p {
-  color: #748075;
-  font-size: 16px;
+.section-top h2 {
+  font-size: clamp(36px, 4.5vw, 53px);
+  line-height: 1.1;
+  color: #789a89;
+  margin-bottom: 15px;
 }
+
+.section-top p {
+  font-size: 16px;
+  color: #87939b;
+  line-height: 1.8;
+}
+
+/* ABOUT */
 
 .about {
   display: grid;
@@ -262,208 +370,394 @@ section { padding: 95px 8%; }
   gap: 75px;
 }
 
-.about-picture {
-  min-height: 390px;
-  background: var(--pink);
-  border-radius: 45% 55% 40% 60%;
+.about-art {
+  min-height: 420px;
+  position: relative;
+  border-radius: 45% 55% 52% 48%;
+  background: linear-gradient(140deg, #f9cbd3, #fce7ae);
   display: grid;
   place-items: center;
-  position: relative;
-  font-size: 125px;
+  font-size: 135px;
 }
 
-.about-picture span {
+.about-art .mini-cloud {
+  position: absolute;
+  font-size: 55px;
+  top: 25px;
+  right: 35px;
+}
+
+.about-art .mini-flower {
+  position: absolute;
+  font-size: 65px;
+  bottom: 30px;
+  left: 20px;
+}
+
+.about-sticker {
   position: absolute;
   background: white;
+  padding: 15px 23px;
   border-radius: 20px;
-  padding: 13px 20px;
+  bottom: 35px;
+  right: -20px;
+  box-shadow: 0 8px 25px #9c8a7d1a;
   font-size: 14px;
   font-weight: 900;
-  bottom: 28px;
-  right: -15px;
-  box-shadow: 0 8px 25px #354b3d15;
+  color: #86a38e;
 }
+
+.about-content .section-tag { display: block; }
 
 .about-content h2 {
-  font-size: clamp(33px, 4vw, 45px);
-  font-weight: 900;
-  line-height: 1.15;
-  margin-bottom: 20px;
-}
-
-.about-content p {
-  color: #748075;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.activities {
-  background: #f0f4e9;
-}
-
-.activity-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.activity-card {
-  background: white;
-  border-radius: 25px;
-  padding: 30px;
-  transition: .3s;
-  border: 1px solid #ffffff;
-}
-
-.activity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px #354b3d12;
-}
-
-.activity-icon {
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-  border-radius: 22px;
-  font-size: 35px;
+  font-size: clamp(36px, 4vw, 48px);
+  line-height: 1.12;
+  color: #789a89;
   margin-bottom: 22px;
 }
 
-.activity-card:nth-child(1) .activity-icon { background: #fbe7dc; }
-.activity-card:nth-child(2) .activity-icon { background: #e2eff2; }
-.activity-card:nth-child(3) .activity-icon { background: #f8edc9; }
-
-.activity-card h3 {
-  font-size: 21px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.activity-card p {
-  color: #788278;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.quote-section {
-  text-align: center;
-  background: linear-gradient(120deg, #f7e9d9, #e7f0e3);
-  padding: 85px 8%;
-}
-
-.quote-section .quote-icon {
-  font-size: 45px;
+.about-content p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #87939b;
   margin-bottom: 15px;
 }
 
-.quote-section h2 {
-  font-size: clamp(30px, 4vw, 46px);
-  font-weight: 900;
-  max-width: 750px;
-  margin: 0 auto 15px;
-  line-height: 1.2;
+/* LEARNING */
+
+.learning {
+  background: #f4f9f4;
+  position: relative;
 }
 
-.quote-section p {
-  color: #748075;
+.learning:before {
+  content: '✿';
+  position: absolute;
+  top: 30px;
+  right: 6%;
+  color: #f4c4cf;
+  font-size: 70px;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.learning-card {
+  border-radius: 30px;
+  padding: 35px 28px;
+  min-height: 280px;
+  transition: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.learning-card:hover {
+  transform: translateY(-9px) rotate(-1deg);
+  box-shadow: 0 15px 30px #80978c18;
+}
+
+.learning-card:nth-child(1) { background: #ffe2e7; }
+.learning-card:nth-child(2) { background: #dff3fb; }
+.learning-card:nth-child(3) { background: #fff0c7; }
+.learning-card:nth-child(4) { background: #e5def9; }
+.learning-card:nth-child(5) { background: #dff4e5; }
+.learning-card:nth-child(6) { background: #ffe8d8; }
+
+.learning-icon {
+  font-size: 53px;
+  margin-bottom: 23px;
+  display: block;
+}
+
+.learning-card h3 {
+  font-size: 23px;
+  color: #647e79;
+  margin-bottom: 10px;
+}
+
+.learning-card p {
+  color: #788a8b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.card-decoration {
+  position: absolute;
+  right: 15px;
+  bottom: -13px;
+  font-size: 70px;
+  opacity: .14;
+}
+
+/* COLOURFUL BANNER */
+
+.adventure {
+  background: linear-gradient(120deg, #b9e5f2, #d9cdf5, #ffd9d9);
+  padding: 85px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.adventure h2 {
+  font-size: clamp(35px, 5vw, 57px);
+  color: #617c8d;
+  margin-bottom: 17px;
+  position: relative;
+  z-index: 2;
+}
+
+.adventure p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #708493;
   font-size: 16px;
+  line-height: 1.9;
+  position: relative;
+  z-index: 2;
 }
 
-.contact-grid {
+.adventure-decor {
+  position: absolute;
+  font-size: 65px;
+  opacity: .75;
+}
+
+.decor-left { left: 7%; top: 20px; }
+.decor-right { right: 7%; bottom: 10px; }
+
+/* VALUES */
+
+.values {
+  background: white;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.value {
+  text-align: center;
+  padding: 20px 12px;
+}
+
+.value-icon {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 18px;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 43px;
+}
+
+.value:nth-child(1) .value-icon { background: #ffe6ea; }
+.value:nth-child(2) .value-icon { background: #e4f5fa; }
+.value:nth-child(3) .value-icon { background: #fff1c9; }
+.value:nth-child(4) .value-icon { background: #e8e2fb; }
+
+.value h3 {
+  font-size: 19px;
+  color: #789a89;
+  margin-bottom: 8px;
+}
+
+.value p {
+  font-size: 13px;
+  color: #89969a;
+  line-height: 1.7;
+}
+
+/* CONTACT */
+
+.contact {
+  background: linear-gradient(135deg, #fff0e9, #f3f0ff);
+}
+
+.contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 55px;
   align-items: center;
 }
 
-.contact-grid h2 {
-  font-size: clamp(34px, 4vw, 45px);
-  font-weight: 900;
-  line-height: 1.15;
-  margin-bottom: 18px;
+.contact-layout h2 {
+  font-size: clamp(38px, 4.5vw, 53px);
+  color: #789a89;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-.contact-grid p {
-  color: #748075;
-  margin-bottom: 15px;
+.contact-layout p {
+  color: #87939b;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 14px;
 }
 
-.contact-card {
-  background: #eaf1e5;
-  border-radius: 25px;
+.contact-box {
+  background: white;
   padding: 35px;
+  border-radius: 30px;
+  box-shadow: 0 12px 35px #a5a2b010;
 }
 
-.contact-card h3 {
-  font-size: 23px;
+.contact-box h3 {
+  font-size: 27px;
+  color: #789a89;
   margin-bottom: 20px;
 }
 
 .contact-detail {
-  background: white;
-  padding: 15px;
-  border-radius: 14px;
-  margin-top: 12px;
+  background: #fffaf3;
+  padding: 17px;
+  border-radius: 17px;
+  margin-top: 13px;
   font-size: 14px;
+  color: #87939b;
 }
 
-.contact-detail strong { display: block; margin-bottom: 3px; }
-.contact-detail a { color: var(--green-dark); }
+.contact-detail strong {
+  display: block;
+  color: #789a89;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* FOOTER */
 
 footer {
-  background: #304b3b;
-  color: white;
+  background: #d7eadb;
   padding: 45px 8% 25px;
   text-align: center;
+  color: #708f7b;
 }
 
 .footer-name {
-  font-size: 23px;
-  font-weight: 900;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 26px;
   margin-bottom: 5px;
 }
 
-footer p { opacity: .75; font-size: 13px; }
-.footer-bottom { border-top: 1px solid #ffffff25; margin-top: 25px; padding-top: 20px; }
+footer p {
+  font-size: 13px;
+  opacity: .85;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffffa0;
+  padding-top: 20px;
+  margin-top: 25px;
+}
+
+/* ANIMATIONS */
 
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
 }
 
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-@keyframes rise {
+@keyframes float {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -17px; }
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.3) rotate(15deg); }
+}
+
+@keyframes enter {
   from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float {
-  0%,100% { margin-top: 0; }
-  50% { margin-top: -15px; }
-}
+/* MOBILE */
 
 @media(max-width: 950px) {
-  .hero-decoration { width: 270px; height: 270px; font-size: 100px; right: 4%; opacity: .75; }
+  .hero-scene {
+    width: 280px;
+    height: 280px;
+    font-size: 105px;
+    right: 4%;
+    opacity: .8;
+  }
+
   .hero-content { max-width: 570px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media(max-width: 720px) {
-  header { padding: 12px 5%; flex-direction: column; gap: 12px; }
-  nav { justify-content: center; gap: 17px; flex-wrap: wrap; }
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 5%;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
   nav a { font-size: 12px; }
-  .nav-button { padding: 8px 14px; }
-  .hero { min-height: 650px; padding: 70px 7%; align-items: flex-start; }
-  .hero-decoration { width: 180px; height: 180px; font-size: 70px; right: 8%; top: auto; bottom: 30px; transform: none; opacity: .9; }
-  .hero h1 { font-size: 49px; }
-  .hero p { font-size: 16px; }
-  section { padding: 70px 7%; }
-  .about, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-picture { min-height: 270px; font-size: 90px; }
-  .activity-grid { grid-template-columns: 1fr; }
-  .activity-card { padding: 25px; }
+
+  .nav-cta { padding: 9px 15px; }
+
+  .hero {
+    min-height: 720px;
+    padding: 65px 7%;
+    align-items: flex-start;
+  }
+
+  .hero h1 { font-size: 57px; }
+  .hero-content p { font-size: 16px; }
+
+  .hero-scene {
+    width: 190px;
+    height: 190px;
+    font-size: 75px;
+    top: auto;
+    bottom: 35px;
+    right: 12%;
+    transform: none;
+  }
+
+  .sparkle-one { right: 20%; top: 52%; }
+  .sparkle-two { right: 70%; bottom: 9%; }
+
+  .intro-strip { gap: 17px; padding: 22px 5%; }
+  .intro-item { font-size: 12px; }
+
+  section { padding: 75px 7%; }
+
+  .about, .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-art { min-height: 280px; font-size: 95px; }
+
+  .learning-grid { grid-template-columns: 1fr; }
+
+  .learning-card { min-height: 230px; }
+
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .adventure-decor { font-size: 35px; }
+
+  .contact-box { padding: 25px; }
 }
 
 @media(prefers-reduced-motion: reduce) {
@@ -482,101 +776,226 @@ footer p { opacity: .75; font-size: 13px; }
   <a class="logo" href="#home">
     <img src="https://static.wixstatic.com/media/5510f0_6e7d2395ba674354adc6e89a17d1a634~mv2.png/v1/crop/x_0,y_0,w_1012,h_1024/fill/w_226,h_230,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/177844189769993709%20(2).png" alt="Little Explorers Nursery logo">
     <div>
-      <strong>Little Explorers</strong>
+      <div class="logo-name">Little Explorers</div>
       <small>NURSERY TELFORD</small>
     </div>
   </a>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#activities">Our Approach</a>
-    <a href="#contact" class="nav-button">Get in Touch</a>
+    <a href="#about">Our Nursery</a>
+    <a href="#learning">Learning</a>
+    <a href="#values">Our Values</a>
+    <a href="#contact" class="nav-cta">Say Hello! ✨</a>
   </nav>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-  <div class="hero-dot dot-one"></div>
-  <div class="hero-dot dot-two"></div>
+  <div class="shape shape-pink"></div>
+  <div class="shape shape-blue"></div>
 
   <div class="hero-content">
-    <span class="eyebrow">🌿 A WORLD OF LITTLE DISCOVERIES</span>
-    <h1>Where little minds <span>grow big.</span></h1>
-    <p>A happy, welcoming place for children to discover, imagine, learn and grow. Every little explorer deserves a wonderful beginning.</p>
+    <span class="hero-label">🌈 A LITTLE WORLD OF WONDER</span>
 
-    <div class="hero-actions">
-      <a href="#about" class="button button-primary">Discover Our Nursery →</a>
-      <a href="#contact" class="button button-secondary">Contact Us</a>
+    <h1>
+      Little adventures.<br>
+      <span class="pink">Big beginnings.</span>
+    </h1>
+
+    <p>
+      A happy place where curious little minds can explore, discover,
+      make friends and grow. Because childhood should be full of
+      wonderful adventures!
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="button button-pink">Explore Our Nursery →</a>
+      <a href="#contact" class="button button-white">Get in Touch 💌</a>
     </div>
   </div>
 
-  <div class="hero-decoration" aria-hidden="true">🧸</div>
+  <div class="hero-scene" aria-hidden="true">
+    <div class="scene-cloud"></div>
+    <div class="character">🧸</div>
+    <div class="scene-flower flower-one">🌼</div>
+    <div class="scene-flower flower-two">🌸</div>
+    <div class="scene-star star-one">✦</div>
+    <div class="scene-star star-two">✧</div>
+  </div>
+
+  <div class="hero-sparkle sparkle-one">✨</div>
+  <div class="hero-sparkle sparkle-two">⭐</div>
 </section>
+
+<div class="intro-strip">
+  <div class="intro-item"><span>🌱</span> Little minds growing</div>
+  <div class="intro-item"><span>🎨</span> Learning through play</div>
+  <div class="intro-item"><span>💛</span> Wonderful beginnings</div>
+  <div class="intro-item"><span>🌈</span> Every child matters</div>
+</div>
 
 <section id="about">
   <div class="about">
-    <div class="about-picture reveal">
+    <div class="about-art reveal">
       🌱
-      <span>Little steps. Big possibilities. ✨</span>
+      <div class="mini-cloud">☁️</div>
+      <div class="mini-flower">🌻</div>
+      <div class="about-sticker">Every day is an adventure! ✨</div>
     </div>
 
     <div class="about-content reveal">
-      <div class="section-label">A LITTLE ABOUT US</div>
-      <h2>Every child has a story waiting to unfold.</h2>
-      <p>At Little Explorers Nursery Telford, we believe every child deserves the opportunity to learn, discover and flourish in a happy and supportive environment.</p>
-      <p>We want every little explorer to feel valued, encouraged and confident as they take their first steps on an exciting journey of discovery.</p>
-      <a href="#contact" class="button button-primary">Come and Say Hello →</a>
+      <span class="section-tag">HELLO LITTLE EXPLORERS!</span>
+      <h2>A place to play, learn, discover and grow.</h2>
+
+      <p>
+        At Little Explorers Nursery Telford, we believe every child
+        deserves the opportunity to learn, discover and flourish
+        in a happy and supportive environment.
+      </p>
+
+      <p>
+        We want every little explorer to feel valued, encouraged
+        and confident as they take their first steps on an exciting
+        journey of discovery.
+      </p>
+
+      <a href="#contact" class="button button-pink">Get to Know Us →</a>
     </div>
   </div>
 </section>
 
-<section class="activities" id="activities">
-  <div class="section-heading reveal">
-    <div class="section-label">LEARN THROUGH PLAY</div>
-    <h2>Little hands. Curious minds.</h2>
-    <p>Every day brings new opportunities to explore, create and discover the world around us.</p>
+<section class="learning" id="learning">
+  <div class="section-top reveal">
+    <span class="section-tag">LET'S HAVE SOME FUN!</span>
+    <h2>So much to see. So much to discover.</h2>
+    <p>
+      The world is full of exciting things to explore.
+      Every experience is an opportunity to learn something new.
+    </p>
   </div>
 
-  <div class="activity-grid">
-    <article class="activity-card reveal">
-      <div class="activity-icon">🎨</div>
-      <h3>Creative Adventures</h3>
-      <p>Encouraging imagination and self-expression through art, crafts, music and creative play.</p>
+  <div class="learning-grid">
+
+    <article class="learning-card reveal">
+      <span class="learning-icon">🎨</span>
+      <h3>Creative Little Minds</h3>
+      <p>Painting, drawing, making and imagining. A world where creativity has no limits.</p>
+      <span class="card-decoration">🌈</span>
     </article>
 
-    <article class="activity-card reveal">
-      <div class="activity-icon">🌻</div>
-      <h3>Discover & Explore</h3>
-      <p>Inspiring little minds to ask questions, explore new ideas and discover the world around them.</p>
+    <article class="learning-card reveal">
+      <span class="learning-icon">🌳</span>
+      <h3>Outdoor Adventures</h3>
+      <p>Discovering nature, exploring the outdoors and finding something wonderful around every corner.</p>
+      <span class="card-decoration">🌻</span>
     </article>
 
-    <article class="activity-card reveal">
-      <div class="activity-icon">💛</div>
+    <article class="learning-card reveal">
+      <span class="learning-icon">📚</span>
+      <h3>Stories & Imagination</h3>
+      <p>Exploring new worlds through stories, imagination, conversation and discovery.</p>
+      <span class="card-decoration">⭐</span>
+    </article>
+
+    <article class="learning-card reveal">
+      <span class="learning-icon">🧩</span>
+      <h3>Little Problem Solvers</h3>
+      <p>Building curiosity, confidence and independence through exciting everyday challenges.</p>
+      <span class="card-decoration">🧸</span>
+    </article>
+
+    <article class="learning-card reveal">
+      <span class="learning-icon">🎵</span>
+      <h3>Music & Movement</h3>
+      <p>Moving, dancing, singing and enjoying the fun of discovering new sounds and rhythms.</p>
+      <span class="card-decoration">🎈</span>
+    </article>
+
+    <article class="learning-card reveal">
+      <span class="learning-icon">💛</span>
+      <h3>Friendships & Growing</h3>
+      <p>Making friends, sharing experiences and celebrating all the little milestones along the way.</p>
+      <span class="card-decoration">🌼</span>
+    </article>
+
+  </div>
+</section>
+
+<section class="adventure">
+  <div class="adventure-decor decor-left">☁️</div>
+  <div class="adventure-decor decor-right">🌈</div>
+
+  <h2>Every little explorer has a big story.</h2>
+  <p>
+    We believe in celebrating the little moments, encouraging
+    curious minds and making every day an opportunity for
+    something wonderful.
+  </p>
+</section>
+
+<section class="values" id="values">
+  <div class="section-top reveal">
+    <span class="section-tag">WHAT MATTERS TO US</span>
+    <h2>Little things make a big difference.</h2>
+    <p>
+      A happy childhood is built on care, encouragement,
+      discovery and a sense of belonging.
+    </p>
+  </div>
+
+  <div class="values-grid">
+
+    <div class="value reveal">
+      <div class="value-icon">💗</div>
+      <h3>Feeling Valued</h3>
+      <p>Every child is unique and deserves to feel special.</p>
+    </div>
+
+    <div class="value reveal">
+      <div class="value-icon">🌱</div>
       <h3>Growing Together</h3>
-      <p>Supporting children as they build friendships, independence and confidence at their own pace.</p>
-    </article>
+      <p>Encouraging every little step and celebrating progress.</p>
+    </div>
+
+    <div class="value reveal">
+      <div class="value-icon">🌈</div>
+      <h3>Being Curious</h3>
+      <p>Making room for questions, imagination and discovery.</p>
+    </div>
+
+    <div class="value reveal">
+      <div class="value-icon">🤝</div>
+      <h3>Belonging</h3>
+      <p>Creating a welcoming place where everyone matters.</p>
+    </div>
+
   </div>
 </section>
 
-<section class="quote-section">
-  <div class="quote-icon">🌈</div>
-  <h2>Little steps today. Wonderful possibilities tomorrow.</h2>
-  <p>Because every little explorer deserves the chance to shine.</p>
-</section>
-
-<section id="contact">
-  <div class="contact-grid">
+<section class="contact" id="contact">
+  <div class="contact-layout">
     <div class="reveal">
-      <div class="section-label">LET'S GET TO KNOW EACH OTHER</div>
-      <h2>We'd love to hear from you!</h2>
-      <p>Thinking about joining the Little Explorers family? Have a question or want to find out more about our nursery?</p>
-      <p>Get in touch and take the first step towards a wonderful new adventure.</p>
+      <span class="section-tag">YOUR NEXT LITTLE ADVENTURE STARTS HERE</span>
+      <h2>Come on in. We'd love to meet you!</h2>
+
+      <p>
+        Whether you would like to find out more about our nursery,
+        ask a question or enquire about a place, we would love
+        to hear from you.
+      </p>
+
+      <p>
+        Get in touch and take the first step towards a wonderful
+        new adventure.
+      </p>
+
+      <a href="mailto:ADD-EMAIL-HERE" class="button button-pink">Send Us a Message →</a>
     </div>
 
-    <div class="contact-card reveal">
-      <h3>Get in Touch 💌</h3>
+    <div class="contact-box reveal">
+      <h3>Let's say hello! 💌</h3>
 
       <div class="contact-detail">
         <strong>📍 Find Us</strong>
@@ -592,6 +1011,11 @@ footer p { opacity: .75; font-size: 13px; }
         <strong>📞 Give Us a Call</strong>
         Add nursery telephone number
       </div>
+
+      <div class="contact-detail">
+        <strong>🌼 Nursery Enquiries</strong>
+        Please contact us to enquire about availability and visits.
+      </div>
     </div>
   </div>
 </section>
@@ -599,13 +1023,14 @@ footer p { opacity: .75; font-size: 13px; }
 </main>
 
 <footer>
-  <div class="footer-name">Little Explorers Nursery Telford Ltd</div>
-  <p>Little steps. Wonderful beginnings. 🌱</p>
+  <div class="footer-name">Little Explorers Nursery Telford Ltd 🌈</div>
+  <p>Little adventures. Big beginnings.</p>
+
   <div class="footer-bottom">
     <p>© <span id="year"></span> Little Explorers Nursery Telford Ltd. All rights reserved.</p>
   </div>
 </footer>
- 
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
