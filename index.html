@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Explorers Nursery Telford</title>
+<meta name="description" content="Welcome to Little Explorers Nursery Telford. A caring, welcoming place where little minds grow, explore and thrive.">
+<style>
+:root {
+  --green: #719b70;
+  --dark: #304b3b;
+  --cream: #fffaf0;
+  --yellow: #f4d77c;
+  --pink: #f4c9c3;
+  --blue: #c9e4e9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--dark);
+  background: var(--cream);
+  line-height: 1.7;
+}
+header {
+  background: rgba(255,250,240,.96);
+  padding: 14px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 18px #304b3b12;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo img { width: 62px; height: 62px; object-fit: contain; }
+.logo strong { font-size: 18px; line-height: 1.2; }
+.logo small { display: block; font-size: 11px; letter-spacing: 2px; color: var(--green); }
+nav { display: flex; gap: 25px; flex-wrap: wrap; }
+nav a { color: var(--dark); text-decoration: none; font-weight: bold; font-size: 14px; }
+nav a:hover { color: var(--green); }
+.hero {
+  min-height: 590px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 85% 20%, #f4d77c80 0 75px, transparent 76px),
+    radial-gradient(circle at 75% 85%, #c9e4e980 0 110px, transparent 111px),
+    linear-gradient(120deg, #fff4df, #f4f7e9);
+}
+.hero-inner { max-width: 720px; animation: appear 1s ease both; }
+.eyebrow {
+  display: inline-block; background: #e6efdf; color: var(--dark);
+  padding: 7px 17px; border-radius: 30px; font-size: 13px;
+  font-weight: bold; letter-spacing: 1px;
+}
+h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.08; margin: 22px 0; }
+h1 span { color: var(--green); }
+.hero p { max-width: 570px; font-size: 18px; color: #526658; }
+.button {
+  display: inline-block; margin-top: 28px; padding: 13px 27px;
+  border-radius: 30px; background: var(--green); color: white;
+  text-decoration: none; font-weight: bold; transition: .2s;
+}
+.button:hover { background: var(--dark); transform: translateY(-2px); }
+section { padding: 85px 8%; }
+.section-heading { text-align: center; max-width: 680px; margin: 0 auto 45px; }
+.section-heading h2 { font-size: clamp(30px, 4vw, 43px); margin-bottom: 12px; }
+.section-heading p { color: #68776a; }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+.about-art {
+  min-height: 320px; border-radius: 45% 55% 50% 40%;
+  background: linear-gradient(135deg, var(--pink), var(--yellow));
+  display: grid; place-items: center; font-size: 100px;
+}
+.about h2 { font-size: 38px; line-height: 1.2; margin-bottom: 20px; }
+.about p { color: #68776a; margin-bottom: 14px; }
+.features { background: #f0f4e9; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: white; padding: 30px 24px; border-radius: 22px;
+  text-align: center; box-shadow: 0 8px 25px #304b3b09;
+  transition: transform .25s;
+}
+.card:hover { transform: translateY(-6px); }
+.card .icon { font-size: 42px; margin-bottom: 12px; }
+.card h3 { margin-bottom: 10px; font-size: 20px; }
+.card p { color: #718071; font-size: 15px; }
+.banner {
+  text-align: center;
+  background: linear-gradient(120deg, #e9f1dc, #f9e9d9);
+  padding: 75px 8%;
+}
+.banner h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 12px; }
+.banner p { max-width: 650px; margin: auto; color: #657467; }
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
+.contact h2 { font-size: 38px; margin-bottom: 15px; }
+.contact p { color: #68776a; margin-bottom: 12px; }
+.contact-box { background: #f0f4e9; padding: 30px; border-radius: 22px; }
+.contact-box a { color: var(--dark); font-weight: bold; }
+footer {
+  background: var(--dark); color: white; padding: 35px 8%;
+  text-align: center; font-size: 13px;
+}
+footer p { opacity: .8; }
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media(max-width: 750px) {
+  header { flex-direction: column; }
+  nav { justify-content: center; gap: 14px; }
+  .hero { min-height: 480px; padding: 65px 7%; }
+  section { padding: 65px 7%; }
+  .about, .contact { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .about-art { min-height: 230px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://static.wixstatic.com/media/5510f0_6e7d2395ba674354adc6e89a17d1a634~mv2.png/v1/crop/x_0,y_0,w_1012,h_1024/fill/w_226,h_230,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/177844189769993709%20(2).png" alt="Little Explorers Nursery logo">
+    <div><strong>Little Explorers</strong><small>NURSERY TELFORD</small></div>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#activities">Our Approach</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <span class="eyebrow">WELCOME TO LITTLE EXPLORERS</span>
+    <h1>Big adventures start with <span>little steps.</span></h1>
+    <p>A warm, caring and inspiring place where children can discover the world around them, make friends and grow in confidence.</p>
+    <a class="button" href="#about">Discover Our Nursery</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="about-art">🌱 🧸</div>
+    <div>
+      <h2>A little place for big possibilities.</h2>
+      <p>At Little Explorers Nursery Telford, we believe every child deserves the opportunity to learn, discover and flourish in a happy and supportive environment.</p>
+      <p>We want every little explorer to feel valued, encouraged and confident as they take their first steps on an exciting journey of discovery.</p>
+      <a class="button" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="activities">
+  <div class="section-heading">
+    <h2>Every day is an adventure</h2>
+    <p>We believe children learn through curiosity, creativity, play and meaningful experiences.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <div class="icon">🎨</div>
+      <h3>Creative Discovery</h3>
+      <p>Encouraging imagination and self-expression through arts, crafts, music and creative play.</p>
+    </article>
+    <article class="card">
+      <div class="icon">🌳</div>
+      <h3>Explore & Discover</h3>
+      <p>Giving little minds opportunities to explore, ask questions and discover the world around them.</p>
+    </article>
+    <article class="card">
+      <div class="icon">💛</div>
+      <h3>Care & Confidence</h3>
+      <p>Supporting children as they build friendships, independence and confidence at their own pace.</p>
+    </article>
+  </div>
+</section>
+
+<section class="banner">
+  <h2>Little steps. Wonderful beginnings.</h2>
+  <p>Every child has their own story to tell. We look forward to being part of their journey, celebrating their achievements and helping them grow.</p>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div>
+      <h2>Come and say hello!</h2>
+      <p>We would love to hear from you. If you would like to learn more about Little Explorers Nursery, please get in touch.</p>
+      <p>Whether you have a question or would like to enquire about a place, we're happy to help.</p>
+    </div>
+    <div class="contact-box">
+      <h3>Contact the Nursery</h3>
+      <p>📍 Telford, Shropshire</p>
+      <p>Please contact us to enquire about nursery places, opening times and visits.</p>
+      <p><strong>Email:</strong> Add nursery email address</p>
+      <p><strong>Telephone:</strong> Add nursery telephone number</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Little Explorers Nursery Telford Ltd</strong>
+  <p>Little steps. Wonderful beginnings.</p>
+  <p>© <span id="year"></span> Little Explorers Nursery Telford Ltd. All rights reserved.</p>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
