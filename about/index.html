@@ -4,646 +4,1417 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawthorne Digital | Digital Solutions That Move Business Forward</title>
-<meta name="description" content="Professional website design and digital business services. Premium websites without the premium price.">
+<meta name="theme-color" content="#ffffff">
+<title>Hawthorne Digital | Websites & Digital Business Services</title>
+<meta name="description" content="Hawthorne Digital creates modern, affordable websites and provides digital business services for businesses across the UK.">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
- --navy:#202b4c;
- --blue:#2856b1;
- --light:#eef3ff;
- --grey:#f6f7f9;
- --text:#252d40;
- --muted:#747d8e;
- --border:#e8eaf0;
+    --blue: #2856B1;
+    --navy: #202B4C;
+    --text: #30394D;
+    --muted: #778196;
+    --light: #F5F7FB;
+    --line: #E8ECF3;
+    --white: #FFFFFF;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:white}
-a{text-decoration:none;color:inherit}
-.container{width:88%;max-width:1300px;margin:auto}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 105px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    padding-top: 84px;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
 
 /* HEADER */
-header{
- position:sticky;top:0;z-index:100;
- background:rgba(255,255,255,.96);
- border-bottom:1px solid var(--border);
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    height: 84px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(32,43,76,0.08);
+    transition: box-shadow 0.25s ease;
 }
-.nav{
- height:88px;display:flex;align-items:center;
- justify-content:space-between;
+
+.site-header.scrolled {
+    box-shadow: 0 8px 30px rgba(32,43,76,0.09);
 }
-.logo img{width:205px;max-height:65px;object-fit:contain;object-position:left}
-.nav-links{display:flex;gap:34px;align-items:center;list-style:none}
-.nav-links a{font-size:13px;font-weight:600;color:var(--navy)}
-.nav-links a:hover{color:var(--blue)}
-.nav-links .contact{
- background:var(--blue);color:white;
- padding:14px 23px;border-radius:4px
+
+.navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.menu{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 190px;
+    max-height: 58px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4B556B;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.nav-contact {
+    background: var(--blue);
+    color: white !important;
+    padding: 11px 22px;
+    border-radius: 5px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-contact:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--navy);
+    font-size: 27px;
+    cursor: pointer;
+}
 
 /* HERO */
-.hero{padding:115px 0 100px;overflow:hidden}
-.hero-grid{
- display:grid;grid-template-columns:1fr 1fr;
- align-items:center;gap:65px
+
+.hero {
+    position: relative;
+    padding: 112px 0 120px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 85% 15%, rgba(40,86,177,0.09), transparent 34%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFE 100%);
 }
-.hero-tag{
- font-size:11px;text-transform:uppercase;
- letter-spacing:2px;font-weight:700;
- color:var(--blue);margin-bottom:27px
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 470px;
+    height: 470px;
+    border: 1px solid rgba(40,86,177,0.09);
+    border-radius: 50%;
+    right: -170px;
+    bottom: -270px;
+    pointer-events: none;
 }
-.hero h1{
- font-family:Manrope,sans-serif;
- font-size:clamp(48px,6vw,79px);
- line-height:1.08;letter-spacing:-4px;
- color:var(--navy);font-weight:800;
- margin-bottom:27px
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 790px;
 }
-.hero h1 span{color:var(--blue)}
-.hero p{
- font-size:16px;line-height:1.9;
- color:var(--muted);max-width:520px;
- margin-bottom:32px
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
 }
-.btn{
- display:inline-block;padding:16px 25px;
- background:var(--blue);color:white;
- border-radius:4px;font-size:13px;
- font-weight:700;transition:.25s
+
+.eyebrow::before {
+    content: "";
+    width: 27px;
+    height: 2px;
+    background: var(--blue);
 }
-.btn:hover{background:var(--navy);transform:translateY(-3px)}
-.btn-outline{
- background:white;border:1px solid var(--border);
- color:var(--navy);margin-left:10px
+
+.hero h1 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    font-size: clamp(43px, 6vw, 76px);
+    line-height: 1.12;
+    letter-spacing: -3.5px;
+    font-weight: 800;
+    max-width: 850px;
 }
-.btn-outline:hover{color:white}
-.hero-image{
- min-height:475px;position:relative;
- background:linear-gradient(135deg,#eaf0ff,#f7f9ff);
- display:flex;align-items:center;justify-content:center;
- overflow:hidden;border-radius:3px
+
+.hero h1 span {
+    color: var(--blue);
 }
-.hero-image:before{
- content:"";position:absolute;width:380px;height:380px;
- border:1px solid rgba(40,86,177,.2);border-radius:50%
+
+.hero-description {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 590px;
+    margin-top: 25px;
+    line-height: 1.9;
 }
-.hero-image:after{
- content:"";position:absolute;width:280px;height:280px;
- border:1px solid rgba(40,86,177,.2);border-radius:50%
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 36px;
 }
-.hero-image img{
- width:230px;max-height:150px;object-fit:contain;
- z-index:2;animation:float 5s ease-in-out infinite
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s ease;
 }
-.hero-caption{
- position:absolute;bottom:25px;left:25px;
- font-size:10px;letter-spacing:2px;
- color:var(--blue);font-weight:700
+
+.button-primary {
+    color: white;
+    background: var(--blue);
+    border: 1px solid var(--blue);
 }
-@keyframes float{50%{transform:translateY(-12px)}}
+
+.button-primary:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    transform: translateY(-3px);
+}
+
+.button-outline {
+    color: var(--navy);
+    border: 1px solid #DCE2ED;
+    background: white;
+}
+
+.button-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-3px);
+}
+
+.hero-note {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #7B8598;
+    font-size: 12px;
+}
+
+.hero-note span {
+    width: 7px;
+    height: 7px;
+    background: #3DAD83;
+    border-radius: 50%;
+}
 
 /* INTRO STRIP */
-.intro{
- background:var(--navy);color:white;padding:24px 0
+
+.intro-strip {
+    padding: 25px 0;
+    background: var(--navy);
+    color: white;
 }
-.intro-inner{
- display:flex;justify-content:space-between;
- gap:20px;flex-wrap:wrap
+
+.intro-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
-.intro span{font-size:12px;font-weight:600;letter-spacing:.5px}
+
+.intro-strip p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.intro-strip a {
+    font-size: 12px;
+    font-weight: 700;
+    color: #AFC8FF;
+    white-space: nowrap;
+}
+
+.intro-strip a:hover {
+    color: white;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.section {
+    padding: 105px 0;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 48px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 17px;
+    max-width: 560px;
+}
 
 /* SERVICES */
-section{padding:105px 0}
-.heading{max-width:720px;margin-bottom:55px}
-.kicker{
- color:var(--blue);font-size:11px;
- font-weight:800;letter-spacing:2px;
- text-transform:uppercase;margin-bottom:18px
-}
-.heading h2{
- font-family:Manrope,sans-serif;
- font-size:clamp(34px,4vw,51px);
- line-height:1.2;letter-spacing:-2px;
- color:var(--navy);margin-bottom:19px
-}
-.heading p{color:var(--muted);font-size:14px;line-height:1.9}
 
-.service-grid{
- display:grid;grid-template-columns:repeat(3,1fr);
- border-top:1px solid var(--border);
- border-left:1px solid var(--border)
-}
-.service{
- padding:36px 30px;min-height:260px;
- border-right:1px solid var(--border);
- border-bottom:1px solid var(--border);
- transition:.3s
-}
-.service:hover{background:#f7f9ff}
-.service .number{
- font-size:12px;color:var(--blue);
- font-weight:700;margin-bottom:35px
-}
-.service h3{
- font-family:Manrope,sans-serif;
- font-size:21px;color:var(--navy);margin-bottom:15px
-}
-.service p{font-size:13px;line-height:1.9;color:var(--muted)}
-.service a{
- display:inline-block;margin-top:22px;
- font-size:12px;font-weight:700;color:var(--blue)
+.services {
+    background: white;
 }
 
-/* WORK */
-.work{background:var(--grey)}
-.work-header{
- display:flex;justify-content:space-between;
- align-items:end;gap:25px;margin-bottom:45px
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
 }
-.work-grid{
- display:grid;grid-template-columns:1fr 1fr;gap:25px
+
+.service {
+    padding: 35px 30px 38px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    min-height: 245px;
+    transition: background 0.25s ease;
 }
-.project{background:white;overflow:hidden}
-.project-image{
- height:300px;display:flex;align-items:center;
- justify-content:center;overflow:hidden
+
+.service:hover {
+    background: #F8FAFE;
 }
-.project-image img{
- width:100%;height:100%;object-fit:cover;
- transition:transform .5s
+
+.service-number {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
 }
-.project:hover img{transform:scale(1.04)}
-.project-placeholder{
- width:100%;height:100%;display:flex;
- align-items:center;justify-content:center;
- flex-direction:column;gap:15px;
- color:var(--navy);background:#e8efff
+
+.service h3 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 12px;
 }
-.project-placeholder strong{
- font-family:Manrope,sans-serif;font-size:28px
+
+.service p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
 }
-.project-placeholder span{font-size:10px;letter-spacing:3px}
-.project-info{padding:25px}
-.project-info h3{
- font-family:Manrope,sans-serif;
- color:var(--navy);font-size:20px;margin-bottom:8px
-}
-.project-info p{font-size:12px;color:var(--muted)}
-.project-info a{
- display:inline-block;margin-top:17px;
- color:var(--blue);font-size:12px;font-weight:700
+
+.service-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--blue);
+    font-weight: 700;
 }
 
 /* ABOUT */
-.about-grid{
- display:grid;grid-template-columns:1fr 1fr;
- gap:80px;align-items:center
-}
-.about-visual{
- min-height:410px;background:#edf2ff;
- display:flex;align-items:center;justify-content:center;
- position:relative;overflow:hidden
-}
-.about-visual img{width:230px;object-fit:contain;z-index:2}
-.about-visual:before{
- content:"";position:absolute;width:300px;height:300px;
- border:1px solid #c7d7f7;border-radius:50%
-}
-.about-text h2{
- font-family:Manrope,sans-serif;font-size:45px;
- line-height:1.2;letter-spacing:-2px;
- color:var(--navy);margin-bottom:22px
-}
-.about-text h2 span{color:var(--blue)}
-.about-text p{
- font-size:13px;line-height:2;
- color:var(--muted);margin-bottom:17px
-}
-.about-points{margin:25px 0;list-style:none}
-.about-points li{
- padding:12px 0;border-bottom:1px solid var(--border);
- font-size:13px;font-weight:600;color:var(--navy)
-}
-.about-points li:before{
- content:"✓";color:var(--blue);margin-right:12px
+
+.about {
+    background: var(--light);
 }
 
-/* VALUES */
-.values{background:#f6f7f9}
-.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.value h3{
- color:var(--navy);font-family:Manrope,sans-serif;
- font-size:17px;margin-bottom:13px
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: 85px;
 }
-.value p{font-size:12px;color:var(--muted);line-height:1.9}
-.value .line{height:3px;width:35px;background:var(--blue);margin-bottom:23px}
+
+.about-copy h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.8px;
+    color: var(--navy);
+    margin-bottom: 24px;
+}
+
+.about-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.about-points {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid #DFE5EF;
+}
+
+.about-point {
+    padding: 19px 0;
+    border-bottom: 1px solid #DFE5EF;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.about-point-number {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 3px;
+}
+
+.about-point h3 {
+    color: var(--navy);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.about-point p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* FEATURE */
+
+.feature {
+    background: white;
+}
+
+.feature-panel {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 65px;
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    align-items: center;
+    gap: 55px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-panel::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    right: -180px;
+    top: -200px;
+}
+
+.feature-panel h2 {
+    font-family: 'Manrope', sans-serif;
+    color: white;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+}
+
+.feature-panel p {
+    color: #B8C2D7;
+    font-size: 14px;
+    max-width: 490px;
+}
+
+.feature-panel .button {
+    margin-top: 27px;
+}
+
+.feature-details {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0;
+}
+
+.feature-detail {
+    padding: 19px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.feature-detail:first-child {
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.feature-detail strong {
+    display: block;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.feature-detail span {
+    color: #AEBBD4;
+    font-size: 12px;
+}
+
+/* WORK */
+
+.work {
+    background: #F8FAFD;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.work-item {
+    background: white;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.work-image {
+    height: 270px;
+    background: linear-gradient(135deg, #EAF0FC, #D9E4F8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-placeholder {
+    text-align: center;
+    color: var(--blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.work-placeholder small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #7385A8;
+    margin-top: 5px;
+}
+
+.work-info {
+    padding: 25px 27px;
+}
+
+.work-info span {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.work-info h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    color: var(--navy);
+    margin-top: 6px;
+}
+
+.work-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
 
 /* PRICE */
-.price{
- background:var(--navy);color:white;
- padding:75px 0
-}
-.price-inner{
- display:flex;justify-content:space-between;
- align-items:center;gap:30px
-}
-.price h2{
- font-family:Manrope,sans-serif;
- font-size:39px;margin-bottom:15px
-}
-.price p{font-size:13px;color:#c4cde0;line-height:1.9;max-width:540px}
-.price-number{
- font-family:Manrope,sans-serif;
- font-size:76px;font-weight:800
-}
-.price-number small{
- display:block;font-size:10px;
- letter-spacing:2px;text-align:right;color:#c4cde0
+
+.pricing {
+    background: white;
 }
 
-/* CTA */
-.cta{text-align:center}
-.cta .heading{margin:0 auto 30px}
-.cta .heading h2{font-size:48px}
-.cta .btn{margin-top:8px}
+.pricing-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 55px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+}
+
+.pricing-copy {
+    max-width: 580px;
+}
+
+.pricing-copy h2 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--navy);
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.pricing-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+.price {
+    color: var(--blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: -2px;
+}
+
+.price small {
+    display: block;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--light);
+    padding: 105px 0;
+}
+
+.contact-inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.contact-inner .eyebrow {
+    justify-content: center;
+}
+
+.contact-inner h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(35px, 5vw, 53px);
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.contact-inner p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 570px;
+    margin: 20px auto 30px;
+}
+
+.contact-inner .button {
+    margin: 4px;
+}
 
 /* FOOTER */
-footer{background:#202b4c;color:white;padding:65px 0 25px}
-.footer-grid{
- display:grid;grid-template-columns:1.5fr 1fr 1fr;
- gap:50px
-}
-.footer-logo img{
- width:205px;max-height:65px;
- object-fit:contain;filter:brightness(0) invert(1)
-}
-.footer-brand p{
- color:#bfc9dd;font-size:12px;
- line-height:1.9;max-width:310px;margin-top:20px
-}
-.footer-col h4{font-size:13px;margin-bottom:22px}
-.footer-col a{
- display:block;color:#bfc9dd;
- font-size:12px;margin-bottom:14px
-}
-.footer-col a:hover{color:white}
-.copyright{
- margin-top:50px;padding-top:23px;
- border-top:1px solid #46506b;
- display:flex;justify-content:space-between;
- color:#bfc9dd;font-size:10px
+
+footer {
+    background: #18223F;
+    color: white;
+    padding: 65px 0 25px;
 }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:.7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 50px;
+}
 
-@media(max-width:900px){
- .hero-grid,.about-grid{grid-template-columns:1fr}
- .service-grid{grid-template-columns:1fr 1fr}
- .value-grid{grid-template-columns:1fr 1fr}
+.footer-brand {
+    max-width: 360px;
 }
-@media(max-width:650px){
- .nav{height:75px}
- .logo img{width:170px}
- .menu{display:block}
- .nav-links{
-  display:none;position:absolute;top:75px;left:0;width:100%;
-  background:white;padding:25px 6%;flex-direction:column;
-  align-items:stretch;gap:22px;border-bottom:1px solid var(--border)
- }
- .nav-links.active{display:flex}
- .nav-links .contact{text-align:center}
- .hero{padding:75px 0}
- .hero h1{letter-spacing:-2px}
- .hero-image{min-height:330px}
- section{padding:75px 0}
- .service-grid,.work-grid{grid-template-columns:1fr}
- .work-header,.price-inner{align-items:flex-start;flex-direction:column}
- .price-number{font-size:60px}
- .about-text h2{font-size:36px}
- .value-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
- .footer-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
- .footer-brand{grid-column:1/-1}
- .copyright{flex-direction:column;gap:12px}
- .btn-outline{margin-left:0;margin-top:10px}
+
+.footer-brand img {
+    width: 185px;
+    max-height: 58px;
+    object-fit: contain;
+    object-position: left center;
+    filter: brightness(0) invert(1);
 }
-@media(prefers-reduced-motion:reduce){
- *{animation:none!important;transition:none!important}
- .reveal{opacity:1;transform:none}
+
+.footer-brand p {
+    color: #AEB9D0;
+    font-size: 13px;
+    margin-top: 18px;
+    max-width: 310px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 75px;
+}
+
+.footer-column h4 {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 17px;
+}
+
+.footer-column a {
+    display: block;
+    color: #AEB9D0;
+    font-size: 12px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #8995AF;
+    font-size: 11px;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .feature-panel {
+        padding: 45px;
+        gap: 30px;
+    }
+
+    .footer-links {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding-top: 72px;
+    }
+
+    .container {
+        width: min(100% - 36px, 1160px);
+    }
+
+    .site-header {
+        height: 72px;
+    }
+
+    .logo img {
+        width: 160px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 18px 22px 25px;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 12px 20px rgba(32,43,76,0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px 5px;
+        font-size: 14px;
+    }
+
+    .nav-links .nav-contact {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .hero {
+        padding: 85px 0 90px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .intro-strip-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .intro-strip p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        min-height: auto;
+        padding: 27px 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .feature-panel {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-image {
+        height: 220px;
+    }
+
+    .pricing-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 25px;
+    }
+
+    .price {
+        font-size: 43px;
+    }
+
+    .contact {
+        padding: 75px 0;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
- <div class="container nav">
-  <a class="logo" href="#home">
-   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-  </a>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
-  <ul class="nav-links" id="navLinks">
-   <li><a href="#home">Home</a></li>
-   <li><a href="#services">Services</a></li>
-   <li><a href="#work">Our Work</a></li>
-   <li><a href="#about">About Us</a></li>
-   <li><a class="contact" href="mailto:hello@hawthornedigital.co.uk">Get In Touch ↗</a></li>
-  </ul>
- </div>
+<!-- FIXED HEADER -->
+<header class="site-header" id="siteHeader">
+    <div class="container navbar">
+
+        <a href="#home" class="logo" aria-label="Hawthorne Digital home">
+            <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#work">Our Work</a>
+            <a href="https://www.bracketsupport.co.uk">Bracket</a>
+            <a href="#contact" class="nav-contact">Get in Touch</a>
+        </nav>
+
+    </div>
 </header>
 
 <main>
 
 <!-- HERO -->
 <section class="hero" id="home">
- <div class="container hero-grid">
-  <div class="reveal">
-   <div class="hero-tag">Hawthorne Digital · Digital solutions</div>
-   <h1>Bringing your<br>business into<br><span>the digital future.</span></h1>
-   <p>
-    We create professional websites and deliver practical digital
-    business services that help organisations establish their
-    presence, connect with customers and grow with confidence.
-   </p>
-   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Let's Discuss Your Project ↗</a>
-   <a href="#services" class="btn btn-outline">Explore Our Services</a>
-  </div>
-  <div class="hero-image reveal">
-   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-   <div class="hero-caption">DESIGNED WITH PURPOSE. BUILT FOR BUSINESS.</div>
-  </div>
- </div>
+    <div class="container">
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">Hawthorne Digital</div>
+
+            <h1>
+                Digital solutions.<br>
+                <span>Designed around you.</span>
+            </h1>
+
+            <p class="hero-description">
+                We create modern websites and provide practical digital services
+                that help businesses build their presence, connect with customers
+                and move forward with confidence.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="button button-primary">
+                    Start a Project <span>→</span>
+                </a>
+
+                <a href="#services" class="button button-outline">
+                    Explore Our Services
+                </a>
+            </div>
+
+            <div class="hero-note">
+                <span></span>
+                Working with businesses across the UK
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<div class="intro">
- <div class="container intro-inner">
-  <span>Website Design</span>
-  <span>Digital Business Services</span>
-  <span>Creative Solutions</span>
-  <span>Personal Support</span>
- </div>
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+    <div class="container intro-strip-inner">
+        <p>Premium thinking. Practical digital solutions.</p>
+        <a href="#about">GET TO KNOW HAWTHORNE →</a>
+    </div>
 </div>
 
 <!-- SERVICES -->
-<section id="services">
- <div class="container">
-  <div class="heading reveal">
-   <div class="kicker">What we do</div>
-   <h2>Digital services designed around your business.</h2>
-   <p>
-    We bring together design, technology and practical digital
-    solutions to help businesses make the most of their online presence.
-   </p>
-  </div>
+<section class="section services" id="services">
+    <div class="container">
 
-  <div class="service-grid">
-   <div class="service reveal">
-    <div class="number">01 / WEBSITES</div>
-    <h3>Website Design & Development</h3>
-    <p>From straightforward business websites to fully bespoke digital experiences, we create websites that reflect your brand and connect with your audience.</p>
-    <a href="mailto:hello@hawthornedigital.co.uk">Discover Website Design ↗</a>
-   </div>
-   <div class="service reveal">
-    <div class="number">02 / DIGITAL</div>
-    <h3>Digital Business Services</h3>
-    <p>Hosting, domains, business email and ongoing website management to help keep your business connected and operating online.</p>
-    <a href="mailto:hello@hawthornedigital.co.uk">Explore Digital Services ↗</a>
-   </div>
-   <div class="service reveal">
-    <div class="number">03 / CREATIVE</div>
-    <h3>Graphic & Creative Design</h3>
-    <p>Creative design solutions that bring your identity together, from logos and business stationery to promotional materials.</p>
-    <a href="mailto:hello@hawthornedigital.co.uk">Explore Creative Design ↗</a>
-   </div>
-   <div class="service reveal">
-    <div class="number">04 / HOSTING</div>
-    <h3>Website Hosting</h3>
-    <p>Hosting solutions designed to keep your website accessible, supported and performing as expected.</p>
-    <a href="mailto:hello@hawthornedigital.co.uk">Find Out More ↗</a>
-   </div>
-   <div class="service reveal">
-    <div class="number">05 / SUPPORT</div>
-    <h3>Ongoing Website Support</h3>
-    <p>Website updates, maintenance, security monitoring and technical assistance through our customer support platform, Bracket.</p>
-    <a href="https://www.bracketsupport.co.uk">Discover Bracket ↗</a>
-   </div>
-   <div class="service reveal">
-    <div class="number">06 / DOMAINS</div>
-    <h3>Domains & Business Email</h3>
-    <p>Professional domain and email management to help your business establish a consistent and recognisable identity.</p>
-    <a href="mailto:hello@hawthornedigital.co.uk">Find Out More ↗</a>
-   </div>
-  </div>
- </div>
-</section>
+        <div class="section-heading reveal">
+            <div class="eyebrow">What We Do</div>
+            <h2>Everything your business needs to move forward.</h2>
+            <p>
+                From your first website to the ongoing support behind it,
+                we provide digital services designed around your business.
+            </p>
+        </div>
 
-<!-- OUR WORK -->
-<section class="work" id="work">
- <div class="container">
-  <div class="work-header reveal">
-   <div class="heading" style="margin:0">
-    <div class="kicker">Selected projects</div>
-    <h2>Our work speaks for itself.</h2>
-    <p>A selection of digital projects, creative ideas and websites brought to life.</p>
-   </div>
-   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Work With Us ↗</a>
-  </div>
+        <div class="services-grid">
 
-  <div class="work-grid">
-   <article class="project reveal">
-    <div class="project-image">
-     <div class="project-placeholder">
-      <strong>Little Explorers</strong>
-      <span>NURSERY WEBSITE DESIGN</span>
-     </div>
-    </div>
-    <div class="project-info">
-     <h3>Little Explorers Nursery</h3>
-     <p>Website design · Branding · Digital presence</p>
-     <a href="mailto:hello@hawthornedigital.co.uk">View Project ↗</a>
-    </div>
-   </article>
+            <article class="service reveal">
+                <div class="service-number">01 / WEB DESIGN</div>
+                <h3>Website Design & Development</h3>
+                <p>
+                    Modern, responsive websites designed to represent your
+                    business and create a better experience for your customers.
+                </p>
+                <a href="#contact" class="service-link">Discuss a website →</a>
+            </article>
 
-   <article class="project reveal">
-    <div class="project-image">
-     <div class="project-placeholder" style="background:#e7ebf4">
-      <strong>Hawthorne Digital</strong>
-      <span>BRAND & WEB DESIGN</span>
-     </div>
+            <article class="service reveal">
+                <div class="service-number">02 / HOSTING</div>
+                <h3>Website Hosting</h3>
+                <p>
+                    Reliable hosting solutions to help keep your website
+                    accessible, secure and performing as it should.
+                </p>
+                <a href="#contact" class="service-link">Explore hosting →</a>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-number">03 / SUPPORT</div>
+                <h3>Website Support</h3>
+                <p>
+                    Ongoing technical assistance, maintenance and improvements
+                    to help keep your website running smoothly.
+                </p>
+                <a href="https://www.bracketsupport.co.uk" class="service-link">Discover Bracket →</a>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-number">04 / CREATIVE</div>
+                <h3>Graphic & Creative Design</h3>
+                <p>
+                    Creative materials that help your business communicate
+                    consistently, from branding to promotional designs.
+                </p>
+                <a href="#contact" class="service-link">Explore creative services →</a>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-number">05 / DOMAINS</div>
+                <h3>Domains & Business Email</h3>
+                <p>
+                    Domain registration and professional email solutions
+                    to give your business a more established online presence.
+                </p>
+                <a href="#contact" class="service-link">Find out more →</a>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-number">06 / DIGITAL</div>
+                <h3>Digital Business Services</h3>
+                <p>
+                    Practical digital solutions tailored to your requirements,
+                    helping your business work smarter and grow.
+                </p>
+                <a href="#contact" class="service-link">Talk to our team →</a>
+            </article>
+
+        </div>
     </div>
-    <div class="project-info">
-     <h3>Hawthorne Digital</h3>
-     <p>Brand development · Website design · Digital services</p>
-     <a href="#home">Explore Our Website ↗</a>
-    </div>
-   </article>
-  </div>
- </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
- <div class="container about-grid">
-  <div class="about-visual reveal">
-   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital logo">
-  </div>
-  <div class="about-text reveal">
-   <div class="kicker">Who we are</div>
-   <h2>Built around people.<br><span>Driven by ideas.</span></h2>
-   <p>
-    At Hawthorne Digital, we believe every business deserves
-    access to professional digital services without unnecessary
-    complexity or excessive costs.
-   </p>
-   <p>
-    Our approach is built on collaboration, creativity and
-    communication. We work closely with our clients and partners,
-    keeping them involved throughout every stage of their project.
-   </p>
-   <ul class="about-points">
-    <li>Personal service and support</li>
-    <li>Transparent, affordable pricing</li>
-    <li>Solutions tailored to your requirements</li>
-    <li>Clients and partners at the heart of everything</li>
-    <li>Supporting businesses throughout the UK</li>
-   </ul>
-   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Get To Know Us ↗</a>
-  </div>
- </div>
+<section class="section about" id="about">
+    <div class="container about-grid">
+
+        <div class="about-copy reveal">
+            <div class="eyebrow">A Little About Us</div>
+
+            <h2>Good digital work starts with understanding your business.</h2>
+
+            <p>
+                At Hawthorne Digital, we believe every business deserves
+                access to well-designed, reliable digital services.
+            </p>
+
+            <p>
+                We take a collaborative approach, working alongside our
+                clients to understand their goals and deliver solutions
+                that genuinely work for them.
+            </p>
+
+            <p>
+                From the initial conversation to ongoing support,
+                our focus remains on quality, transparency and personal service.
+            </p>
+
+            <a href="#contact" class="button button-primary" style="margin-top:12px;">
+                Work With Us →
+            </a>
+        </div>
+
+        <div class="about-points reveal">
+
+            <div class="about-point">
+                <div class="about-point-number">01</div>
+                <div>
+                    <h3>Built Around You</h3>
+                    <p>Solutions shaped around your needs, goals and customers.</p>
+                </div>
+            </div>
+
+            <div class="about-point">
+                <div class="about-point-number">02</div>
+                <div>
+                    <h3>Clear & Transparent</h3>
+                    <p>Honest communication and straightforward pricing.</p>
+                </div>
+            </div>
+
+            <div class="about-point">
+                <div class="about-point-number">03</div>
+                <div>
+                    <h3>Personal Support</h3>
+                    <p>Real people working with you throughout your journey.</p>
+                </div>
+            </div>
+
+            <div class="about-point">
+                <div class="about-point-number">04</div>
+                <div>
+                    <h3>Here for the Long Term</h3>
+                    <p>Support and services that can grow alongside your business.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<!-- VALUES -->
-<section class="values">
- <div class="container">
-  <div class="heading reveal">
-   <div class="kicker">Our values</div>
-   <h2>What makes us different.</h2>
-   <p>The principles behind the way we work, the services we deliver and the relationships we build.</p>
-  </div>
-  <div class="value-grid">
-   <div class="value reveal">
-    <div class="line"></div>
-    <h3>Collaboration</h3>
-    <p>We work with you, not just for you. Your ideas and input remain important throughout the process.</p>
-   </div>
-   <div class="value reveal">
-    <div class="line"></div>
-    <h3>Transparency</h3>
-    <p>Clear communication and straightforward pricing, so you know what to expect at every stage.</p>
-   </div>
-   <div class="value reveal">
-    <div class="line"></div>
-    <h3>Creativity</h3>
-    <p>We approach every project with fresh ideas and a focus on delivering quality results.</p>
-   </div>
-   <div class="value reveal">
-    <div class="line"></div>
-    <h3>Commitment</h3>
-    <p>We believe in building lasting relationships and providing support beyond the initial project.</p>
-   </div>
-  </div>
- </div>
+<!-- BRACKET FEATURE -->
+<section class="section feature">
+    <div class="container">
+
+        <div class="feature-panel reveal">
+
+            <div>
+                <div class="eyebrow" style="color:#AFC8FF;">Client Support</div>
+
+                <h2>Support that keeps you in control.</h2>
+
+                <p>
+                    Introducing Bracket, our customer support and website
+                    management portal. Keep track of requests, monitor progress
+                    and access your services in one convenient place.
+                </p>
+
+                <a href="https://www.bracketsupport.co.uk" class="button button-primary">
+                    Explore Bracket →
+                </a>
+            </div>
+
+            <div class="feature-details">
+                <div class="feature-detail">
+                    <strong>Manage Your Requests</strong>
+                    <span>Submit and track your support requests.</span>
+                </div>
+
+                <div class="feature-detail">
+                    <strong>Follow Your Progress</strong>
+                    <span>Stay informed with clear project updates.</span>
+                </div>
+
+                <div class="feature-detail">
+                    <strong>One Convenient Portal</strong>
+                    <span>Access your Hawthorne services in one place.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="section work" id="work">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <div class="eyebrow">Selected Work</div>
+            <h2>Ideas brought to life.</h2>
+            <p>
+                A look at the projects, designs and digital experiences
+                we are working to bring together.
+            </p>
+        </div>
+
+        <div class="work-grid">
+
+            <article class="work-item reveal">
+                <div class="work-image">
+                    <!-- Replace with an actual project screenshot -->
+                    <div class="work-placeholder">
+                        Little Explorers
+                        <small>Website Design & Development</small>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span>Website Design</span>
+                    <h3>Little Explorers Nursery</h3>
+                    <p>A welcoming digital experience for a nursery business.</p>
+                </div>
+            </article>
+
+            <article class="work-item reveal">
+                <div class="work-image">
+                    <!-- Replace with an actual Bracket or Hawthorne project screenshot -->
+                    <div class="work-placeholder">
+                        Bracket
+                        <small>Customer Portal & Digital Platform</small>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span>Digital Platform</span>
+                    <h3>Bracket Support</h3>
+                    <p>A dedicated portal for managing customer services and support.</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
 </section>
 
 <!-- PRICING -->
-<section class="price">
- <div class="container price-inner reveal">
-  <div>
-   <div class="kicker" style="color:#b9d1ff">Affordable by design</div>
-   <h2>Premium websites.<br>Accessible pricing.</h2>
-   <p>
-    Professional website design doesn't need to come with
-    an excessive price tag. Discover our website solutions
-    and find the right starting point for your business.
-   </p>
-   <br>
-   <a href="mailto:hello@hawthornedigital.co.uk" class="btn" style="background:white;color:#2856b1">Request a Quote ↗</a>
-  </div>
-  <div class="price-number">£99<small>STARTING PRICE</small></div>
- </div>
+<section class="section pricing">
+    <div class="container">
+
+        <div class="pricing-inner reveal">
+
+            <div class="pricing-copy">
+                <div class="eyebrow">Straightforward Pricing</div>
+                <h2>Professional websites. Accessible pricing.</h2>
+                <p>
+                    Whether you are starting from scratch or looking to refresh
+                    your existing website, we offer solutions to suit different
+                    businesses and budgets.
+                </p>
+                <a href="#contact" class="button button-primary" style="margin-top:22px;">
+                    Request a Quote →
+                </a>
+            </div>
+
+            <div class="price">
+                £99
+                <small>Website projects starting from</small>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
- <div class="container">
-  <div class="heading reveal">
-   <div class="kicker">Let's work together</div>
-   <h2>Have a project in mind?</h2>
-   <p>
-    Every great project starts with a conversation.
-    Tell us what you're looking to achieve and let's
-    explore how Hawthorne Digital can help.
-   </p>
-  </div>
-  <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Start a Conversation ↗</a>
- </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+
+        <div class="contact-inner reveal">
+            <div class="eyebrow">Let's Get Started</div>
+
+            <h2>Have a project in mind?</h2>
+
+            <p>
+                Tell us a little about your business and what you are looking
+                to achieve. We'd love to hear from you and explore how
+                Hawthorne Digital can help.
+            </p>
+
+            <a href="mailto:hello@hawthornedigital.co.uk" class="button button-primary">
+                Contact Our Team →
+            </a>
+
+            <a href="https://www.hawthornedigital.co.uk" class="button button-outline">
+                Explore Hawthorne
+            </a>
+        </div>
+
+    </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
- <div class="container">
-  <div class="footer-grid">
-   <div class="footer-brand">
-    <a href="#home" class="footer-logo">
-     <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-    </a>
-    <p>Premium websites without the premium price. Digital services designed around the way your business works.</p>
-   </div>
-   <div class="footer-col">
-    <h4>Explore</h4>
-    <a href="#home">Home</a>
-    <a href="#services">Our Services</a>
-    <a href="#work">Our Work</a>
-    <a href="#about">About Us</a>
-   </div>
-   <div class="footer-col">
-    <h4>Connect</h4>
-    <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
-    <a href="https://www.hawthornedigital.co.uk">Website</a>
-    <a href="https://www.bracketsupport.co.uk">Bracket Support</a>
-   </div>
-  </div>
-  <div class="copyright">
-   <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
-   <span>Premium Websites Without the Premium Price.</span>
-  </div>
- </div>
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="#home">
+                    <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+                </a>
+
+                <p>
+                    Modern websites and practical digital services,
+                    designed around the way your business works.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="#home">Home</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#about">About Us</a>
+                    <a href="#work">Our Work</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#services">Website Design</a>
+                    <a href="#services">Hosting</a>
+                    <a href="#services">Website Support</a>
+                    <a href="https://www.bracketsupport.co.uk">Bracket Portal</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@hawthornedigital.co.uk">Email Our Team</a>
+                    <a href="#contact">Get a Quote</a>
+                    <a href="https://www.hawthornedigital.co.uk">Our Website</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
+            <span>Designed with purpose. Built around you.</span>
+        </div>
+
+    </div>
 </footer>
 
 <script>
-const menu=document.getElementById('menu');
-const nav=document.getElementById('navLinks');
+// Fixed header styling when scrolling
+const header = document.getElementById('siteHeader');
 
-menu.addEventListener('click',()=>{
- nav.classList.toggle('active');
- menu.textContent=nav.classList.contains('active')?'✕':'☰';
+function updateHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+}
+
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+// Mobile navigation
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.innerHTML = isOpen ? '&times;' : '☰';
 });
 
-document.querySelectorAll('.nav-links a').forEach(a=>{
- a.addEventListener('click',()=>{
-  nav.classList.remove('active');
-  menu.textContent='☰';
- });
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '☰';
+    });
 });
 
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add('visible');
-   observer.unobserve(entry.target);
-  }
- });
-},{threshold:.12});
+// Reveal sections as they enter the screen
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
 
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.reveal').forEach(element => {
+    revealObserver.observe(element);
+});
 
-document.getElementById('year').textContent=new Date().getFullYear();
+// Automatic copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
