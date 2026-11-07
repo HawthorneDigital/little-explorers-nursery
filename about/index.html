@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hawthorne Digital | Premium Websites, Accessible Prices</title>
-<meta name="description" content="Affordable, premium website design, custom coding and digital services for businesses across the UK.">
+<meta name="description" content="Premium website design, custom coding and affordable digital solutions for businesses across the UK.">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
@@ -20,12 +20,14 @@
   --cream:#f8f9fc;
   --text:#202b4c;
   --muted:#6e7890;
-  --radius:24px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth;scroll-padding-top:100px}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
 
 body{
   font-family:"DM Sans",sans-serif;
@@ -33,6 +35,7 @@ body{
   background:white;
   overflow-x:hidden;
   line-height:1.65;
+  padding-top:85px;
 }
 
 h1,h2,h3{
@@ -45,19 +48,24 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(1200px,90%);margin:auto}
 
-/* NAVIGATION */
+/* FIXED NAVIGATION */
 
 header{
-  position:sticky;
+  position:fixed;
   top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
+  left:0;
+  width:100%;
+  height:85px;
+  z-index:99999;
+  background:rgba(255,255,255,.97);
   backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid #edf0f6;
+  box-shadow:0 5px 25px rgba(32,43,76,.06);
 }
 
 .nav{
-  min-height:85px;
+  height:100%;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -66,7 +74,7 @@ header{
 
 .logo img{
   width:230px;
-  height:auto;
+  max-height:65px;
   object-fit:contain;
 }
 
@@ -76,6 +84,10 @@ header{
   gap:26px;
   font-size:.88rem;
   font-weight:700;
+}
+
+.nav-links a{
+  transition:color .2s;
 }
 
 .nav-links a:hover{color:var(--blue)}
@@ -202,9 +214,7 @@ header{
   background:white;
 }
 
-.btn-secondary:hover{
-  background:var(--pale);
-}
+.btn-secondary:hover{background:var(--pale)}
 
 .hero-note{
   font-size:.8rem;
@@ -212,7 +222,7 @@ header{
   margin-top:22px;
 }
 
-/* HERO VISUAL */
+/* HERO IMAGE */
 
 .hero-visual{
   position:relative;
@@ -229,19 +239,15 @@ header{
 }
 
 .hero-photo img{
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   object-fit:cover;
-}
-
-.hero-photo::after{
-  content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(40,86,177,.12),transparent);
 }
 
 .floating-price{
   position:absolute;
-  left:-15px;bottom:20px;
+  left:-15px;
+  bottom:20px;
   z-index:3;
   background:white;
   padding:22px 25px;
@@ -272,34 +278,28 @@ header{
 
 .floating-star{
   position:absolute;
-  top:-10px;right:5px;
+  top:-10px;
+  right:5px;
   width:65px;height:65px;
   background:#c5d6ff;
   color:var(--blue);
   border-radius:50%;
-  display:grid;place-items:center;
+  display:grid;
+  place-items:center;
   font-size:2rem;
   z-index:3;
   animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-  0%,100%{transform:translateY(0) rotate(0)}
+  0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px) rotate(10deg)}
 }
 
-/* WAVY DIVIDER */
+/* WAVE */
 
-.wave{
-  line-height:0;
-  margin-top:-1px;
-}
-
-.wave svg{
-  width:100%;
-  height:90px;
-  display:block;
-}
+.wave{line-height:0;margin-top:-1px}
+.wave svg{width:100%;height:90px;display:block}
 
 /* BRAND STRIP */
 
@@ -307,7 +307,6 @@ header{
   background:var(--navy);
   color:white;
   padding:23px 0;
-  overflow:hidden;
 }
 
 .strip-inner{
@@ -321,11 +320,9 @@ header{
   text-transform:uppercase;
 }
 
-.strip-inner span{
-  color:#a9c2ff;
-}
+.strip-inner span{color:#a9c2ff}
 
-/* INTRO */
+/* SECTION */
 
 .section{padding:100px 0}
 
@@ -370,8 +367,6 @@ header{
   border-radius:25px;
   padding:30px;
   transition:.3s;
-  position:relative;
-  overflow:hidden;
 }
 
 .service:hover{
@@ -391,29 +386,13 @@ header{
   margin-bottom:22px;
 }
 
-.service h3{
-  font-size:1.3rem;
-  margin-bottom:12px;
-}
-
-.service p{
-  color:var(--muted);
-  font-size:.92rem;
-}
-
-.service a{
-  display:inline-block;
-  color:var(--blue);
-  font-weight:800;
-  margin-top:20px;
-}
+.service h3{font-size:1.3rem;margin-bottom:12px}
+.service p{color:var(--muted);font-size:.92rem}
+.service a{display:inline-block;color:var(--blue);font-weight:800;margin-top:20px}
 
 /* AFFORDABILITY */
 
-.price-section{
-  padding:110px 0;
-  background:white;
-}
+.price-section{padding:110px 0}
 
 .price-grid{
   display:grid;
@@ -428,11 +407,9 @@ header{
 }
 
 .price-copy h2 span{color:var(--blue)}
+.price-copy p{color:var(--muted);margin:22px 0}
 
-.price-copy p{
-  color:var(--muted);
-  margin:22px 0;
-}
+.text-link{color:var(--blue);font-weight:800}
 
 .price-card{
   background:linear-gradient(145deg,#202b4c,#323f6b);
@@ -442,14 +419,6 @@ header{
   position:relative;
   overflow:hidden;
   box-shadow:0 25px 60px rgba(32,43,76,.2);
-}
-
-.price-card::after{
-  content:"✦";
-  position:absolute;
-  right:-20px;top:-60px;
-  font-size:14rem;
-  color:rgba(255,255,255,.04);
 }
 
 .price-card .label{
@@ -462,11 +431,7 @@ header{
   font-weight:800;
 }
 
-.price-card h3{
-  font-size:1.7rem;
-  margin:22px 0 10px;
-}
-
+.price-card h3{font-size:1.7rem;margin:22px 0 10px}
 .price-card .price{
   font-family:Manrope,sans-serif;
   font-size:3.8rem;
@@ -475,18 +440,8 @@ header{
   line-height:1.2;
 }
 
-.price-card p{
-  color:#c7d2e9;
-  font-size:.9rem;
-  margin:15px 0 25px;
-}
-
-.price-card .btn{
-  background:white;
-  color:var(--navy);
-  position:relative;
-  z-index:2;
-}
+.price-card p{color:#c7d2e9;font-size:.9rem;margin:15px 0 25px}
+.price-card .btn{background:white;color:var(--navy)}
 
 /* SHOWCASE */
 
@@ -508,7 +463,9 @@ header{
 .showcase-card img{
   position:absolute;
   inset:0;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
+  object-fit:cover;
   transition:.7s;
 }
 
@@ -516,7 +473,8 @@ header{
 
 .showcase-card::after{
   content:"";
-  position:absolute;inset:0;
+  position:absolute;
+  inset:0;
   background:linear-gradient(0deg,rgba(22,32,57,.88),transparent 70%);
 }
 
@@ -526,16 +484,8 @@ header{
   z-index:2;color:white;
 }
 
-.showcase-content small{
-  color:#b8ceff;
-  font-weight:800;
-  letter-spacing:1px;
-}
-
-.showcase-content h3{
-  font-size:1.8rem;
-  margin-top:8px;
-}
+.showcase-content small{color:#b8ceff;font-weight:800;letter-spacing:1px}
+.showcase-content h3{font-size:1.8rem;margin-top:8px}
 
 /* PROCESS */
 
@@ -545,34 +495,18 @@ header{
   gap:22px;
 }
 
-.process-item{
-  border-top:3px solid #b8ccff;
-  padding-top:25px;
-}
-
-.process-item .number{
-  font-size:2.6rem;
-  color:#a7bdf1;
-  font-family:Manrope,sans-serif;
-  font-weight:800;
-}
-
+.process-item{border-top:3px solid #b8ccff;padding-top:25px}
+.process-item .number{font-size:2.6rem;color:#a7bdf1;font-family:Manrope;font-weight:800}
 .process-item h3{margin:12px 0}
+.process-item p{color:var(--muted);font-size:.9rem}
 
-.process-item p{
-  color:var(--muted);
-  font-size:.9rem;
-}
-
-/* CTA */
+/* CONTACT */
 
 .cta{
   background:linear-gradient(135deg,#2856b1,#323f6b);
   color:white;
   text-align:center;
   padding:100px 0;
-  position:relative;
-  overflow:hidden;
 }
 
 .cta h2{
@@ -581,16 +515,8 @@ header{
   margin:0 auto 25px;
 }
 
-.cta p{
-  color:#d8e3ff;
-  max-width:650px;
-  margin:0 auto 30px;
-}
-
-.cta .btn{
-  background:white;
-  color:var(--navy);
-}
+.cta p{color:#d8e3ff;max-width:650px;margin:0 auto 30px}
+.cta .btn{background:white;color:var(--navy)}
 
 /* FOOTER */
 
@@ -613,14 +539,9 @@ footer{
   margin-bottom:20px;
 }
 
-footer p,footer a{
-  color:#aebbd2;
-  font-size:.9rem;
-}
-
+footer p,footer a{color:#aebbd2;font-size:.9rem}
 footer a{display:block;margin-bottom:8px}
 footer a:hover{color:white}
-
 footer h3{margin-bottom:15px}
 
 .footer-bottom{
@@ -634,48 +555,68 @@ footer h3{margin-bottom:15px}
   color:#8f9bb3;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media(max-width:900px){
-  .hero-grid,.price-grid,.showcase-grid{
-    grid-template-columns:1fr;
-  }
-
+  .hero-grid,.price-grid,.showcase-grid{grid-template-columns:1fr}
   .hero-visual{min-height:400px}
   .service-grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:1fr 1fr}
 }
 
+/* MOBILE */
+
 @media(max-width:600px){
-  .nav{flex-wrap:wrap;padding:15px 0}
-  .logo img{width:190px}
-  .nav-links{
-    width:100%;
-    gap:15px;
-    overflow-x:auto;
-    font-size:.78rem;
+
+  body{padding-top:125px}
+
+  header{height:125px}
+
+  .nav{
+    flex-direction:column;
+    justify-content:center;
+    gap:10px;
   }
 
-  .nav-links a{white-space:nowrap}
+  .logo img{
+    width:190px;
+    max-height:55px;
+  }
+
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    gap:15px;
+    font-size:.75rem;
+  }
+
+  .nav-cta{padding:8px 13px}
 
   .hero{padding:65px 0}
   .hero h1{font-size:3.2rem}
   .hero-visual{min-height:320px}
   .hero-photo{inset:10px 0 15px 10px}
   .floating-price{left:0}
+
   .section{padding:70px 0}
   .service-grid,.process-grid{grid-template-columns:1fr}
+
   .price-card{padding:30px}
   .price-card .price{font-size:3rem}
+
   .showcase-card{min-height:300px}
   .strip-inner{gap:15px;font-size:.7rem}
+
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation:none!important;
     transition:none!important;
+    scroll-behavior:auto!important;
   }
 }
 </style>
@@ -685,8 +626,9 @@ footer h3{margin-bottom:15px}
 
 <header>
   <div class="container nav">
+
     <a href="#" class="logo">
-      <img src="hawthorne-logo.png" alt="Hawthorne Digital">
+      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
     </a>
 
     <nav class="nav-links">
@@ -695,10 +637,9 @@ footer h3{margin-bottom:15px}
       <a href="#about">Our Approach</a>
       <a href="#contact" class="nav-cta">Let's Talk ↗</a>
     </nav>
+
   </div>
 </header>
-
-<!-- HERO -->
 
 <section class="hero">
   <div class="container hero-grid">
@@ -729,9 +670,10 @@ footer h3{margin-bottom:15px}
     </div>
 
     <div class="hero-visual">
+
       <div class="hero-photo">
         <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=85"
-             alt="Modern website design">
+             alt="Modern website design displayed on a computer">
       </div>
 
       <div class="floating-price">
@@ -741,20 +683,17 @@ footer h3{margin-bottom:15px}
       </div>
 
       <div class="floating-star">✦</div>
+
     </div>
 
   </div>
 </section>
-
-<!-- WAVY DIVIDER -->
 
 <div class="wave">
 <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
 <path fill="#202b4c" d="M0,40 C180,100 330,0 540,40 C780,90 960,100 1150,35 C1300,0 1380,25 1440,45 L1440,100 L0,100 Z"/>
 </svg>
 </div>
-
-<!-- STRIP -->
 
 <div class="brand-strip">
   <div class="strip-inner">
@@ -764,8 +703,6 @@ footer h3{margin-bottom:15px}
     <div>Creative Solutions <span>✦</span></div>
   </div>
 </div>
-
-<!-- SERVICES -->
 
 <section class="section services" id="services">
   <div class="container">
@@ -785,7 +722,7 @@ footer h3{margin-bottom:15px}
         <div class="service-icon">✦</div>
         <h3>Website Design</h3>
         <p>Professional, modern websites designed to make your business look its best.</p>
-        <a href="#contact">Let's discuss your website →</a>
+        <a href="#contact">Discuss your website →</a>
       </div>
 
       <div class="service">
@@ -798,14 +735,14 @@ footer h3{margin-bottom:15px}
       <div class="service">
         <div class="service-icon">⌘</div>
         <h3>Digital Development</h3>
-        <p>Tailored tools, functionality and digital projects beyond the standard template.</p>
+        <p>Tailored tools, functionality and digital projects beyond standard templates.</p>
         <a href="#contact">Build something new →</a>
       </div>
 
       <div class="service">
         <div class="service-icon">▣</div>
         <h3>Hosting & Domains</h3>
-        <p>Reliable hosting, domain management and business email services.</p>
+        <p>Hosting, domain management and business email services.</p>
         <a href="#contact">Find out more →</a>
       </div>
 
@@ -819,15 +756,13 @@ footer h3{margin-bottom:15px}
       <div class="service">
         <div class="service-icon">◈</div>
         <h3>Graphic Design</h3>
-        <p>Creative visuals, branding materials and digital graphics for your business.</p>
+        <p>Creative visuals, branding materials and digital graphics.</p>
         <a href="#contact">Explore design →</a>
       </div>
 
     </div>
   </div>
 </section>
-
-<!-- PRICE SECTION -->
 
 <section class="price-section" id="about">
   <div class="container price-grid">
@@ -842,14 +777,13 @@ footer h3{margin-bottom:15px}
 
       <p>
         We believe businesses of every size deserve a professional
-        online presence. That's why we focus on delivering
-        thoughtful design and quality digital solutions at
-        accessible prices.
+        online presence. That's why we focus on thoughtful design
+        and quality digital solutions at accessible prices.
       </p>
 
       <p>
-        No unnecessary complexity. No intimidating agency experience.
-        Just a collaborative approach and a website built around you.
+        No unnecessary complexity. Just a collaborative approach
+        and a website built around your business.
       </p>
 
       <a href="#contact" class="text-link">Tell us what you need →</a>
@@ -857,9 +791,7 @@ footer h3{margin-bottom:15px}
 
     <div class="price-card">
       <span class="label">A professional starting point</span>
-
       <h3>Your next website could start from</h3>
-
       <div class="price">£214.99</div>
 
       <p>
@@ -872,8 +804,6 @@ footer h3{margin-bottom:15px}
 
   </div>
 </section>
-
-<!-- SHOWCASE -->
 
 <section class="section showcase" id="work">
   <div class="container">
@@ -911,8 +841,6 @@ footer h3{margin-bottom:15px}
 
   </div>
 </section>
-
-<!-- PROCESS -->
 
 <section class="section">
   <div class="container">
@@ -956,18 +884,18 @@ footer h3{margin-bottom:15px}
   </div>
 </section>
 
-<!-- CTA -->
-
 <section class="cta" id="contact">
   <div class="container">
 
-    <div class="eyebrow" style="color:#c8d8ff">Your next big idea starts here</div>
+    <div class="eyebrow" style="color:#c8d8ff">
+      Your next big idea starts here
+    </div>
 
     <h2>Let's make something brilliant together.</h2>
 
     <p>
       Whether you need a new website, a custom digital solution
-      or a little creative inspiration, we'd love to hear from you.
+      or creative inspiration, we'd love to hear from you.
     </p>
 
     <a href="mailto:hello@hawthornedigital.co.uk" class="btn">
@@ -977,15 +905,16 @@ footer h3{margin-bottom:15px}
   </div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
   <div class="container">
 
     <div class="footer-grid">
 
       <div>
-        <img src="hawthorne-logo.png" alt="Hawthorne Digital" class="footer-logo">
+        <img src="/Hawthorne-Digital-logo.png"
+             alt="Hawthorne Digital"
+             class="footer-logo">
+
         <p>
           Premium digital solutions without the premium price.
           Websites, coding and creative services for businesses
