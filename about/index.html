@@ -1,1162 +1,649 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
-<title>Hawthorne Digital | Premium Digital Solutions</title>
-<meta name="description" content="Hawthorne Digital provides premium, affordable website design and digital business services across the UK.">
+<title>Hawthorne Digital | Digital Solutions That Move Business Forward</title>
+<meta name="description" content="Professional website design and digital business services. Premium websites without the premium price.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --navy: #202b4c;
-    --blue: #2856b1;
-    --bright: #4385ee;
-    --pale: #edf2ff;
-    --grey: #f7f8fb;
-    --text: #29344e;
-    --muted: #778198;
-    --border: #e8edf5;
+ --navy:#202b4c;
+ --blue:#2856b1;
+ --light:#eef3ff;
+ --grey:#f6f7f9;
+ --text:#252d40;
+ --muted:#747d8e;
+ --border:#e8eaf0;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:white}
+a{text-decoration:none;color:inherit}
+.container{width:88%;max-width:1300px;margin:auto}
 
-* { margin:0; padding:0; box-sizing:border-box; }
-
-html { scroll-behavior:smooth; }
-
-body {
-    font-family:'DM Sans',sans-serif;
-    background:#fff;
-    color:var(--text);
-    overflow-x:hidden;
+/* HEADER */
+header{
+ position:sticky;top:0;z-index:100;
+ background:rgba(255,255,255,.96);
+ border-bottom:1px solid var(--border);
 }
-
-a { text-decoration:none; color:inherit; }
-
-button { font:inherit; }
-
-.container {
-    width:88%;
-    max-width:1250px;
-    margin:auto;
+.nav{
+ height:88px;display:flex;align-items:center;
+ justify-content:space-between;
 }
-
-/* BACKGROUND DETAILS */
-
-.background-grid {
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    pointer-events:none;
-    opacity:.35;
-    background-image:
-        linear-gradient(rgba(40,86,177,.035) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(40,86,177,.035) 1px,transparent 1px);
-    background-size:65px 65px;
-    mask-image:linear-gradient(to bottom,black,transparent 80%);
+.logo img{width:205px;max-height:65px;object-fit:contain;object-position:left}
+.nav-links{display:flex;gap:34px;align-items:center;list-style:none}
+.nav-links a{font-size:13px;font-weight:600;color:var(--navy)}
+.nav-links a:hover{color:var(--blue)}
+.nav-links .contact{
+ background:var(--blue);color:white;
+ padding:14px 23px;border-radius:4px
 }
-
-/* NAVIGATION */
-
-header {
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:100;
-    padding:17px 6%;
-    background:rgba(255,255,255,.91);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(32,43,76,.07);
-    transition:.3s;
-}
-
-header.scrolled {
-    box-shadow:0 8px 35px rgba(32,43,76,.07);
-}
-
-nav {
-    max-width:1400px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo img {
-    display:block;
-    width:205px;
-    max-height:65px;
-    object-fit:contain;
-    object-position:left center;
-}
-
-.nav-links {
-    display:flex;
-    align-items:center;
-    gap:32px;
-    list-style:none;
-}
-
-.nav-links a {
-    font-size:13px;
-    font-weight:600;
-    color:var(--navy);
-    transition:.25s;
-}
-
-.nav-links a:hover { color:var(--bright); }
-
-.nav-button {
-    background:var(--blue);
-    color:white!important;
-    padding:13px 22px;
-    border-radius:5px;
-    box-shadow:0 5px 18px rgba(40,86,177,.17);
-}
-
-.nav-button:hover {
-    background:var(--navy);
-    transform:translateY(-2px);
-}
-
-.menu-toggle {
-    display:none;
-    background:none;
-    border:none;
-    color:var(--navy);
-    font-size:25px;
-    cursor:pointer;
-}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
 
 /* HERO */
-
-.hero {
-    min-height:790px;
-    padding:170px 6% 100px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
+.hero{padding:115px 0 100px;overflow:hidden}
+.hero-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ align-items:center;gap:65px
 }
-
-.hero::before {
-    content:"";
-    position:absolute;
-    width:650px;
-    height:650px;
-    border-radius:50%;
-    right:-150px;
-    top:40px;
-    background:radial-gradient(circle,rgba(40,86,177,.10),transparent 68%);
-    pointer-events:none;
+.hero-tag{
+ font-size:11px;text-transform:uppercase;
+ letter-spacing:2px;font-weight:700;
+ color:var(--blue);margin-bottom:27px
 }
-
-.hero-layout {
-    max-width:1400px;
-    width:100%;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    align-items:center;
-    gap:60px;
+.hero h1{
+ font-family:Manrope,sans-serif;
+ font-size:clamp(48px,6vw,79px);
+ line-height:1.08;letter-spacing:-4px;
+ color:var(--navy);font-weight:800;
+ margin-bottom:27px
 }
-
-.eyebrow {
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:var(--blue);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-    margin-bottom:26px;
+.hero h1 span{color:var(--blue)}
+.hero p{
+ font-size:16px;line-height:1.9;
+ color:var(--muted);max-width:520px;
+ margin-bottom:32px
 }
-
-.eyebrow::before {
-    content:"";
-    width:30px;
-    height:2px;
-    background:var(--blue);
+.btn{
+ display:inline-block;padding:16px 25px;
+ background:var(--blue);color:white;
+ border-radius:4px;font-size:13px;
+ font-weight:700;transition:.25s
 }
-
-.hero h1 {
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(49px,6.4vw,83px);
-    line-height:1.04;
-    letter-spacing:-4px;
-    color:var(--navy);
-    margin-bottom:26px;
+.btn:hover{background:var(--navy);transform:translateY(-3px)}
+.btn-outline{
+ background:white;border:1px solid var(--border);
+ color:var(--navy);margin-left:10px
 }
-
-.hero h1 span {
-    background:linear-gradient(100deg,#2856b1,#5795f5);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+.btn-outline:hover{color:white}
+.hero-image{
+ min-height:475px;position:relative;
+ background:linear-gradient(135deg,#eaf0ff,#f7f9ff);
+ display:flex;align-items:center;justify-content:center;
+ overflow:hidden;border-radius:3px
 }
-
-.hero-description {
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.9;
-    max-width:510px;
-    margin-bottom:32px;
+.hero-image:before{
+ content:"";position:absolute;width:380px;height:380px;
+ border:1px solid rgba(40,86,177,.2);border-radius:50%
 }
-
-.buttons {
-    display:flex;
-    flex-wrap:wrap;
-    gap:13px;
+.hero-image:after{
+ content:"";position:absolute;width:280px;height:280px;
+ border:1px solid rgba(40,86,177,.2);border-radius:50%
 }
-
-.btn {
-    padding:16px 24px;
-    border-radius:5px;
-    font-size:13px;
-    font-weight:700;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    transition:.3s;
+.hero-image img{
+ width:230px;max-height:150px;object-fit:contain;
+ z-index:2;animation:float 5s ease-in-out infinite
 }
-
-.btn-primary {
-    color:white;
-    background:linear-gradient(110deg,#2856b1,#4385ee);
-    box-shadow:0 8px 24px rgba(40,86,177,.2);
+.hero-caption{
+ position:absolute;bottom:25px;left:25px;
+ font-size:10px;letter-spacing:2px;
+ color:var(--blue);font-weight:700
 }
+@keyframes float{50%{transform:translateY(-12px)}}
 
-.btn-primary:hover {
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(40,86,177,.3);
+/* INTRO STRIP */
+.intro{
+ background:var(--navy);color:white;padding:24px 0
 }
-
-.btn-secondary {
-    border:1px solid #dce3ef;
-    color:var(--navy);
-    background:white;
+.intro-inner{
+ display:flex;justify-content:space-between;
+ gap:20px;flex-wrap:wrap
 }
-
-.btn-secondary:hover {
-    border-color:var(--blue);
-    color:var(--blue);
-}
-
-.hero-note {
-    margin-top:28px;
-    font-size:10px;
-    letter-spacing:1.5px;
-    color:#929caf;
-}
-
-/* FUTURISTIC HERO GRAPHIC */
-
-.hero-visual {
-    min-height:450px;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.visual-ring {
-    position:absolute;
-    width:370px;
-    height:370px;
-    border:1px solid rgba(40,86,177,.16);
-    border-radius:50%;
-    animation:rotate 35s linear infinite;
-}
-
-.visual-ring::before,
-.visual-ring::after {
-    content:"";
-    position:absolute;
-    border:1px solid rgba(40,86,177,.13);
-    border-radius:50%;
-}
-
-.visual-ring::before { inset:35px; }
-.visual-ring::after { inset:75px; }
-
-.visual-ring span {
-    position:absolute;
-    top:48px;
-    left:65px;
-    width:10px;
-    height:10px;
-    background:#4385ee;
-    border-radius:50%;
-    box-shadow:0 0 20px #4385ee;
-}
-
-@keyframes rotate {
-    to { transform:rotate(360deg); }
-}
-
-.hero-core {
-    width:205px;
-    height:205px;
-    border-radius:30px;
-    background:linear-gradient(145deg,#ffffff,#edf2ff);
-    border:1px solid rgba(40,86,177,.22);
-    box-shadow:0 25px 75px rgba(40,86,177,.13);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    z-index:2;
-    animation:float 5s ease-in-out infinite;
-}
-
-.hero-core img {
-    width:145px;
-    max-height:125px;
-    object-fit:contain;
-}
-
-@keyframes float {
-    0%,100% { transform:translateY(0) rotate(-3deg); }
-    50% { transform:translateY(-14px) rotate(0deg); }
-}
-
-.visual-label {
-    position:absolute;
-    padding:14px 18px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.94);
-    border-radius:7px;
-    box-shadow:0 10px 35px rgba(32,43,76,.08);
-    z-index:3;
-}
-
-.visual-label strong {
-    display:block;
-    font-size:11px;
-    color:var(--navy);
-}
-
-.visual-label small {
-    color:var(--muted);
-    font-size:10px;
-}
-
-.label-top { top:65px; right:0; }
-.label-bottom { bottom:60px; left:0; }
-
-/* TRUST STRIP */
-
-.trust-strip {
-    background:var(--navy);
-    padding:23px 6%;
-}
-
-.trust-inner {
-    max-width:1250px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.trust-inner span {
-    color:#fff;
-    font-size:11px;
-    font-weight:600;
-    letter-spacing:1px;
-}
-
-.trust-inner span::before {
-    content:"✦";
-    color:#82b3ff;
-    margin-right:10px;
-}
-
-/* SECTIONS */
-
-section { padding:105px 6%; }
-
-.section-heading {
-    text-align:center;
-    max-width:680px;
-    margin:0 auto 60px;
-}
-
-.section-heading .eyebrow { justify-content:center; }
-
-.section-heading h2 {
-    font-family:'Space Grotesk',sans-serif;
-    color:var(--navy);
-    font-size:clamp(34px,4vw,49px);
-    letter-spacing:-2px;
-    margin-bottom:18px;
-}
-
-.section-heading h2 span { color:var(--blue); }
-
-.section-heading p {
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.9;
-}
+.intro span{font-size:12px;font-weight:600;letter-spacing:.5px}
 
 /* SERVICES */
+section{padding:105px 0}
+.heading{max-width:720px;margin-bottom:55px}
+.kicker{
+ color:var(--blue);font-size:11px;
+ font-weight:800;letter-spacing:2px;
+ text-transform:uppercase;margin-bottom:18px
+}
+.heading h2{
+ font-family:Manrope,sans-serif;
+ font-size:clamp(34px,4vw,51px);
+ line-height:1.2;letter-spacing:-2px;
+ color:var(--navy);margin-bottom:19px
+}
+.heading p{color:var(--muted);font-size:14px;line-height:1.9}
 
-.services { background:#f7f8fb; }
-
-.service-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.service-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ border-top:1px solid var(--border);
+ border-left:1px solid var(--border)
+}
+.service{
+ padding:36px 30px;min-height:260px;
+ border-right:1px solid var(--border);
+ border-bottom:1px solid var(--border);
+ transition:.3s
+}
+.service:hover{background:#f7f9ff}
+.service .number{
+ font-size:12px;color:var(--blue);
+ font-weight:700;margin-bottom:35px
+}
+.service h3{
+ font-family:Manrope,sans-serif;
+ font-size:21px;color:var(--navy);margin-bottom:15px
+}
+.service p{font-size:13px;line-height:1.9;color:var(--muted)}
+.service a{
+ display:inline-block;margin-top:22px;
+ font-size:12px;font-weight:700;color:var(--blue)
 }
 
-.service-card {
-    background:white;
-    border:1px solid #e9edf5;
-    padding:32px;
-    border-radius:9px;
-    min-height:245px;
-    position:relative;
-    overflow:hidden;
-    transition:.35s;
+/* WORK */
+.work{background:var(--grey)}
+.work-header{
+ display:flex;justify-content:space-between;
+ align-items:end;gap:25px;margin-bottom:45px
 }
-
-.service-card:hover {
-    transform:translateY(-7px);
-    border-color:#a9c3f3;
-    box-shadow:0 18px 45px rgba(32,43,76,.07);
+.work-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:25px
 }
-
-.service-icon {
-    width:48px;
-    height:48px;
-    border-radius:9px;
-    display:grid;
-    place-items:center;
-    color:white;
-    font-size:21px;
-    background:linear-gradient(145deg,#202b4c,#2856b1);
-    margin-bottom:24px;
+.project{background:white;overflow:hidden}
+.project-image{
+ height:300px;display:flex;align-items:center;
+ justify-content:center;overflow:hidden
 }
-
-.service-card h3 {
-    font-family:'Space Grotesk',sans-serif;
-    color:var(--navy);
-    font-size:18px;
-    margin-bottom:12px;
+.project-image img{
+ width:100%;height:100%;object-fit:cover;
+ transition:transform .5s
 }
-
-.service-card p {
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.9;
+.project:hover img{transform:scale(1.04)}
+.project-placeholder{
+ width:100%;height:100%;display:flex;
+ align-items:center;justify-content:center;
+ flex-direction:column;gap:15px;
+ color:var(--navy);background:#e8efff
 }
-
-.service-card::after {
-    content:"";
-    position:absolute;
-    right:-35px;
-    bottom:-55px;
-    width:110px;
-    height:110px;
-    border:1px solid rgba(40,86,177,.07);
-    border-radius:50%;
+.project-placeholder strong{
+ font-family:Manrope,sans-serif;font-size:28px
 }
-
-/* PRICE */
-
-.price-section { background:white; }
-
-.price-panel {
-    max-width:1100px;
-    margin:auto;
-    padding:60px;
-    border-radius:12px;
-    background:linear-gradient(110deg,#202b4c,#2856b1);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:35px;
-    position:relative;
-    overflow:hidden;
+.project-placeholder span{font-size:10px;letter-spacing:3px}
+.project-info{padding:25px}
+.project-info h3{
+ font-family:Manrope,sans-serif;
+ color:var(--navy);font-size:20px;margin-bottom:8px
 }
-
-.price-panel::after {
-    content:"";
-    position:absolute;
-    right:-100px;
-    top:-180px;
-    width:400px;
-    height:400px;
-    border:1px solid rgba(255,255,255,.13);
-    border-radius:50%;
-    box-shadow:0 0 0 45px rgba(255,255,255,.025),
-               0 0 0 90px rgba(255,255,255,.025);
-}
-
-.price-panel .eyebrow { color:#b7d1ff; }
-
-.price-panel h2 {
-    font-family:'Space Grotesk',sans-serif;
-    font-size:42px;
-    color:white;
-    margin-bottom:15px;
-}
-
-.price-panel p {
-    color:#d0dbf1;
-    font-size:13px;
-    line-height:1.9;
-    max-width:500px;
-}
-
-.price-panel .btn {
-    background:white;
-    color:var(--blue);
-    margin-top:25px;
-}
-
-.price-number {
-    color:white;
-    font-family:'Space Grotesk',sans-serif;
-    font-size:72px;
-    font-weight:700;
-    position:relative;
-    z-index:2;
-    white-space:nowrap;
-}
-
-.price-number small {
-    display:block;
-    text-align:right;
-    font-family:'DM Sans',sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
-    color:#c8d9ff;
-}
-
-/* PROCESS */
-
-.process-grid {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.process-card {
-    padding-top:24px;
-    border-top:2px solid #e5eaf3;
-    transition:.3s;
-}
-
-.process-card:hover { border-color:var(--blue); }
-
-.process-number {
-    font-family:'Space Grotesk',sans-serif;
-    color:#9ab8ee;
-    font-size:38px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.process-card h3 {
-    color:var(--navy);
-    font-size:16px;
-    margin-bottom:12px;
-}
-
-.process-card p {
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.9;
+.project-info p{font-size:12px;color:var(--muted)}
+.project-info a{
+ display:inline-block;margin-top:17px;
+ color:var(--blue);font-size:12px;font-weight:700
 }
 
 /* ABOUT */
-
-.about {
-    background:var(--grey);
+.about-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:80px;align-items:center
+}
+.about-visual{
+ min-height:410px;background:#edf2ff;
+ display:flex;align-items:center;justify-content:center;
+ position:relative;overflow:hidden
+}
+.about-visual img{width:230px;object-fit:contain;z-index:2}
+.about-visual:before{
+ content:"";position:absolute;width:300px;height:300px;
+ border:1px solid #c7d7f7;border-radius:50%
+}
+.about-text h2{
+ font-family:Manrope,sans-serif;font-size:45px;
+ line-height:1.2;letter-spacing:-2px;
+ color:var(--navy);margin-bottom:22px
+}
+.about-text h2 span{color:var(--blue)}
+.about-text p{
+ font-size:13px;line-height:2;
+ color:var(--muted);margin-bottom:17px
+}
+.about-points{margin:25px 0;list-style:none}
+.about-points li{
+ padding:12px 0;border-bottom:1px solid var(--border);
+ font-size:13px;font-weight:600;color:var(--navy)
+}
+.about-points li:before{
+ content:"✓";color:var(--blue);margin-right:12px
 }
 
-.about-layout {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+/* VALUES */
+.values{background:#f6f7f9}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.value h3{
+ color:var(--navy);font-family:Manrope,sans-serif;
+ font-size:17px;margin-bottom:13px
 }
+.value p{font-size:12px;color:var(--muted);line-height:1.9}
+.value .line{height:3px;width:35px;background:var(--blue);margin-bottom:23px}
 
-.about h2 {
-    font-family:'Space Grotesk',sans-serif;
-    color:var(--navy);
-    font-size:clamp(35px,4vw,50px);
-    letter-spacing:-2px;
-    line-height:1.15;
-    margin-bottom:24px;
+/* PRICE */
+.price{
+ background:var(--navy);color:white;
+ padding:75px 0
 }
-
-.about h2 span { color:var(--blue); }
-
-.about p {
-    color:var(--muted);
-    font-size:13px;
-    line-height:2;
-    margin-bottom:22px;
+.price-inner{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:30px
 }
-
-.about-list {
-    list-style:none;
+.price h2{
+ font-family:Manrope,sans-serif;
+ font-size:39px;margin-bottom:15px
 }
-
-.about-list li {
-    padding:13px 0;
-    border-bottom:1px solid #e3e8f1;
-    font-size:13px;
-    color:var(--navy);
-    font-weight:600;
+.price p{font-size:13px;color:#c4cde0;line-height:1.9;max-width:540px}
+.price-number{
+ font-family:Manrope,sans-serif;
+ font-size:76px;font-weight:800
 }
-
-.about-list li::before {
-    content:"✓";
-    color:var(--blue);
-    margin-right:13px;
+.price-number small{
+ display:block;font-size:10px;
+ letter-spacing:2px;text-align:right;color:#c4cde0
 }
-
-.about-graphic {
-    min-height:370px;
-    border-radius:12px;
-    border:1px solid #dce5f5;
-    background:
-        radial-gradient(circle at center,rgba(40,86,177,.13),transparent 60%),
-        white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.about-graphic img {
-    width:230px;
-    max-height:150px;
-    object-fit:contain;
-    position:relative;
-    z-index:2;
-}
-
-.about-graphic::before,
-.about-graphic::after {
-    content:"";
-    position:absolute;
-    width:280px;
-    height:280px;
-    border:1px solid rgba(40,86,177,.13);
-    border-radius:50%;
-}
-
-.about-graphic::after { width:370px; height:370px; }
 
 /* CTA */
-
-.cta {
-    text-align:center;
-    padding:115px 6%;
-}
-
-.cta h2 {
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(38px,5vw,60px);
-    color:var(--navy);
-    letter-spacing:-3px;
-    margin-bottom:20px;
-}
-
-.cta h2 span { color:var(--blue); }
-
-.cta p {
-    max-width:570px;
-    margin:0 auto 30px;
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.9;
-}
+.cta{text-align:center}
+.cta .heading{margin:0 auto 30px}
+.cta .heading h2{font-size:48px}
+.cta .btn{margin-top:8px}
 
 /* FOOTER */
-
-footer {
-    background:#202b4c;
-    color:white;
-    padding:65px 6% 25px;
+footer{background:#202b4c;color:white;padding:65px 0 25px}
+.footer-grid{
+ display:grid;grid-template-columns:1.5fr 1fr 1fr;
+ gap:50px
 }
-
-.footer-layout {
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
-    gap:50px;
+.footer-logo img{
+ width:205px;max-height:65px;
+ object-fit:contain;filter:brightness(0) invert(1)
 }
-
-.footer-logo img {
-    width:205px;
-    max-height:65px;
-    object-fit:contain;
-    object-position:left;
-    filter:brightness(0) invert(1);
+.footer-brand p{
+ color:#bfc9dd;font-size:12px;
+ line-height:1.9;max-width:310px;margin-top:20px
 }
-
-.footer-brand p {
-    color:#b7c2da;
-    font-size:12px;
-    line-height:1.9;
-    max-width:310px;
-    margin-top:20px;
+.footer-col h4{font-size:13px;margin-bottom:22px}
+.footer-col a{
+ display:block;color:#bfc9dd;
+ font-size:12px;margin-bottom:14px
 }
-
-.footer-column h4 {
-    font-size:13px;
-    margin-bottom:22px;
-}
-
-.footer-column a {
-    display:block;
-    color:#b7c2da;
-    font-size:12px;
-    margin-bottom:14px;
-    transition:.2s;
-}
-
-.footer-column a:hover { color:white; }
-
-.footer-bottom {
-    max-width:1250px;
-    margin:50px auto 0;
-    padding-top:23px;
-    border-top:1px solid rgba(255,255,255,.13);
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    color:#a0aec9;
-    font-size:10px;
+.footer-col a:hover{color:white}
+.copyright{
+ margin-top:50px;padding-top:23px;
+ border-top:1px solid #46506b;
+ display:flex;justify-content:space-between;
+ color:#bfc9dd;font-size:10px
 }
 
 /* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-.reveal {
-    opacity:0;
-    transform:translateY(24px);
-    transition:.75s ease;
+@media(max-width:900px){
+ .hero-grid,.about-grid{grid-template-columns:1fr}
+ .service-grid{grid-template-columns:1fr 1fr}
+ .value-grid{grid-template-columns:1fr 1fr}
 }
-
-.reveal.visible {
-    opacity:1;
-    transform:translateY(0);
+@media(max-width:650px){
+ .nav{height:75px}
+ .logo img{width:170px}
+ .menu{display:block}
+ .nav-links{
+  display:none;position:absolute;top:75px;left:0;width:100%;
+  background:white;padding:25px 6%;flex-direction:column;
+  align-items:stretch;gap:22px;border-bottom:1px solid var(--border)
+ }
+ .nav-links.active{display:flex}
+ .nav-links .contact{text-align:center}
+ .hero{padding:75px 0}
+ .hero h1{letter-spacing:-2px}
+ .hero-image{min-height:330px}
+ section{padding:75px 0}
+ .service-grid,.work-grid{grid-template-columns:1fr}
+ .work-header,.price-inner{align-items:flex-start;flex-direction:column}
+ .price-number{font-size:60px}
+ .about-text h2{font-size:36px}
+ .value-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
+ .footer-grid{grid-template-columns:1fr 1fr;gap:30px 20px}
+ .footer-brand{grid-column:1/-1}
+ .copyright{flex-direction:column;gap:12px}
+ .btn-outline{margin-left:0;margin-top:10px}
 }
-
-/* MOBILE */
-
-@media(max-width:900px) {
-    .hero-layout { grid-template-columns:1fr; }
-    .hero-visual { min-height:380px; }
-    .service-grid { grid-template-columns:repeat(2,1fr); }
-    .about-layout { grid-template-columns:1fr; }
-    .process-grid { grid-template-columns:repeat(2,1fr); }
-}
-
-@media(max-width:650px) {
-    .menu-toggle { display:block; }
-
-    .nav-links {
-        display:none;
-        position:absolute;
-        top:75px;
-        left:5%;
-        width:90%;
-        background:white;
-        padding:25px;
-        border:1px solid var(--border);
-        border-radius:9px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:22px;
-        box-shadow:0 15px 35px rgba(32,43,76,.1);
-    }
-
-    .nav-links.active { display:flex; }
-
-    .nav-button { text-align:center; }
-
-    .hero { padding-top:145px; min-height:auto; }
-    .hero h1 { letter-spacing:-3px; }
-    .hero-visual { transform:scale(.85); margin:-10px 0; }
-
-    section { padding:75px 6%; }
-
-    .service-grid { grid-template-columns:1fr; }
-    .price-panel { padding:35px 25px; flex-direction:column; align-items:flex-start; }
-    .price-number { font-size:60px; }
-    .process-grid { grid-template-columns:1fr 1fr; gap:30px 18px; }
-
-    .trust-inner { justify-content:center; }
-
-    .footer-layout { grid-template-columns:1fr 1fr; gap:35px 20px; }
-    .footer-brand { grid-column:1/-1; }
-
-    .footer-bottom { flex-direction:column; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    *,*::before,*::after {
-        animation:none!important;
-        transition:none!important;
-        scroll-behavior:auto!important;
-    }
-    .reveal { opacity:1; transform:none; }
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 
-<div class="background-grid"></div>
-
-<header id="header">
-<nav>
-    <a href="#home" class="logo">
-        <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-    </a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#process">Our Process</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="https://www.hawthornedigital.co.uk/contact" class="nav-button">Get In Touch ↗</a></li>
-    </ul>
-</nav>
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home">
+   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+  </a>
+  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  <ul class="nav-links" id="navLinks">
+   <li><a href="#home">Home</a></li>
+   <li><a href="#services">Services</a></li>
+   <li><a href="#work">Our Work</a></li>
+   <li><a href="#about">About Us</a></li>
+   <li><a class="contact" href="mailto:hello@hawthornedigital.co.uk">Get In Touch ↗</a></li>
+  </ul>
+ </div>
 </header>
 
 <main>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="hero-layout">
-
-    <div>
-        <div class="eyebrow">A new perspective on digital</div>
-
-        <h1>
-            PREMIUM<br>
-            DIGITAL.<br>
-            <span>WITHOUT<br>THE PREMIUM<br>PRICE.</span>
-        </h1>
-
-        <p class="hero-description">
-            We create modern websites and provide digital business
-            solutions that help businesses establish their presence,
-            connect with customers and move forward.
-        </p>
-
-        <div class="buttons">
-            <a href="mailto:hello@hawthornedigital.co.uk" class="btn btn-primary">
-                Start Your Project ↗
-            </a>
-            <a href="#services" class="btn btn-secondary">
-                Discover Our Services
-            </a>
-        </div>
-
-        <div class="hero-note">
-            DESIGNED WITH PURPOSE · BUILT AROUND YOUR BUSINESS
-        </div>
-    </div>
-
-    <div class="hero-visual">
-        <div class="visual-ring"><span></span></div>
-
-        <div class="hero-core">
-            <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital logo">
-        </div>
-
-        <div class="visual-label label-top">
-            <strong>WEB DESIGN</strong>
-            <small>Created around your vision</small>
-        </div>
-
-        <div class="visual-label label-bottom">
-            <strong>DIGITAL SOLUTIONS</strong>
-            <small>Designed for what's next</small>
-        </div>
-    </div>
-
-</div>
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="hero-tag">Hawthorne Digital · Digital solutions</div>
+   <h1>Bringing your<br>business into<br><span>the digital future.</span></h1>
+   <p>
+    We create professional websites and deliver practical digital
+    business services that help organisations establish their
+    presence, connect with customers and grow with confidence.
+   </p>
+   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Let's Discuss Your Project ↗</a>
+   <a href="#services" class="btn btn-outline">Explore Our Services</a>
+  </div>
+  <div class="hero-image reveal">
+   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+   <div class="hero-caption">DESIGNED WITH PURPOSE. BUILT FOR BUSINESS.</div>
+  </div>
+ </div>
 </section>
 
-<div class="trust-strip">
-    <div class="trust-inner">
-        <span>Custom Website Design</span>
-        <span>Affordable Solutions</span>
-        <span>Personal Support</span>
-        <span>UK-Wide Services</span>
-    </div>
+<div class="intro">
+ <div class="container intro-inner">
+  <span>Website Design</span>
+  <span>Digital Business Services</span>
+  <span>Creative Solutions</span>
+  <span>Personal Support</span>
+ </div>
 </div>
 
-<section class="services" id="services">
-<div class="container">
+<!-- SERVICES -->
+<section id="services">
+ <div class="container">
+  <div class="heading reveal">
+   <div class="kicker">What we do</div>
+   <h2>Digital services designed around your business.</h2>
+   <p>
+    We bring together design, technology and practical digital
+    solutions to help businesses make the most of their online presence.
+   </p>
+  </div>
 
-    <div class="section-heading reveal">
-        <div class="eyebrow">Our expertise</div>
-        <h2>Everything starts with <span>a good idea.</span></h2>
-        <p>
-            We offer a range of digital services designed to support
-            your business, strengthen your brand and make the most
-            of your online presence.
-        </p>
-    </div>
-
-    <div class="service-grid">
-
-        <div class="service-card reveal">
-            <div class="service-icon">⌘</div>
-            <h3>Website Design</h3>
-            <p>Professionally designed websites that bring your brand to life and create a great experience for your users.</p>
-        </div>
-
-        <div class="service-card reveal">
-            <div class="service-icon">◈</div>
-            <h3>Website Hosting</h3>
-            <p>Reliable hosting solutions to keep your website accessible and performing smoothly.</p>
-        </div>
-
-        <div class="service-card reveal">
-            <div class="service-icon">↗</div>
-            <h3>Website Support</h3>
-            <p>Ongoing maintenance, updates and technical assistance to keep your digital presence running.</p>
-        </div>
-
-        <div class="service-card reveal">
-            <div class="service-icon">◎</div>
-            <h3>Domains & Email</h3>
-            <p>Professional domains and business email solutions to establish your identity online.</p>
-        </div>
-
-        <div class="service-card reveal">
-            <div class="service-icon">✳</div>
-            <h3>Graphic Design</h3>
-            <p>Creative branding, business stationery and promotional designs that make your business stand out.</p>
-        </div>
-
-        <div class="service-card reveal">
-            <div class="service-icon">⌬</div>
-            <h3>Digital Business Services</h3>
-            <p>Practical digital solutions tailored to your business requirements and ambitions.</p>
-        </div>
-
-    </div>
-</div>
+  <div class="service-grid">
+   <div class="service reveal">
+    <div class="number">01 / WEBSITES</div>
+    <h3>Website Design & Development</h3>
+    <p>From straightforward business websites to fully bespoke digital experiences, we create websites that reflect your brand and connect with your audience.</p>
+    <a href="mailto:hello@hawthornedigital.co.uk">Discover Website Design ↗</a>
+   </div>
+   <div class="service reveal">
+    <div class="number">02 / DIGITAL</div>
+    <h3>Digital Business Services</h3>
+    <p>Hosting, domains, business email and ongoing website management to help keep your business connected and operating online.</p>
+    <a href="mailto:hello@hawthornedigital.co.uk">Explore Digital Services ↗</a>
+   </div>
+   <div class="service reveal">
+    <div class="number">03 / CREATIVE</div>
+    <h3>Graphic & Creative Design</h3>
+    <p>Creative design solutions that bring your identity together, from logos and business stationery to promotional materials.</p>
+    <a href="mailto:hello@hawthornedigital.co.uk">Explore Creative Design ↗</a>
+   </div>
+   <div class="service reveal">
+    <div class="number">04 / HOSTING</div>
+    <h3>Website Hosting</h3>
+    <p>Hosting solutions designed to keep your website accessible, supported and performing as expected.</p>
+    <a href="mailto:hello@hawthornedigital.co.uk">Find Out More ↗</a>
+   </div>
+   <div class="service reveal">
+    <div class="number">05 / SUPPORT</div>
+    <h3>Ongoing Website Support</h3>
+    <p>Website updates, maintenance, security monitoring and technical assistance through our customer support platform, Bracket.</p>
+    <a href="https://www.bracketsupport.co.uk">Discover Bracket ↗</a>
+   </div>
+   <div class="service reveal">
+    <div class="number">06 / DOMAINS</div>
+    <h3>Domains & Business Email</h3>
+    <p>Professional domain and email management to help your business establish a consistent and recognisable identity.</p>
+    <a href="mailto:hello@hawthornedigital.co.uk">Find Out More ↗</a>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section class="price-section">
-<div class="price-panel reveal">
+<!-- OUR WORK -->
+<section class="work" id="work">
+ <div class="container">
+  <div class="work-header reveal">
+   <div class="heading" style="margin:0">
+    <div class="kicker">Selected projects</div>
+    <h2>Our work speaks for itself.</h2>
+    <p>A selection of digital projects, creative ideas and websites brought to life.</p>
+   </div>
+   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Work With Us ↗</a>
+  </div>
 
-    <div>
-        <div class="eyebrow">Professional doesn't have to mean expensive</div>
-        <h2>Your website.<br>Your next step.</h2>
-        <p>
-            Every business deserves a quality online presence.
-            Discover our affordable website solutions, with
-            transparent pricing and a personal approach.
-        </p>
-        <a href="mailto:hello@hawthornedigital.co.uk" class="btn">
-            Request a Quote ↗
-        </a>
+  <div class="work-grid">
+   <article class="project reveal">
+    <div class="project-image">
+     <div class="project-placeholder">
+      <strong>Little Explorers</strong>
+      <span>NURSERY WEBSITE DESIGN</span>
+     </div>
     </div>
-
-    <div class="price-number">
-        £99
-        <small>STARTING PRICE</small>
+    <div class="project-info">
+     <h3>Little Explorers Nursery</h3>
+     <p>Website design · Branding · Digital presence</p>
+     <a href="mailto:hello@hawthornedigital.co.uk">View Project ↗</a>
     </div>
+   </article>
 
-</div>
+   <article class="project reveal">
+    <div class="project-image">
+     <div class="project-placeholder" style="background:#e7ebf4">
+      <strong>Hawthorne Digital</strong>
+      <span>BRAND & WEB DESIGN</span>
+     </div>
+    </div>
+    <div class="project-info">
+     <h3>Hawthorne Digital</h3>
+     <p>Brand development · Website design · Digital services</p>
+     <a href="#home">Explore Our Website ↗</a>
+    </div>
+   </article>
+  </div>
+ </div>
 </section>
 
-<section id="process">
-<div class="container">
-
-    <div class="section-heading reveal">
-        <div class="eyebrow">Our approach</div>
-        <h2>From first idea to <span>final result.</span></h2>
-        <p>We keep things simple, collaborative and transparent throughout every stage of your project.</p>
-    </div>
-
-    <div class="process-grid">
-
-        <div class="process-card reveal">
-            <div class="process-number">01</div>
-            <h3>Let's Talk</h3>
-            <p>We get to know your business, ideas and requirements.</p>
-        </div>
-
-        <div class="process-card reveal">
-            <div class="process-number">02</div>
-            <h3>Plan & Design</h3>
-            <p>We develop a design that reflects your identity and vision.</p>
-        </div>
-
-        <div class="process-card reveal">
-            <div class="process-number">03</div>
-            <h3>Build & Refine</h3>
-            <p>We bring your project to life and keep you involved along the way.</p>
-        </div>
-
-        <div class="process-card reveal">
-            <div class="process-number">04</div>
-            <h3>Launch & Support</h3>
-            <p>Your finished project goes live, with ongoing support options available.</p>
-        </div>
-
-    </div>
-</div>
+<!-- ABOUT -->
+<section id="about">
+ <div class="container about-grid">
+  <div class="about-visual reveal">
+   <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital logo">
+  </div>
+  <div class="about-text reveal">
+   <div class="kicker">Who we are</div>
+   <h2>Built around people.<br><span>Driven by ideas.</span></h2>
+   <p>
+    At Hawthorne Digital, we believe every business deserves
+    access to professional digital services without unnecessary
+    complexity or excessive costs.
+   </p>
+   <p>
+    Our approach is built on collaboration, creativity and
+    communication. We work closely with our clients and partners,
+    keeping them involved throughout every stage of their project.
+   </p>
+   <ul class="about-points">
+    <li>Personal service and support</li>
+    <li>Transparent, affordable pricing</li>
+    <li>Solutions tailored to your requirements</li>
+    <li>Clients and partners at the heart of everything</li>
+    <li>Supporting businesses throughout the UK</li>
+   </ul>
+   <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Get To Know Us ↗</a>
+  </div>
+ </div>
 </section>
 
-<section class="about" id="about">
-<div class="container about-layout">
-
-    <div class="reveal">
-        <div class="eyebrow">Why Hawthorne Digital?</div>
-
-        <h2>More than just<br><span>a digital service.</span></h2>
-
-        <p>
-            We believe that great digital experiences begin with
-            understanding the people behind the business.
-            That's why our clients and partners are at the heart
-            of everything we do.
-        </p>
-
-        <p>
-            From the first conversation to the finished result,
-            we work alongside you to deliver solutions that
-            reflect your business and support your ambitions.
-        </p>
-
-        <ul class="about-list">
-            <li>Personal service and support</li>
-            <li>Transparent and affordable pricing</li>
-            <li>Solutions designed around your requirements</li>
-            <li>Collaborative approach at every stage</li>
-            <li>Supporting businesses throughout the UK</li>
-        </ul>
-    </div>
-
-    <div class="about-graphic reveal">
-        <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-    </div>
-
-</div>
+<!-- VALUES -->
+<section class="values">
+ <div class="container">
+  <div class="heading reveal">
+   <div class="kicker">Our values</div>
+   <h2>What makes us different.</h2>
+   <p>The principles behind the way we work, the services we deliver and the relationships we build.</p>
+  </div>
+  <div class="value-grid">
+   <div class="value reveal">
+    <div class="line"></div>
+    <h3>Collaboration</h3>
+    <p>We work with you, not just for you. Your ideas and input remain important throughout the process.</p>
+   </div>
+   <div class="value reveal">
+    <div class="line"></div>
+    <h3>Transparency</h3>
+    <p>Clear communication and straightforward pricing, so you know what to expect at every stage.</p>
+   </div>
+   <div class="value reveal">
+    <div class="line"></div>
+    <h3>Creativity</h3>
+    <p>We approach every project with fresh ideas and a focus on delivering quality results.</p>
+   </div>
+   <div class="value reveal">
+    <div class="line"></div>
+    <h3>Commitment</h3>
+    <p>We believe in building lasting relationships and providing support beyond the initial project.</p>
+   </div>
+  </div>
+ </div>
 </section>
 
+<!-- PRICING -->
+<section class="price">
+ <div class="container price-inner reveal">
+  <div>
+   <div class="kicker" style="color:#b9d1ff">Affordable by design</div>
+   <h2>Premium websites.<br>Accessible pricing.</h2>
+   <p>
+    Professional website design doesn't need to come with
+    an excessive price tag. Discover our website solutions
+    and find the right starting point for your business.
+   </p>
+   <br>
+   <a href="mailto:hello@hawthornedigital.co.uk" class="btn" style="background:white;color:#2856b1">Request a Quote ↗</a>
+  </div>
+  <div class="price-number">£99<small>STARTING PRICE</small></div>
+ </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
-<div class="container reveal">
-
-    <div class="eyebrow" style="justify-content:center">Let's get started</div>
-
-    <h2>READY TO MOVE<br><span>YOUR BUSINESS FORWARD?</span></h2>
-
-    <p>
-        Whether you're launching a new business, refreshing
-        your website or looking for ongoing digital support,
-        we're ready to help bring your ideas to life.
-    </p>
-
-    <a href="mailto:hello@hawthornedigital.co.uk" class="btn btn-primary">
-        Let's Talk About Your Project ↗
-    </a>
-
-</div>
+ <div class="container">
+  <div class="heading reveal">
+   <div class="kicker">Let's work together</div>
+   <h2>Have a project in mind?</h2>
+   <p>
+    Every great project starts with a conversation.
+    Tell us what you're looking to achieve and let's
+    explore how Hawthorne Digital can help.
+   </p>
+  </div>
+  <a href="mailto:hello@hawthornedigital.co.uk" class="btn">Start a Conversation ↗</a>
+ </div>
 </section>
 
 </main>
 
 <footer>
-<div class="footer-layout">
-
-    <div class="footer-brand">
-        <a href="#home" class="footer-logo">
-            <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-        </a>
-
-        <p>
-            Premium websites without the premium price.
-            Digital solutions designed around the way
-            your business works.
-        </p>
-    </div>
-
-    <div class="footer-column">
-        <h4>Explore</h4>
-        <a href="#home">Home</a>
-        <a href="#services">Our Services</a>
-        <a href="#process">Our Process</a>
-        <a href="#about">About Us</a>
-    </div>
-
-    <div class="footer-column">
-        <h4>Get In Touch</h4>
-        <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
-        <a href="https://www.hawthornedigital.co.uk">Website</a>
-        <a href="https://www.bracketsupport.co.uk">Bracket Support</a>
-    </div>
-
-</div>
-
-<div class="footer-bottom">
-    <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
-    <span>Designed with purpose. Built for business.</span>
-</div>
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand">
+    <a href="#home" class="footer-logo">
+     <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+    </a>
+    <p>Premium websites without the premium price. Digital services designed around the way your business works.</p>
+   </div>
+   <div class="footer-col">
+    <h4>Explore</h4>
+    <a href="#home">Home</a>
+    <a href="#services">Our Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#about">About Us</a>
+   </div>
+   <div class="footer-col">
+    <h4>Connect</h4>
+    <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
+    <a href="https://www.hawthornedigital.co.uk">Website</a>
+    <a href="https://www.bracketsupport.co.uk">Bracket Support</a>
+   </div>
+  </div>
+  <div class="copyright">
+   <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
+   <span>Premium Websites Without the Premium Price.</span>
+  </div>
+ </div>
 </footer>
 
 <script>
-const header = document.getElementById('header');
+const menu=document.getElementById('menu');
+const nav=document.getElementById('navLinks');
 
-window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 25);
+menu.addEventListener('click',()=>{
+ nav.classList.toggle('active');
+ menu.textContent=nav.classList.contains('active')?'✕':'☰';
 });
 
-const toggle = document.getElementById('menuToggle');
-const links = document.getElementById('navLinks');
-
-toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('active');
-    toggle.textContent = open ? '✕' : '☰';
-    toggle.setAttribute('aria-expanded', open);
+document.querySelectorAll('.nav-links a').forEach(a=>{
+ a.addEventListener('click',()=>{
+  nav.classList.remove('active');
+  menu.textContent='☰';
+ });
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        links.classList.remove('active');
-        toggle.textContent = '☰';
-        toggle.setAttribute('aria-expanded', 'false');
-    });
-});
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-
 </body>
 </html>
