@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hawthorne Digital | Websites, Code & Digital Solutions</title>
-<meta name="description" content="Hawthorne Digital delivers affordable premium website design, custom coding, digital development, hosting and ongoing support for businesses across the UK.">
+<meta name="description" content="Hawthorne Digital provides website design, custom coding, digital development, hosting and support for businesses across the UK.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -41,12 +42,14 @@ body {
   color: var(--text);
   background: white;
   line-height: 1.7;
+  padding-top: 82px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: 'Manrope', sans-serif;
   line-height: 1.2;
-  letter-spacing: -0.6px;
+  letter-spacing: -.6px;
 }
 
 a {
@@ -54,8 +57,9 @@ a {
   text-decoration: none;
 }
 
-button, a {
-  -webkit-tap-highlight-color: transparent;
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .container {
@@ -66,12 +70,15 @@ button, a {
 /* NAVIGATION */
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: rgba(255,255,255,.96);
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255,255,255,.97);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(32,43,76,.08);
 }
 
 .navbar {
@@ -147,7 +154,7 @@ header {
     radial-gradient(circle at 80% 20%, rgba(91,132,237,.20), transparent 30%),
     linear-gradient(135deg, #202b4c 0%, #323f6b 55%, #263d78 100%);
   color: white;
-  padding: 100px 0 105px;
+  padding: 100px 0 120px;
   overflow: hidden;
   position: relative;
 }
@@ -261,7 +268,7 @@ header {
   font-size: .83rem;
 }
 
-/* HERO VISUAL */
+/* HERO WEBSITE PREVIEW */
 
 .hero-visual {
   position: relative;
@@ -348,17 +355,9 @@ header {
   height: 80px;
 }
 
-.mock-block:nth-child(2) {
-  background: #dce7ff;
-}
-
-.mock-block:nth-child(3) {
-  background: #eef1f7;
-}
-
-.mock-block:nth-child(4) {
-  background: #d9e4fc;
-}
+.mock-block:nth-child(2) { background: #dce7ff; }
+.mock-block:nth-child(3) { background: #eef1f7; }
+.mock-block:nth-child(4) { background: #d9e4fc; }
 
 .code-float {
   position: absolute;
@@ -383,8 +382,9 @@ header {
 /* INTRO */
 
 .intro {
-  padding: 85px 0;
+  padding: 100px 0;
   text-align: center;
+  position: relative;
 }
 
 .section-label {
@@ -412,8 +412,9 @@ header {
 /* SERVICES */
 
 .services {
-  padding: 90px 0;
+  padding: 100px 0;
   background: var(--light);
+  position: relative;
 }
 
 .section-header {
@@ -474,11 +475,77 @@ header {
   font-size: .88rem;
 }
 
-/* CUSTOM DEVELOPMENT */
+/* SHOWCASE */
+
+.showcase {
+  padding: 100px 0;
+  background: white;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.showcase-card {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--navy);
+  box-shadow: 0 15px 35px rgba(32,43,76,.12);
+}
+
+.showcase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.showcase-card:hover img {
+  transform: scale(1.08);
+}
+
+.showcase-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(18,27,48,.95),
+    rgba(18,27,48,.05) 75%
+  );
+}
+
+.showcase-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 28px;
+  color: white;
+}
+
+.showcase-overlay span {
+  color: #9db7ff;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.showcase-overlay h3 {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* DEVELOPMENT */
 
 .development {
-  padding: 95px 0;
-  background: white;
+  padding: 110px 0;
+  background: var(--light);
+  position: relative;
 }
 
 .development-grid {
@@ -531,8 +598,9 @@ header {
 /* PROCESS */
 
 .process {
-  padding: 90px 0;
-  background: var(--light);
+  padding: 100px 0;
+  background: white;
+  position: relative;
 }
 
 .process-grid {
@@ -568,8 +636,8 @@ header {
 /* DIFFERENTIATOR */
 
 .different {
-  padding: 90px 0;
-  background: white;
+  padding: 100px 0;
+  background: var(--light);
 }
 
 .different-panel {
@@ -612,10 +680,23 @@ header {
 /* CTA */
 
 .cta {
-  padding: 90px 0;
+  padding: 100px 0;
   text-align: center;
   background: var(--blue);
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  left: -120px;
+  top: -180px;
 }
 
 .cta h2 {
@@ -675,6 +756,30 @@ footer a:hover {
   gap: 15px;
 }
 
+/* SECTION DIVIDERS */
+
+.services,
+.development,
+.process,
+.different {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.services::before,
+.development::before,
+.process::before,
+.different::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: rgba(40,86,177,.035);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 30%);
+  pointer-events: none;
+}
+
 /* MOBILE */
 
 @media(max-width: 900px) {
@@ -689,7 +794,8 @@ footer a:hover {
     width: 100%;
   }
 
-  .services-grid {
+  .services-grid,
+  .showcase-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -703,6 +809,10 @@ footer a:hover {
 }
 
 @media(max-width: 600px) {
+  body {
+    padding-top: 135px;
+  }
+
   .navbar {
     flex-wrap: wrap;
     padding: 15px 0;
@@ -721,7 +831,7 @@ footer a:hover {
   }
 
   .hero {
-    padding: 65px 0;
+    padding: 65px 0 85px;
   }
 
   .hero h1 {
@@ -750,16 +860,22 @@ footer a:hover {
   }
 
   .services-grid,
+  .showcase-grid,
   .process-grid {
     grid-template-columns: 1fr;
   }
 
+  .showcase-card {
+    height: 300px;
+  }
+
   .intro,
   .services,
+  .showcase,
   .development,
   .process,
   .different {
-    padding: 65px 0;
+    padding: 70px 0;
   }
 
   .different-panel {
@@ -771,6 +887,18 @@ footer a:hover {
     gap: 30px;
   }
 }
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 
@@ -780,7 +908,6 @@ footer a:hover {
   <div class="container navbar">
 
     <a href="#" class="logo">
-      <!-- Replace this with your current Hawthorne Digital logo URL if needed -->
       <img src="https://www.hawthornedigital.co.uk/favicon.ico" alt="Hawthorne Digital logo">
       <div class="logo-text">
         Hawthorne Digital
@@ -976,6 +1103,62 @@ footer a:hover {
   </div>
 </section>
 
+<!-- DIGITAL SHOWCASE -->
+
+<section class="showcase">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="section-label">Creativity meets technology</p>
+      <h2 class="section-heading">Digital work. Real possibilities.</h2>
+      <p class="section-copy">
+        From beautiful websites to custom-built functionality,
+        we help turn ambitious ideas into practical digital solutions.
+      </p>
+    </div>
+
+    <div class="showcase-grid">
+
+      <div class="showcase-card">
+        <img
+          src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1000&q=85"
+          alt="Modern website design displayed on a computer"
+          loading="lazy">
+
+        <div class="showcase-overlay">
+          <span>01 / DESIGN</span>
+          <h3>Websites that make an impression.</h3>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <img
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=85"
+          alt="Developer working with computer code"
+          loading="lazy">
+
+        <div class="showcase-overlay">
+          <span>02 / DEVELOPMENT</span>
+          <h3>Code built around your ideas.</h3>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <img
+          src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85"
+          alt="Creative digital design work"
+          loading="lazy">
+
+        <div class="showcase-overlay">
+          <span>03 / CREATIVITY</span>
+          <h3>Digital experiences with purpose.</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- DEVELOPMENT -->
 
 <section class="development" id="development">
@@ -1126,7 +1309,7 @@ footer a:hover {
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CONTACT CTA -->
 
 <section class="cta" id="contact">
   <div class="container">
