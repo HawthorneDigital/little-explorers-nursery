@@ -27,11 +27,7 @@
   --shadow: 0 12px 35px rgba(16,56,45,.10);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
@@ -48,15 +44,9 @@ h1, h2, h3, .brand-name {
   font-weight: 900;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
 .container {
   width: min(1160px, 90%);
@@ -113,7 +103,7 @@ header {
   width: 66px;
   height: 66px;
   object-fit: contain;
-  background: var(--green-dark);
+  background: white;
   border-radius: 50%;
   padding: 4px;
 }
@@ -138,9 +128,7 @@ header {
   font-weight: 700;
 }
 
-.nav-links a:not(.nav-button):hover {
-  color: var(--yellow);
-}
+.nav-links a:not(.nav-button):hover { color: var(--yellow); }
 
 .nav-button {
   background: var(--yellow);
@@ -203,9 +191,7 @@ header {
   letter-spacing: -1.5px;
 }
 
-.hero h1 span {
-  color: var(--yellow);
-}
+.hero h1 span { color: var(--yellow); }
 
 .hero-copy {
   color: #e0ebe4;
@@ -228,9 +214,7 @@ header {
   transition: .2s;
 }
 
-.button:hover {
-  transform: translateY(-3px);
-}
+.button:hover { transform: translateY(-3px); }
 
 .button-yellow {
   background: var(--yellow);
@@ -275,14 +259,9 @@ header {
   background: var(--cream);
 }
 
-.intro .section-heading {
-  max-width: 760px;
-  margin: 0 auto 20px;
-}
+.intro .section-heading { max-width: 760px; margin: 0 auto 20px; }
 
-.intro .section-intro {
-  font-size: 1.05rem;
-}
+.intro .section-intro { font-size: 1.05rem; }
 
 /* FEATURE STRIP */
 
@@ -354,17 +333,11 @@ header {
   text-align: center;
 }
 
-.values .section-heading {
-  color: white;
-}
+.values .section-heading { color: white; }
 
-.values .eyebrow {
-  color: var(--yellow);
-}
+.values .eyebrow { color: var(--yellow); }
 
-.values .section-intro {
-  color: #d3e2d9;
-}
+.values .section-intro { color: #d3e2d9; }
 
 .value-grid {
   display: grid;
@@ -405,10 +378,7 @@ header {
   margin-bottom: 12px;
 }
 
-.value-card p {
-  color: #d6e5dc;
-  font-size: .94rem;
-}
+.value-card p { color: #d6e5dc; font-size: .94rem; }
 
 /* LEARNING */
 
@@ -434,9 +404,7 @@ header {
   transition: .25s;
 }
 
-.learning-card:hover {
-  transform: translateY(-6px);
-}
+.learning-card:hover { transform: translateY(-6px); }
 
 .learning-card img {
   height: 220px;
@@ -444,9 +412,7 @@ header {
   object-fit: cover;
 }
 
-.learning-card-content {
-  padding: 25px;
-}
+.learning-card-content { padding: 25px; }
 
 .learning-card h3 {
   color: var(--green);
@@ -454,10 +420,7 @@ header {
   margin-bottom: 10px;
 }
 
-.learning-card p {
-  color: var(--muted);
-  font-size: .94rem;
-}
+.learning-card p { color: var(--muted); font-size: .94rem; }
 
 /* BANNER */
 
@@ -530,9 +493,7 @@ header {
   margin-bottom: 15px;
 }
 
-.contact-panel p {
-  color: #dce9df;
-}
+.contact-panel p { color: #dce9df; }
 
 .contact-details {
   background: rgba(255,255,255,.09);
@@ -545,9 +506,7 @@ header {
   overflow-wrap: anywhere;
 }
 
-.contact-details strong {
-  color: var(--yellow);
-}
+.contact-details strong { color: var(--yellow); }
 
 /* FOOTER */
 
@@ -575,14 +534,9 @@ footer p, footer a {
   font-size: .92rem;
 }
 
-footer a {
-  display: block;
-  margin-bottom: 8px;
-}
+footer a { display: block; margin-bottom: 8px; }
 
-footer a:hover {
-  color: var(--yellow);
-}
+footer a:hover { color: var(--yellow); }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.15);
@@ -598,99 +552,28 @@ footer a:hover {
 /* RESPONSIVE */
 
 @media (max-width: 850px) {
-  .nav-links {
-    gap: 13px;
-    font-size: .8rem;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .parents-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image {
-    height: 350px;
-  }
-
-  .image-note {
-    left: 10px;
-  }
-
-  .value-grid,
-  .learning-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .contact-panel {
-    grid-template-columns: 1fr;
-  }
+  .nav-links { gap: 13px; font-size: .8rem; }
+  .hero-grid, .about-grid, .parents-grid { grid-template-columns: 1fr; }
+  .hero-image { height: 350px; }
+  .image-note { left: 10px; }
+  .value-grid, .learning-grid { grid-template-columns: 1fr 1fr; }
+  .contact-panel { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .navbar {
-    padding: 12px 0;
-    flex-wrap: wrap;
-  }
-
-  .logo img {
-    width: 55px;
-    height: 55px;
-  }
-
-  .nav-links {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-
-  .nav-links a {
-    white-space: nowrap;
-  }
-
-  .hero {
-    padding: 55px 0;
-  }
-
-  .hero h1 {
-    font-size: 2.7rem;
-  }
-
-  .hero-image {
-    height: 280px;
-  }
-
-  .feature-items {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .value-grid,
-  .learning-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro,
-  .about,
-  .values,
-  .learning,
-  .parents,
-  .contact {
-    padding: 65px 0;
-  }
-
-  .contact-panel {
-    padding: 30px 22px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
+  .navbar { padding: 12px 0; flex-wrap: wrap; }
+  .logo img { width: 55px; height: 55px; }
+  .nav-links { width: 100%; overflow-x: auto; padding-bottom: 8px; }
+  .nav-links a { white-space: nowrap; }
+  .hero { padding: 55px 0; }
+  .hero h1 { font-size: 2.7rem; }
+  .hero-image { height: 280px; }
+  .feature-items { grid-template-columns: 1fr; gap: 15px; }
+  .value-grid, .learning-grid { grid-template-columns: 1fr; }
+  .intro, .about, .values, .learning, .parents, .contact { padding: 65px 0; }
+  .contact-panel { padding: 30px 22px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; }
 }
 </style>
 </head>
@@ -905,8 +788,8 @@ footer a:hover {
     </div>
     <div>
       <img class="parents-image"
-        src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=1000&q=85"
-        alt="Parent and child spending time together">
+        src="https://images.unsplash.com/photo-1544776193-32d404ae6088?auto=format&fit=crop&w=1000&q=85"
+        alt="Family spending time together">
     </div>
   </div>
 </section>
@@ -975,3 +858,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
+
