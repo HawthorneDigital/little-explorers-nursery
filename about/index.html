@@ -4,394 +4,678 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawthorne Digital | Digital, Designed Differently</title>
-<meta name="description" content="Hawthorne Digital creates websites, custom code and digital solutions for ambitious businesses across the UK.">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Hawthorne Digital | Premium Websites, Accessible Prices</title>
+<meta name="description" content="Affordable, premium website design, custom coding and digital services for businesses across the UK.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --navy:#202b4c;
   --brand:#323f6b;
   --blue:#2856b1;
   --bright:#7298ff;
-  --light:#f3f5fa;
-  --white:#fff;
-  --text:#1b2540;
-  --muted:#68738a;
+  --pale:#eaf0ff;
+  --cream:#f8f9fc;
+  --text:#202b4c;
+  --muted:#6e7890;
+  --radius:24px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth;scroll-padding-top:100px}
+
 body{
   font-family:"DM Sans",sans-serif;
   color:var(--text);
   background:white;
-  line-height:1.65;
   overflow-x:hidden;
+  line-height:1.65;
 }
-h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;letter-spacing:-1px}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;object-fit:cover}
-.container{width:min(1240px,90%);margin:auto}
 
-/* NAV */
+h1,h2,h3{
+  font-family:Manrope,sans-serif;
+  line-height:1.15;
+  letter-spacing:-1px;
+}
+
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1200px,90%);margin:auto}
+
+/* NAVIGATION */
 
 header{
-  position:sticky;top:0;z-index:1000;
+  position:sticky;
+  top:0;
+  z-index:1000;
   background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid #e9ecf2;
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #edf0f6;
 }
+
 .nav{
   min-height:85px;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   gap:25px;
 }
-.logo{
-  font-family:Manrope,sans-serif;
-  font-size:1.15rem;font-weight:800;
-  color:var(--navy);
-  display:flex;align-items:center;gap:12px;
+
+.logo img{
+  width:230px;
+  height:auto;
+  object-fit:contain;
 }
-.logo-mark{
-  width:39px;height:39px;
-  background:var(--brand);color:white;
-  display:grid;place-items:center;
-  border-radius:11px;font-size:1.2rem;
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  font-size:.88rem;
+  font-weight:700;
 }
-.logo small{
-  display:block;font-size:.6rem;
-  letter-spacing:2px;color:#78829a;
-}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:.88rem;font-weight:700}
+
 .nav-links a:hover{color:var(--blue)}
-.nav-contact{
-  background:var(--blue);color:white;
-  padding:12px 20px;border-radius:7px;
+
+.nav-cta{
+  background:var(--navy);
+  color:white!important;
+  padding:12px 21px;
+  border-radius:50px;
+  transition:.25s;
+}
+
+.nav-cta:hover{
+  background:var(--blue);
+  transform:translateY(-2px);
 }
 
 /* HERO */
 
 .hero{
-  padding:100px 0 75px;
   position:relative;
+  padding:95px 0 110px;
   overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 10%,#dce6ff 0,transparent 27%),
+    linear-gradient(180deg,#fff,#f7f9ff);
 }
+
 .hero::before{
   content:"";
-  position:absolute;right:-200px;top:-220px;
-  width:600px;height:600px;
+  position:absolute;
+  width:400px;height:400px;
   border-radius:50%;
-  background:radial-gradient(circle,#e7edff,transparent 70%);
+  border:1px solid #dce5ff;
+  top:100px;right:-180px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:55px;
+  position:relative;
+  z-index:2;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#eaf0ff;
+  color:var(--blue);
+  border-radius:50px;
+  padding:9px 16px;
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:25px;
+}
+
+.pill span{
+  width:8px;height:8px;
+  background:#5d87ef;
+  border-radius:50%;
+}
+
+.hero h1{
+  font-size:clamp(3.2rem,6.4vw,6rem);
+  color:var(--navy);
+  font-weight:800;
+}
+
+.hero h1 .blue{color:var(--blue)}
+
+.hero h1 .playful{
+  position:relative;
+  display:inline-block;
+}
+
+.hero h1 .playful::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-5px;
+  height:8px;width:100%;
+  background:#a9c2ff;
+  border-radius:50%;
+  transform:rotate(-2deg);
   z-index:-1;
 }
-.hero-topline{
-  display:flex;align-items:center;gap:12px;
-  font-size:.76rem;font-weight:800;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--blue);margin-bottom:30px;
+
+.hero-text{
+  font-size:1.08rem;
+  color:var(--muted);
+  max-width:550px;
+  margin:25px 0 30px;
 }
-.hero-topline::before{
-  content:"";width:30px;height:3px;background:var(--blue);
+
+.buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
 }
-.hero h1{
-  font-size:clamp(3.6rem,8vw,7.8rem);
-  max-width:1050px;font-weight:800;
-  color:var(--navy);
-  letter-spacing:-5px;
-}
-.hero h1 span{color:var(--blue)}
-.hero-bottom{
-  display:flex;justify-content:space-between;
-  align-items:end;gap:40px;margin-top:40px;
-}
-.hero-description{
-  max-width:530px;color:var(--muted);font-size:1.1rem;
-}
-.hero-action{
-  background:var(--navy);color:white;
-  padding:16px 25px;border-radius:8px;
-  font-weight:700;white-space:nowrap;
+
+.btn{
+  display:inline-block;
+  padding:15px 23px;
+  border-radius:50px;
+  font-weight:800;
   transition:.25s;
 }
-.hero-action:hover{background:var(--blue);transform:translateY(-3px)}
-.hero-image{
-  margin-top:65px;height:470px;
-  border-radius:14px;overflow:hidden;
+
+.btn-primary{
+  background:var(--blue);
+  color:white;
+  box-shadow:0 8px 22px rgba(40,86,177,.2);
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(40,86,177,.25);
+}
+
+.btn-secondary{
+  border:1px solid #d7dfef;
+  background:white;
+}
+
+.btn-secondary:hover{
+  background:var(--pale);
+}
+
+.hero-note{
+  font-size:.8rem;
+  color:#8791a6;
+  margin-top:22px;
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
   position:relative;
-}
-.hero-image img{height:100%;transition:transform .8s}
-.hero-image:hover img{transform:scale(1.03)}
-.hero-image-label{
-  position:absolute;bottom:25px;left:30px;
-  background:white;padding:15px 20px;
-  border-radius:8px;font-weight:700;
+  min-height:470px;
 }
 
-/* MOVING STRIP */
+.hero-photo{
+  position:absolute;
+  inset:20px 0 20px 30px;
+  border-radius:35px;
+  overflow:hidden;
+  transform:rotate(2deg);
+  box-shadow:0 30px 70px rgba(32,43,76,.15);
+}
 
-.ticker{
-  background:var(--blue);color:white;
-  overflow:hidden;padding:18px 0;
+.hero-photo img{
+  width:100%;height:100%;
+  object-fit:cover;
 }
-.ticker-track{
-  display:flex;width:max-content;
-  animation:marquee 30s linear infinite;
+
+.hero-photo::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(40,86,177,.12),transparent);
 }
-.ticker-item{
-  white-space:nowrap;
-  padding:0 35px;
-  font-size:1rem;font-weight:800;
-  letter-spacing:1px;text-transform:uppercase;
+
+.floating-price{
+  position:absolute;
+  left:-15px;bottom:20px;
+  z-index:3;
+  background:white;
+  padding:22px 25px;
+  border-radius:22px;
+  box-shadow:0 15px 45px rgba(32,43,76,.15);
+  transform:rotate(-3deg);
 }
-.ticker-item span{color:#a9c2ff;padding-left:25px}
-@keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+
+.floating-price small{
+  display:block;
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:700;
+}
+
+.floating-price strong{
+  display:block;
+  font-size:2rem;
+  color:var(--blue);
+  font-family:Manrope,sans-serif;
+  line-height:1.2;
+}
+
+.floating-price span{
+  font-size:.72rem;
+  color:#8b95a8;
+}
+
+.floating-star{
+  position:absolute;
+  top:-10px;right:5px;
+  width:65px;height:65px;
+  background:#c5d6ff;
+  color:var(--blue);
+  border-radius:50%;
+  display:grid;place-items:center;
+  font-size:2rem;
+  z-index:3;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-10px) rotate(10deg)}
+}
+
+/* WAVY DIVIDER */
+
+.wave{
+  line-height:0;
+  margin-top:-1px;
+}
+
+.wave svg{
+  width:100%;
+  height:90px;
+  display:block;
+}
+
+/* BRAND STRIP */
+
+.brand-strip{
+  background:var(--navy);
+  color:white;
+  padding:23px 0;
+  overflow:hidden;
+}
+
+.strip-inner{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:35px;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.strip-inner span{
+  color:#a9c2ff;
 }
 
 /* INTRO */
 
-.intro{padding:115px 0}
-.intro-grid{
-  display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;
+.section{padding:100px 0}
+
+.section-top{
+  text-align:center;
+  max-width:780px;
+  margin:0 auto 55px;
 }
+
 .eyebrow{
-  font-size:.75rem;letter-spacing:2px;
-  text-transform:uppercase;color:var(--blue);
-  font-weight:800;margin-bottom:20px;
+  color:var(--blue);
+  font-size:.76rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:18px;
 }
-.intro h2{
-  font-size:clamp(2.4rem,5vw,4.4rem);
+
+.section-top h2{
+  font-size:clamp(2.3rem,4.5vw,4rem);
   color:var(--navy);
 }
-.intro-right p{
-  font-size:1.2rem;color:var(--muted);
-  margin-bottom:25px;max-width:700px;
-}
-.text-link{
-  color:var(--blue);font-weight:800;
-  display:inline-flex;gap:10px;align-items:center;
-}
-.text-link:hover{gap:16px}
 
-/* WORK */
-
-.work{background:var(--light);padding:110px 0}
-.section-heading{
-  display:flex;justify-content:space-between;
-  align-items:end;gap:30px;margin-bottom:50px;
+.section-top p{
+  color:var(--muted);
+  margin-top:20px;
 }
-.section-heading h2{
-  font-size:clamp(2.4rem,5vw,4.5rem);
-  color:var(--navy);max-width:700px;
-}
-.section-heading p{color:var(--muted);max-width:350px}
-.work-grid{
-  display:grid;grid-template-columns:1.15fr .85fr;
-  gap:25px;
-}
-.work-column{display:grid;gap:25px}
-.work-card{
-  position:relative;overflow:hidden;
-  border-radius:13px;background:var(--navy);
-  min-height:380px;
-}
-.work-card.large{min-height:620px}
-.work-card img{
-  height:100%;position:absolute;inset:0;
-  transition:transform .7s;
-}
-.work-card:hover img{transform:scale(1.06)}
-.work-card::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(18,28,50,.9),transparent 70%);
-}
-.work-info{
-  position:absolute;bottom:28px;left:28px;right:28px;
-  z-index:2;color:white;
-}
-.work-info small{
-  color:#a9c2ff;font-weight:800;
-  letter-spacing:1.5px;text-transform:uppercase;
-}
-.work-info h3{font-size:2rem;margin-top:8px}
-.work-info p{color:#d5deef;margin-top:8px}
 
 /* SERVICES */
 
-.services{padding:110px 0}
-.services-heading{
-  max-width:850px;margin-bottom:60px;
+.services{background:var(--cream)}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
-.services-heading h2{
-  font-size:clamp(2.5rem,5vw,4.5rem);
+
+.service{
+  background:white;
+  border:1px solid #edf0f6;
+  border-radius:25px;
+  padding:30px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(32,43,76,.09);
+  border-color:#cbd8ff;
+}
+
+.service-icon{
+  width:58px;height:58px;
+  border-radius:18px;
+  background:var(--pale);
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-size:1.5rem;
+  margin-bottom:22px;
+}
+
+.service h3{
+  font-size:1.3rem;
+  margin-bottom:12px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.service a{
+  display:inline-block;
+  color:var(--blue);
+  font-weight:800;
+  margin-top:20px;
+}
+
+/* AFFORDABILITY */
+
+.price-section{
+  padding:110px 0;
+  background:white;
+}
+
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.price-copy h2{
+  font-size:clamp(2.5rem,5vw,4.3rem);
   color:var(--navy);
 }
-.service-list{border-top:1px solid #dfe4ed}
-.service-row{
-  display:grid;grid-template-columns:70px 1fr 1fr 45px;
-  align-items:center;gap:25px;
-  padding:28px 0;border-bottom:1px solid #dfe4ed;
-  transition:.25s;
-}
-.service-row:hover{padding-left:12px;color:var(--blue)}
-.service-number{color:#9aa5bc;font-size:.85rem;font-weight:700}
-.service-row h3{font-size:1.6rem}
-.service-row p{color:var(--muted);font-size:.95rem}
-.service-arrow{
-  width:40px;height:40px;border:1px solid #dce2ee;
-  border-radius:50%;display:grid;place-items:center;
-  font-size:1.2rem;
+
+.price-copy h2 span{color:var(--blue)}
+
+.price-copy p{
+  color:var(--muted);
+  margin:22px 0;
 }
 
-/* DEVELOPMENT */
+.price-card{
+  background:linear-gradient(145deg,#202b4c,#323f6b);
+  color:white;
+  border-radius:30px;
+  padding:42px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(32,43,76,.2);
+}
 
-.dev-section{
-  background:var(--navy);color:white;
-  padding:110px 0;position:relative;overflow:hidden;
+.price-card::after{
+  content:"✦";
+  position:absolute;
+  right:-20px;top:-60px;
+  font-size:14rem;
+  color:rgba(255,255,255,.04);
 }
-.dev-section::after{
-  content:"</>";
-  position:absolute;right:-40px;bottom:-100px;
-  font-family:monospace;font-size:24rem;
-  color:rgba(255,255,255,.035);
+
+.price-card .label{
+  display:inline-block;
+  background:#40568e;
+  color:#dce6ff;
+  padding:7px 13px;
+  border-radius:50px;
+  font-size:.75rem;
+  font-weight:800;
 }
-.dev-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:70px;position:relative;z-index:1;
+
+.price-card h3{
+  font-size:1.7rem;
+  margin:22px 0 10px;
 }
-.dev-section h2{
-  font-size:clamp(2.5rem,5vw,4.5rem);
-  margin-bottom:25px;
+
+.price-card .price{
+  font-family:Manrope,sans-serif;
+  font-size:3.8rem;
+  font-weight:800;
+  color:#9bb7ff;
+  line-height:1.2;
 }
-.dev-section p{color:#c8d2e7;margin-bottom:20px}
-.dev-tag{
-  display:inline-block;color:#a9c2ff;
-  font-weight:800;font-size:.75rem;
-  letter-spacing:2px;margin-bottom:20px;
+
+.price-card p{
+  color:#c7d2e9;
+  font-size:.9rem;
+  margin:15px 0 25px;
 }
-.dev-image img{
-  height:440px;border-radius:13px;
+
+.price-card .btn{
+  background:white;
+  color:var(--navy);
+  position:relative;
+  z-index:2;
 }
-.dev-button{
-  display:inline-block;margin-top:15px;
-  padding:14px 23px;background:white;
-  color:var(--navy);border-radius:7px;font-weight:800;
+
+/* SHOWCASE */
+
+.showcase{background:#edf2ff}
+
+.showcase-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:25px;
+}
+
+.showcase-card{
+  min-height:380px;
+  position:relative;
+  border-radius:25px;
+  overflow:hidden;
+}
+
+.showcase-card img{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  transition:.7s;
+}
+
+.showcase-card:hover img{transform:scale(1.06)}
+
+.showcase-card::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(22,32,57,.88),transparent 70%);
+}
+
+.showcase-content{
+  position:absolute;
+  bottom:25px;left:25px;
+  z-index:2;color:white;
+}
+
+.showcase-content small{
+  color:#b8ceff;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.showcase-content h3{
+  font-size:1.8rem;
+  margin-top:8px;
 }
 
 /* PROCESS */
 
-.process{padding:110px 0}
 .process-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:25px;margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
 }
-.process-card{border-top:3px solid var(--blue);padding-top:25px}
-.process-card .number{
-  color:#aabcf1;font-size:2.5rem;
-  font-family:Manrope;font-weight:800;
-}
-.process-card h3{font-size:1.25rem;margin:15px 0}
-.process-card p{color:var(--muted);font-size:.92rem}
 
-/* ABOUT */
+.process-item{
+  border-top:3px solid #b8ccff;
+  padding-top:25px;
+}
 
-.about{
-  background:#edf2ff;padding:100px 0;
+.process-item .number{
+  font-size:2.6rem;
+  color:#a7bdf1;
+  font-family:Manrope,sans-serif;
+  font-weight:800;
 }
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:65px;align-items:center;
-}
-.about h2{
-  font-size:clamp(2.5rem,5vw,4rem);
-  color:var(--navy);margin-bottom:25px;
-}
-.about p{color:var(--muted);margin-bottom:20px}
-.about img{height:430px;border-radius:13px}
 
-/* CONTACT */
+.process-item h3{margin:12px 0}
 
-.contact{
-  background:var(--blue);color:white;
-  padding:110px 0;text-align:center;
+.process-item p{
+  color:var(--muted);
+  font-size:.9rem;
 }
-.contact h2{
-  font-size:clamp(2.8rem,6vw,5.5rem);
-  max-width:900px;margin:0 auto 25px;
+
+/* CTA */
+
+.cta{
+  background:linear-gradient(135deg,#2856b1,#323f6b);
+  color:white;
+  text-align:center;
+  padding:100px 0;
+  position:relative;
+  overflow:hidden;
 }
-.contact p{
-  color:#e0e8ff;max-width:650px;
-  margin:0 auto 35px;font-size:1.05rem;
+
+.cta h2{
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  max-width:850px;
+  margin:0 auto 25px;
 }
-.contact-button{
-  display:inline-block;background:white;
-  color:var(--navy);padding:16px 25px;
-  border-radius:8px;font-weight:800;
+
+.cta p{
+  color:#d8e3ff;
+  max-width:650px;
+  margin:0 auto 30px;
+}
+
+.cta .btn{
+  background:white;
+  color:var(--navy);
 }
 
 /* FOOTER */
 
 footer{
-  background:#151e35;color:white;padding:60px 0 25px;
+  background:#151e35;
+  color:white;
+  padding:55px 0 25px;
 }
+
 .footer-grid{
-  display:grid;grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;padding-bottom:45px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
 }
-footer h3{margin-bottom:15px}
-footer p,footer a{color:#aebbd2;font-size:.9rem}
+
+.footer-logo{
+  width:260px;
+  max-width:100%;
+  margin-bottom:20px;
+}
+
+footer p,footer a{
+  color:#aebbd2;
+  font-size:.9rem;
+}
+
 footer a{display:block;margin-bottom:8px}
 footer a:hover{color:white}
+
+footer h3{margin-bottom:15px}
+
 .footer-bottom{
-  border-top:1px solid #34405a;padding-top:20px;
-  display:flex;justify-content:space-between;
-  flex-wrap:wrap;gap:15px;
-  color:#8996af;font-size:.8rem;
+  border-top:1px solid #34405a;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+  font-size:.8rem;
+  color:#8f9bb3;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:850px){
-  .hero h1{letter-spacing:-2px}
-  .hero-bottom{align-items:start;flex-direction:column}
-  .intro-grid,.dev-grid,.about-grid{grid-template-columns:1fr}
-  .work-grid{grid-template-columns:1fr}
-  .work-card.large{min-height:450px}
+@media(max-width:900px){
+  .hero-grid,.price-grid,.showcase-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{min-height:400px}
+  .service-grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:1fr 1fr}
-  .section-heading{align-items:start;flex-direction:column}
-  .service-row{grid-template-columns:40px 1fr 35px}
-  .service-row p{grid-column:2}
-  .service-arrow{grid-column:3;grid-row:1}
 }
 
 @media(max-width:600px){
-  .nav{padding:15px 0;flex-wrap:wrap}
-  .nav-links{width:100%;gap:17px;overflow-x:auto;font-size:.78rem}
+  .nav{flex-wrap:wrap;padding:15px 0}
+  .logo img{width:190px}
+  .nav-links{
+    width:100%;
+    gap:15px;
+    overflow-x:auto;
+    font-size:.78rem;
+  }
+
   .nav-links a{white-space:nowrap}
+
   .hero{padding:65px 0}
   .hero h1{font-size:3.2rem}
-  .hero-image{height:300px;margin-top:40px}
-  .hero-image-label{left:12px;bottom:12px}
-  .intro,.work,.services,.dev-section,.process,.about,.contact{padding:70px 0}
-  .work-card.large{min-height:360px}
-  .work-card{min-height:300px}
-  .work-info h3{font-size:1.5rem}
-  .process-grid{grid-template-columns:1fr}
-  .dev-image img,.about img{height:300px}
+  .hero-visual{min-height:320px}
+  .hero-photo{inset:10px 0 15px 10px}
+  .floating-price{left:0}
+  .section{padding:70px 0}
+  .service-grid,.process-grid{grid-template-columns:1fr}
+  .price-card{padding:30px}
+  .price-card .price{font-size:3rem}
+  .showcase-card{min-height:300px}
+  .strip-inner{gap:15px;font-size:.7rem}
   .footer-grid{grid-template-columns:1fr}
-  .service-row h3{font-size:1.2rem}
 }
-
-/* ACCESSIBILITY */
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation:none!important;
     transition:none!important;
-    scroll-behavior:auto!important;
   }
 }
 </style>
@@ -401,236 +685,228 @@ footer a:hover{color:white}
 
 <header>
   <div class="container nav">
-    <a class="logo" href="#">
-      <span class="logo-mark">H</span>
-      <span>
-        Hawthorne Digital
-        <small>DIGITAL SOLUTIONS</small>
-      </span>
+    <a href="#" class="logo">
+      <img src="hawthorne-logo.png" alt="Hawthorne Digital">
     </a>
 
     <nav class="nav-links">
-      <a href="#work">Our Work</a>
       <a href="#services">Services</a>
-      <a href="#development">Development</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-contact">Let's Talk ↗</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">Our Approach</a>
+      <a href="#contact" class="nav-cta">Let's Talk ↗</a>
     </nav>
   </div>
 </header>
 
-<main>
-
 <!-- HERO -->
 
 <section class="hero">
-  <div class="container">
+  <div class="container hero-grid">
 
-    <div class="hero-topline">Hawthorne Digital · Staffordshire, UK</div>
+    <div>
+      <div class="pill"><span></span> Creative digital solutions</div>
 
-    <h1>
-      Digital, designed<br>
-      <span>differently.</span>
-    </h1>
+      <h1>
+        Premium ideas.<br>
+        <span class="blue playful">Accessible</span><br>
+        possibilities.
+      </h1>
 
-    <div class="hero-bottom">
-      <p class="hero-description">
-        We create websites, custom code and digital solutions
-        that help businesses make their mark. Creative thinking,
-        thoughtful design and technology — all working together.
+      <p class="hero-text">
+        We create modern websites, custom code and digital
+        solutions that help businesses stand out — without
+        the premium price tag.
       </p>
 
-      <a href="#contact" class="hero-action">Have an idea? Let's talk ↗</a>
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">Let's create something ↗</a>
+        <a href="#services" class="btn btn-secondary">Explore our services</a>
+      </div>
+
+      <p class="hero-note">
+        Staffordshire-based · Supporting businesses across the UK
+      </p>
     </div>
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85"
-           alt="Creative modern workspace">
-      <div class="hero-image-label">Ideas into digital reality.</div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=85"
+             alt="Modern website design">
+      </div>
+
+      <div class="floating-price">
+        <small>Websites starting from</small>
+        <strong>£214.99</strong>
+        <span>Premium design. Accessible pricing.</span>
+      </div>
+
+      <div class="floating-star">✦</div>
     </div>
 
   </div>
 </section>
 
-<!-- TICKER -->
+<!-- WAVY DIVIDER -->
 
-<div class="ticker">
-  <div class="ticker-track">
-    <div class="ticker-item">Website Design <span>✦</span> Custom Coding <span>✦</span> Digital Development <span>✦</span> Creative Solutions <span>✦</span></div>
-    <div class="ticker-item">Website Design <span>✦</span> Custom Coding <span>✦</span> Digital Development <span>✦</span> Creative Solutions <span>✦</span></div>
+<div class="wave">
+<svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+<path fill="#202b4c" d="M0,40 C180,100 330,0 540,40 C780,90 960,100 1150,35 C1300,0 1380,25 1440,45 L1440,100 L0,100 Z"/>
+</svg>
+</div>
+
+<!-- STRIP -->
+
+<div class="brand-strip">
+  <div class="strip-inner">
+    <div>Website Design <span>✦</span></div>
+    <div>Custom Coding <span>✦</span></div>
+    <div>Digital Development <span>✦</span></div>
+    <div>Creative Solutions <span>✦</span></div>
   </div>
 </div>
 
-<!-- INTRO -->
-
-<section class="intro">
-  <div class="container intro-grid">
-
-    <div>
-      <div class="eyebrow">A little about us</div>
-      <h2>Good design.<br>Great ideas.<br>Better digital.</h2>
-    </div>
-
-    <div class="intro-right">
-      <p>
-        We're Hawthorne Digital — a digital services business
-        helping organisations build a stronger online presence
-        through creative design, website development and
-        tailored digital solutions.
-      </p>
-
-      <p>
-        From a first website to custom functionality, we believe
-        every business deserves digital services that feel
-        professional, purposeful and personal.
-      </p>
-
-      <a href="#about" class="text-link">Get to know Hawthorne <span>→</span></a>
-    </div>
-
-  </div>
-</section>
-
-<!-- WORK -->
-
-<section class="work" id="work">
-  <div class="container">
-
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow">Digital in action</div>
-        <h2>Ideas made<br>into something real.</h2>
-      </div>
-      <p>
-        Every project starts with an idea. We bring together
-        creativity and technology to help make it happen.
-      </p>
-    </div>
-
-    <div class="work-grid">
-
-      <div class="work-card large">
-        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1400&q=85"
-             alt="Website design on a desktop">
-        <div class="work-info">
-          <small>Website Design</small>
-          <h3>Online experiences<br>that stand out.</h3>
-          <p>Design that brings your business to life.</p>
-        </div>
-      </div>
-
-      <div class="work-column">
-
-        <div class="work-card">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85"
-               alt="Developer writing code">
-          <div class="work-info">
-            <small>Custom Development</small>
-            <h3>Built beyond<br>the ordinary.</h3>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
-               alt="Graphic and digital design">
-          <div class="work-info">
-            <small>Creative Design</small>
-            <h3>Make your brand<br>memorable.</h3>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
 <!-- SERVICES -->
 
-<section class="services" id="services">
+<section class="section services" id="services">
   <div class="container">
 
-    <div class="services-heading">
-      <div class="eyebrow">What we do</div>
-      <h2>Digital services that work harder for your business.</h2>
+    <div class="section-top">
+      <div class="eyebrow">What we bring to the table</div>
+      <h2>Big creativity.<br>Practical digital solutions.</h2>
+      <p>
+        From a brand-new website to custom-built functionality,
+        we help businesses make their digital ambitions happen.
+      </p>
     </div>
 
-    <div class="service-list">
+    <div class="service-grid">
 
-      <a href="#contact" class="service-row">
-        <span class="service-number">01</span>
+      <div class="service">
+        <div class="service-icon">✦</div>
         <h3>Website Design</h3>
-        <p>Professional, responsive websites designed around your business and audience.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>Professional, modern websites designed to make your business look its best.</p>
+        <a href="#contact">Let's discuss your website →</a>
+      </div>
 
-      <a href="#development" class="service-row">
-        <span class="service-number">02</span>
+      <div class="service">
+        <div class="service-icon">&lt;/&gt;</div>
         <h3>Custom Coding</h3>
-        <p>Tailored HTML, CSS, JavaScript and bespoke website functionality.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>HTML, CSS, JavaScript and custom features created around your requirements.</p>
+        <a href="#contact">Explore custom code →</a>
+      </div>
 
-      <a href="#development" class="service-row">
-        <span class="service-number">03</span>
+      <div class="service">
+        <div class="service-icon">⌘</div>
         <h3>Digital Development</h3>
-        <p>Custom tools, integrations and digital experiences built around your requirements.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>Tailored tools, functionality and digital projects beyond the standard template.</p>
+        <a href="#contact">Build something new →</a>
+      </div>
 
-      <a href="#contact" class="service-row">
-        <span class="service-number">04</span>
+      <div class="service">
+        <div class="service-icon">▣</div>
         <h3>Hosting & Domains</h3>
-        <p>Hosting, domain management and business email solutions.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>Reliable hosting, domain management and business email services.</p>
+        <a href="#contact">Find out more →</a>
+      </div>
 
-      <a href="#contact" class="service-row">
-        <span class="service-number">05</span>
+      <div class="service">
+        <div class="service-icon">⚙</div>
         <h3>Website Support</h3>
-        <p>Technical assistance, maintenance and ongoing website care.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>Ongoing maintenance, technical assistance and website care.</p>
+        <a href="#contact">Get website support →</a>
+      </div>
 
-      <a href="#contact" class="service-row">
-        <span class="service-number">06</span>
+      <div class="service">
+        <div class="service-icon">◈</div>
         <h3>Graphic Design</h3>
-        <p>Visual assets and creative design to help your business stand out.</p>
-        <span class="service-arrow">↗</span>
-      </a>
+        <p>Creative visuals, branding materials and digital graphics for your business.</p>
+        <a href="#contact">Explore design →</a>
+      </div>
 
     </div>
   </div>
 </section>
 
-<!-- DEVELOPMENT -->
+<!-- PRICE SECTION -->
 
-<section class="dev-section" id="development">
-  <div class="container dev-grid">
+<section class="price-section" id="about">
+  <div class="container price-grid">
 
-    <div>
-      <div class="dev-tag">DESIGN MEETS DEVELOPMENT</div>
-      <h2>We don't just design. We build.</h2>
+    <div class="price-copy">
+      <div class="eyebrow">Premium doesn't have to mean expensive</div>
+
+      <h2>
+        Great websites.<br>
+        <span>Realistic prices.</span>
+      </h2>
 
       <p>
-        Sometimes a project needs more than a template.
-        Our coding and development services help bring
-        unique ideas, features and functionality to life.
+        We believe businesses of every size deserve a professional
+        online presence. That's why we focus on delivering
+        thoughtful design and quality digital solutions at
+        accessible prices.
       </p>
 
       <p>
-        From custom website components to tailored digital
-        experiences, we explore what's possible and build
-        around what your business actually needs.
+        No unnecessary complexity. No intimidating agency experience.
+        Just a collaborative approach and a website built around you.
       </p>
 
-      <a href="#contact" class="dev-button">Tell us what you're imagining ↗</a>
+      <a href="#contact" class="text-link">Tell us what you need →</a>
     </div>
 
-    <div class="dev-image">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
-           alt="Technology and computer development">
+    <div class="price-card">
+      <span class="label">A professional starting point</span>
+
+      <h3>Your next website could start from</h3>
+
+      <div class="price">£214.99</div>
+
+      <p>
+        Every project is different. We'll discuss your requirements
+        and provide a quote tailored to your business.
+      </p>
+
+      <a href="#contact" class="btn">Get your website quote ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+
+<section class="section showcase" id="work">
+  <div class="container">
+
+    <div class="section-top">
+      <div class="eyebrow">Design meets imagination</div>
+      <h2>Digital experiences<br>with personality.</h2>
+      <p>
+        We combine creativity, thoughtful design and technology
+        to help bring businesses and ideas to life.
+      </p>
+    </div>
+
+    <div class="showcase-grid">
+
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
+             alt="Creative graphic design">
+        <div class="showcase-content">
+          <small>CREATIVE DESIGN</small>
+          <h3>Made to make<br>an impression.</h3>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85"
+             alt="Custom coding and development">
+        <div class="showcase-content">
+          <small>DEVELOPMENT</small>
+          <h3>Ideas brought<br>to life.</h3>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -638,41 +914,39 @@ footer a:hover{color:white}
 
 <!-- PROCESS -->
 
-<section class="process">
+<section class="section">
   <div class="container">
 
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow">How we work</div>
-        <h2>Simple. Collaborative.<br>Built around you.</h2>
-      </div>
+    <div class="section-top">
+      <div class="eyebrow">Our approach</div>
+      <h2>Easy to work with.<br>Made around you.</h2>
       <p>
-        Your project is a partnership. We keep the process
-        straightforward and involve you at every stage.
+        Your project is a partnership. We keep things personal,
+        transparent and collaborative.
       </p>
     </div>
 
     <div class="process-grid">
 
-      <div class="process-card">
+      <div class="process-item">
         <div class="number">01</div>
-        <h3>Discover</h3>
-        <p>We learn about your business, ideas and objectives.</p>
+        <h3>Let's Talk</h3>
+        <p>We get to know your business, goals and ideas.</p>
       </div>
 
-      <div class="process-card">
+      <div class="process-item">
         <div class="number">02</div>
-        <h3>Plan & Create</h3>
-        <p>We shape the project and agree on a direction.</p>
+        <h3>Plan & Design</h3>
+        <p>We shape your project and agree on the creative direction.</p>
       </div>
 
-      <div class="process-card">
+      <div class="process-item">
         <div class="number">03</div>
         <h3>Build & Refine</h3>
-        <p>We create your project and refine it with your feedback.</p>
+        <p>We create your project and work with your feedback.</p>
       </div>
 
-      <div class="process-card">
+      <div class="process-item">
         <div class="number">04</div>
         <h3>Launch</h3>
         <p>We bring everything together and help you move forward.</p>
@@ -682,59 +956,26 @@ footer a:hover{color:white}
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- CTA -->
 
-<section class="about" id="about">
-  <div class="container about-grid">
-
-    <div>
-      <div class="eyebrow">The Hawthorne difference</div>
-      <h2>Personal service.<br>Professional results.</h2>
-
-      <p>
-        We believe the best digital work comes from
-        understanding the people behind the business.
-      </p>
-
-      <p>
-        That's why collaboration, communication and
-        practical solutions sit at the heart of our approach.
-        We want to build relationships — not just websites.
-      </p>
-
-      <a href="#contact" class="text-link">Let's work together →</a>
-    </div>
-
-    <div>
-      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
-           alt="Team collaborating on creative work">
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
+<section class="cta" id="contact">
   <div class="container">
 
-    <div class="eyebrow" style="color:#dce6ff;">Have a project in mind?</div>
+    <div class="eyebrow" style="color:#c8d8ff">Your next big idea starts here</div>
 
-    <h2>Let's make something worth talking about.</h2>
+    <h2>Let's make something brilliant together.</h2>
 
     <p>
-      Have an idea, need a new website or want to explore
-      custom development? Let's start a conversation.
+      Whether you need a new website, a custom digital solution
+      or a little creative inspiration, we'd love to hear from you.
     </p>
 
-    <a href="mailto:hello@hawthornedigital.co.uk" class="contact-button">
-      Get in touch with Hawthorne ↗
+    <a href="mailto:hello@hawthornedigital.co.uk" class="btn">
+      Start a conversation ↗
     </a>
 
   </div>
 </section>
-
-</main>
 
 <!-- FOOTER -->
 
@@ -744,25 +985,26 @@ footer a:hover{color:white}
     <div class="footer-grid">
 
       <div>
-        <h3>Hawthorne Digital</h3>
+        <img src="hawthorne-logo.png" alt="Hawthorne Digital" class="footer-logo">
         <p>
-          Creative digital solutions, professional websites
-          and custom development for businesses across the UK.
+          Premium digital solutions without the premium price.
+          Websites, coding and creative services for businesses
+          across the UK.
         </p>
       </div>
 
       <div>
         <h3>Explore</h3>
-        <a href="#work">Our Work</a>
         <a href="#services">Services</a>
-        <a href="#development">Development</a>
-        <a href="#about">About</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">Our Approach</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div>
-        <h3>Contact</h3>
+        <h3>Get in touch</h3>
         <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
-        <a href="https://www.hawthornedigital.co.uk">Website</a>
+        <a href="https://www.hawthornedigital.co.uk">hawthornedigital.co.uk</a>
         <a href="https://www.bracketsupport.co.uk">Bracket Support</a>
       </div>
 
@@ -770,7 +1012,7 @@ footer a:hover{color:white}
 
     <div class="footer-bottom">
       <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
-      <span>Digital, designed differently.</span>
+      <span>Premium Websites Without the Premium Price.</span>
     </div>
 
   </div>
