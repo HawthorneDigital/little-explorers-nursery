@@ -1,1327 +1,1161 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Hawthorne Digital | Premium Digital Solutions</title>
+<meta name="description" content="Hawthorne Digital provides premium, affordable website design and digital business services across the UK.">
 
-<title>Hawthorne Digital | Websites, Development & Digital Solutions</title>
-<meta name="description" content="Hawthorne Digital creates professional websites, custom coding and affordable digital solutions for businesses across the UK.">
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy: #202b4c;
-  --brand: #323f6b;
-  --blue: #2856b1;
-  --light-blue: #eaf0ff;
-  --pale: #f5f7fc;
-  --text: #202b4c;
-  --muted: #718096;
-  --white: #ffffff;
+    --navy: #202b4c;
+    --blue: #2856b1;
+    --bright: #4385ee;
+    --pale: #edf2ff;
+    --grey: #f7f8fb;
+    --text: #29344e;
+    --muted: #778198;
+    --border: #e8edf5;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
+html { scroll-behavior:smooth; }
 
 body {
-  font-family: "DM Sans", sans-serif;
-  color: var(--text);
-  line-height: 1.7;
-  padding-top: 82px;
-  overflow-x: hidden;
+    font-family:'DM Sans',sans-serif;
+    background:#fff;
+    color:var(--text);
+    overflow-x:hidden;
 }
 
-h1, h2, h3 {
-  font-family: "Manrope", sans-serif;
-  line-height: 1.15;
-  letter-spacing: -1px;
-}
+a { text-decoration:none; color:inherit; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
+button { font:inherit; }
 
 .container {
-  width: min(1160px, 90%);
-  margin: auto;
+    width:88%;
+    max-width:1250px;
+    margin:auto;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 24px;
-  border-radius: 50px;
-  font-weight: 800;
-  transition: .25s;
-}
+/* BACKGROUND DETAILS */
 
-.btn-primary {
-  background: var(--blue);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--navy);
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 1px solid #d9e0ee;
-  background: white;
-}
-
-.btn-outline:hover {
-  background: var(--light-blue);
+.background-grid {
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    opacity:.35;
+    background-image:
+        linear-gradient(rgba(40,86,177,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(40,86,177,.035) 1px,transparent 1px);
+    background-size:65px 65px;
+    mask-image:linear-gradient(to bottom,black,transparent 80%);
 }
 
 /* NAVIGATION */
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 82px;
-  z-index: 99999;
-  background: rgba(255,255,255,.97);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #edf0f6;
-  box-shadow: 0 4px 20px rgba(32,43,76,.05);
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+    padding:17px 6%;
+    background:rgba(255,255,255,.91);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(32,43,76,.07);
+    transition:.3s;
 }
 
-.nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
+header.scrolled {
+    box-shadow:0 8px 35px rgba(32,43,76,.07);
+}
+
+nav {
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo img {
-  width: 225px;
-  max-height: 65px;
-  object-fit: contain;
+    display:block;
+    width:205px;
+    max-height:65px;
+    object-fit:contain;
+    object-position:left center;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: .9rem;
-  font-weight: 700;
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
 }
 
-.nav-links a:hover {
-  color: var(--blue);
+.nav-links a {
+    font-size:13px;
+    font-weight:600;
+    color:var(--navy);
+    transition:.25s;
 }
 
-.nav-links .nav-button {
-  background: var(--navy);
-  color: white;
-  padding: 11px 20px;
-  border-radius: 50px;
+.nav-links a:hover { color:var(--bright); }
+
+.nav-button {
+    background:var(--blue);
+    color:white!important;
+    padding:13px 22px;
+    border-radius:5px;
+    box-shadow:0 5px 18px rgba(40,86,177,.17);
+}
+
+.nav-button:hover {
+    background:var(--navy);
+    transform:translateY(-2px);
+}
+
+.menu-toggle {
+    display:none;
+    background:none;
+    border:none;
+    color:var(--navy);
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* HERO */
 
 .hero {
-  padding: 105px 0 100px;
-  background:
-    radial-gradient(circle at 90% 10%, #e2eaff, transparent 30%),
-    linear-gradient(180deg, #fff, #f8faff);
+    min-height:790px;
+    padding:170px 6% 100px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 70px;
+.hero::before {
+    content:"";
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    right:-150px;
+    top:40px;
+    background:radial-gradient(circle,rgba(40,86,177,.10),transparent 68%);
+    pointer-events:none;
 }
 
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--light-blue);
-  color: var(--blue);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: .78rem;
-  font-weight: 800;
-  margin-bottom: 25px;
+.hero-layout {
+    max-width:1400px;
+    width:100%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
 }
 
-.hero-tag span {
-  width: 8px;
-  height: 8px;
-  background: #6b91ef;
-  border-radius: 50%;
+.eyebrow {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:26px;
+}
+
+.eyebrow::before {
+    content:"";
+    width:30px;
+    height:2px;
+    background:var(--blue);
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 6vw, 5.6rem);
-  font-weight: 800;
-  color: var(--navy);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(49px,6.4vw,83px);
+    line-height:1.04;
+    letter-spacing:-4px;
+    color:var(--navy);
+    margin-bottom:26px;
 }
 
-.hero h1 em {
-  color: var(--blue);
-  font-style: normal;
+.hero h1 span {
+    background:linear-gradient(100deg,#2856b1,#5795f5);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .hero-description {
-  font-size: 1.08rem;
-  color: var(--muted);
-  max-width: 520px;
-  margin: 25px 0 30px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.9;
+    max-width:510px;
+    margin-bottom:32px;
 }
 
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
 }
 
-.hero-location {
-  margin-top: 22px;
-  font-size: .82rem;
-  color: #8b95a8;
+.btn {
+    padding:16px 24px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
 }
 
-/* HERO VISUAL */
+.btn-primary {
+    color:white;
+    background:linear-gradient(110deg,#2856b1,#4385ee);
+    box-shadow:0 8px 24px rgba(40,86,177,.2);
+}
+
+.btn-primary:hover {
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(40,86,177,.3);
+}
+
+.btn-secondary {
+    border:1px solid #dce3ef;
+    color:var(--navy);
+    background:white;
+}
+
+.btn-secondary:hover {
+    border-color:var(--blue);
+    color:var(--blue);
+}
+
+.hero-note {
+    margin-top:28px;
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#929caf;
+}
+
+/* FUTURISTIC HERO GRAPHIC */
 
 .hero-visual {
-  position: relative;
-  padding: 20px;
+    min-height:450px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.hero-image {
-  height: 460px;
-  overflow: hidden;
-  border-radius: 28px;
-  box-shadow: 0 25px 70px rgba(32,43,76,.15);
-  transform: rotate(1deg);
+.visual-ring {
+    position:absolute;
+    width:370px;
+    height:370px;
+    border:1px solid rgba(40,86,177,.16);
+    border-radius:50%;
+    animation:rotate 35s linear infinite;
 }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.visual-ring::before,
+.visual-ring::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(40,86,177,.13);
+    border-radius:50%;
 }
 
-.hero-floating {
-  position: absolute;
-  bottom: 0;
-  left: -20px;
-  background: white;
-  padding: 22px 25px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(32,43,76,.15);
+.visual-ring::before { inset:35px; }
+.visual-ring::after { inset:75px; }
+
+.visual-ring span {
+    position:absolute;
+    top:48px;
+    left:65px;
+    width:10px;
+    height:10px;
+    background:#4385ee;
+    border-radius:50%;
+    box-shadow:0 0 20px #4385ee;
 }
 
-.hero-floating small {
-  display: block;
-  color: var(--muted);
-  font-weight: 700;
+@keyframes rotate {
+    to { transform:rotate(360deg); }
 }
 
-.hero-floating strong {
-  display: block;
-  color: var(--blue);
-  font-family: Manrope;
-  font-size: 2rem;
-  line-height: 1.3;
+.hero-core {
+    width:205px;
+    height:205px;
+    border-radius:30px;
+    background:linear-gradient(145deg,#ffffff,#edf2ff);
+    border:1px solid rgba(40,86,177,.22);
+    box-shadow:0 25px 75px rgba(40,86,177,.13);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:2;
+    animation:float 5s ease-in-out infinite;
 }
 
-.hero-floating span {
-  font-size: .75rem;
-  color: var(--muted);
-}
-
-.hero-decoration {
-  position: absolute;
-  top: 0;
-  right: -5px;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: #c8d8ff;
-  color: var(--blue);
-  display: grid;
-  place-items: center;
-  font-size: 2rem;
-  animation: float 4s ease-in-out infinite;
+.hero-core img {
+    width:145px;
+    max-height:125px;
+    object-fit:contain;
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-10px) rotate(10deg); }
+    0%,100% { transform:translateY(0) rotate(-3deg); }
+    50% { transform:translateY(-14px) rotate(0deg); }
 }
 
-/* INTRO STRIP */
-
-.intro-strip {
-  background: var(--navy);
-  color: white;
-  padding: 22px 0;
+.visual-label {
+    position:absolute;
+    padding:14px 18px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.94);
+    border-radius:7px;
+    box-shadow:0 10px 35px rgba(32,43,76,.08);
+    z-index:3;
 }
 
-.intro-strip-inner {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  flex-wrap: wrap;
-  font-size: .8rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.visual-label strong {
+    display:block;
+    font-size:11px;
+    color:var(--navy);
 }
 
-.intro-strip span {
-  color: #a9c2ff;
+.visual-label small {
+    color:var(--muted);
+    font-size:10px;
 }
 
-/* SECTION DEFAULTS */
+.label-top { top:65px; right:0; }
+.label-bottom { bottom:60px; left:0; }
 
-.section {
-  padding: 100px 0;
+/* TRUST STRIP */
+
+.trust-strip {
+    background:var(--navy);
+    padding:23px 6%;
 }
+
+.trust-inner {
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.trust-inner span {
+    color:#fff;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.trust-inner span::before {
+    content:"✦";
+    color:#82b3ff;
+    margin-right:10px;
+}
+
+/* SECTIONS */
+
+section { padding:105px 6%; }
 
 .section-heading {
-  max-width: 750px;
-  margin: 0 auto 55px;
-  text-align: center;
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 60px;
 }
 
-.section-label {
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: .75rem;
-  font-weight: 800;
-  margin-bottom: 18px;
-}
+.section-heading .eyebrow { justify-content:center; }
 
 .section-heading h2 {
-  font-size: clamp(2.3rem, 4.5vw, 4rem);
-  color: var(--navy);
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--navy);
+    font-size:clamp(34px,4vw,49px);
+    letter-spacing:-2px;
+    margin-bottom:18px;
 }
+
+.section-heading h2 span { color:var(--blue); }
 
 .section-heading p {
-  color: var(--muted);
-  margin-top: 20px;
-}
-
-/* ABOUT */
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: center;
-}
-
-.about-image {
-  height: 440px;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-copy h2 {
-  font-size: clamp(2.4rem, 4vw, 3.7rem);
-  margin-bottom: 25px;
-}
-
-.about-copy p {
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-
-.about-points {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.about-point {
-  background: var(--pale);
-  padding: 18px;
-  border-radius: 15px;
-  font-weight: 800;
-}
-
-.about-point span {
-  color: var(--blue);
-  margin-right: 8px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
 }
 
 /* SERVICES */
 
-.services {
-  background: var(--pale);
-}
+.services { background:#f7f8fb; }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+.service-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .service-card {
-  background: white;
-  padding: 30px;
-  border-radius: 22px;
-  border: 1px solid #edf0f6;
-  transition: .3s;
+    background:white;
+    border:1px solid #e9edf5;
+    padding:32px;
+    border-radius:9px;
+    min-height:245px;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 40px rgba(32,43,76,.08);
-  border-color: #cbd8ff;
+    transform:translateY(-7px);
+    border-color:#a9c3f3;
+    box-shadow:0 18px 45px rgba(32,43,76,.07);
 }
 
 .service-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 17px;
-  background: var(--light-blue);
-  display: grid;
-  place-items: center;
-  color: var(--blue);
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 22px;
+    width:48px;
+    height:48px;
+    border-radius:9px;
+    display:grid;
+    place-items:center;
+    color:white;
+    font-size:21px;
+    background:linear-gradient(145deg,#202b4c,#2856b1);
+    margin-bottom:24px;
 }
 
 .service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--navy);
+    font-size:18px;
+    margin-bottom:12px;
 }
 
 .service-card p {
-  color: var(--muted);
-  font-size: .93rem;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.9;
 }
 
-.service-card a {
-  display: inline-block;
-  color: var(--blue);
-  font-weight: 800;
-  margin-top: 20px;
+.service-card::after {
+    content:"";
+    position:absolute;
+    right:-35px;
+    bottom:-55px;
+    width:110px;
+    height:110px;
+    border:1px solid rgba(40,86,177,.07);
+    border-radius:50%;
 }
 
-/* CODING FEATURE */
+/* PRICE */
 
-.development {
-  background: white;
+.price-section { background:white; }
+
+.price-panel {
+    max-width:1100px;
+    margin:auto;
+    padding:60px;
+    border-radius:12px;
+    background:linear-gradient(110deg,#202b4c,#2856b1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:35px;
+    position:relative;
+    overflow:hidden;
 }
 
-.development-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: center;
+.price-panel::after {
+    content:"";
+    position:absolute;
+    right:-100px;
+    top:-180px;
+    width:400px;
+    height:400px;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;
+    box-shadow:0 0 0 45px rgba(255,255,255,.025),
+               0 0 0 90px rgba(255,255,255,.025);
 }
 
-.development-copy h2 {
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
-  margin-bottom: 25px;
+.price-panel .eyebrow { color:#b7d1ff; }
+
+.price-panel h2 {
+    font-family:'Space Grotesk',sans-serif;
+    font-size:42px;
+    color:white;
+    margin-bottom:15px;
 }
 
-.development-copy p {
-  color: var(--muted);
-  margin-bottom: 20px;
+.price-panel p {
+    color:#d0dbf1;
+    font-size:13px;
+    line-height:1.9;
+    max-width:500px;
 }
 
-.code-window {
-  background: #151d32;
-  color: #e5ecff;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(32,43,76,.18);
+.price-panel .btn {
+    background:white;
+    color:var(--blue);
+    margin-top:25px;
 }
 
-.code-top {
-  display: flex;
-  gap: 7px;
-  padding: 17px 20px;
-  background: #202b4c;
+.price-number {
+    color:white;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:72px;
+    font-weight:700;
+    position:relative;
+    z-index:2;
+    white-space:nowrap;
 }
 
-.code-top span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #8295c2;
-}
-
-.code-content {
-  padding: 30px;
-  font-family: monospace;
-  font-size: .9rem;
-  line-height: 2;
-  overflow-x: auto;
-}
-
-.code-blue { color: #8bb4ff; }
-.code-purple { color: #c7a4ff; }
-.code-green { color: #8ce2c0; }
-
-/* AFFORDABLE */
-
-.pricing {
-  background: #edf2ff;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.pricing-copy h2 {
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
-}
-
-.pricing-copy h2 span {
-  color: var(--blue);
-}
-
-.pricing-copy p {
-  color: var(--muted);
-  margin: 22px 0;
-}
-
-.pricing-card {
-  background: var(--navy);
-  color: white;
-  padding: 40px;
-  border-radius: 28px;
-  box-shadow: 0 25px 60px rgba(32,43,76,.18);
-}
-
-.pricing-card .badge {
-  display: inline-block;
-  background: #3c507f;
-  color: #dce6ff;
-  border-radius: 50px;
-  padding: 7px 14px;
-  font-size: .75rem;
-  font-weight: 800;
-}
-
-.pricing-card h3 {
-  font-size: 1.8rem;
-  margin: 22px 0 10px;
-}
-
-.pricing-card .price {
-  color: #a9c2ff;
-  font-size: 3.8rem;
-  font-family: Manrope;
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.pricing-card p {
-  color: #c6d1e7;
-  margin: 15px 0 25px;
-}
-
-.pricing-card .btn {
-  background: white;
-  color: var(--navy);
-}
-
-/* PORTFOLIO */
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
-
-.portfolio-card {
-  position: relative;
-  height: 370px;
-  border-radius: 25px;
-  overflow: hidden;
-  background: var(--navy);
-}
-
-.portfolio-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .6s;
-}
-
-.portfolio-card:hover img {
-  transform: scale(1.06);
-}
-
-.portfolio-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(20,30,53,.9), transparent 75%);
-}
-
-.portfolio-info {
-  position: absolute;
-  z-index: 2;
-  bottom: 25px;
-  left: 25px;
-  color: white;
-}
-
-.portfolio-info small {
-  color: #b8ceff;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.portfolio-info h3 {
-  font-size: 1.8rem;
-  margin-top: 8px;
+.price-number small {
+    display:block;
+    text-align:right;
+    font-family:'DM Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#c8d9ff;
 }
 
 /* PROCESS */
 
-.process {
-  background: var(--pale);
-}
-
 .process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
-.process-step {
-  border-top: 3px solid #b7caff;
-  padding-top: 25px;
+.process-card {
+    padding-top:24px;
+    border-top:2px solid #e5eaf3;
+    transition:.3s;
 }
+
+.process-card:hover { border-color:var(--blue); }
 
 .process-number {
-  color: #a4b9ef;
-  font-family: Manrope;
-  font-size: 2.5rem;
-  font-weight: 800;
+    font-family:'Space Grotesk',sans-serif;
+    color:#9ab8ee;
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.process-step h3 {
-  margin: 15px 0 10px;
+.process-card h3 {
+    color:var(--navy);
+    font-size:16px;
+    margin-bottom:12px;
 }
 
-.process-step p {
-  color: var(--muted);
-  font-size: .92rem;
+.process-card p {
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.9;
 }
+
+/* ABOUT */
+
+.about {
+    background:var(--grey);
+}
+
+.about-layout {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about h2 {
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--navy);
+    font-size:clamp(35px,4vw,50px);
+    letter-spacing:-2px;
+    line-height:1.15;
+    margin-bottom:24px;
+}
+
+.about h2 span { color:var(--blue); }
+
+.about p {
+    color:var(--muted);
+    font-size:13px;
+    line-height:2;
+    margin-bottom:22px;
+}
+
+.about-list {
+    list-style:none;
+}
+
+.about-list li {
+    padding:13px 0;
+    border-bottom:1px solid #e3e8f1;
+    font-size:13px;
+    color:var(--navy);
+    font-weight:600;
+}
+
+.about-list li::before {
+    content:"✓";
+    color:var(--blue);
+    margin-right:13px;
+}
+
+.about-graphic {
+    min-height:370px;
+    border-radius:12px;
+    border:1px solid #dce5f5;
+    background:
+        radial-gradient(circle at center,rgba(40,86,177,.13),transparent 60%),
+        white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.about-graphic img {
+    width:230px;
+    max-height:150px;
+    object-fit:contain;
+    position:relative;
+    z-index:2;
+}
+
+.about-graphic::before,
+.about-graphic::after {
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border:1px solid rgba(40,86,177,.13);
+    border-radius:50%;
+}
+
+.about-graphic::after { width:370px; height:370px; }
 
 /* CTA */
 
-.contact-section {
-  background: linear-gradient(135deg, #2856b1, #323f6b);
-  color: white;
-  padding: 100px 0;
-  text-align: center;
+.cta {
+    text-align:center;
+    padding:115px 6%;
 }
 
-.contact-section h2 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  max-width: 850px;
-  margin: 0 auto 25px;
+.cta h2 {
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(38px,5vw,60px);
+    color:var(--navy);
+    letter-spacing:-3px;
+    margin-bottom:20px;
 }
 
-.contact-section p {
-  color: #d8e3ff;
-  max-width: 650px;
-  margin: 0 auto 30px;
-}
+.cta h2 span { color:var(--blue); }
 
-.contact-section .btn {
-  background: white;
-  color: var(--navy);
+.cta p {
+    max-width:570px;
+    margin:0 auto 30px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
 }
 
 /* FOOTER */
 
 footer {
-  background: #151e35;
-  color: white;
-  padding: 55px 0 25px;
+    background:#202b4c;
+    color:white;
+    padding:65px 6% 25px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 40px;
+.footer-layout {
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:50px;
 }
 
-.footer-logo {
-  width: 250px;
-  margin-bottom: 20px;
+.footer-logo img {
+    width:205px;
+    max-height:65px;
+    object-fit:contain;
+    object-position:left;
+    filter:brightness(0) invert(1);
 }
 
-footer p,
-footer a {
-  color: #aebbd2;
-  font-size: .9rem;
+.footer-brand p {
+    color:#b7c2da;
+    font-size:12px;
+    line-height:1.9;
+    max-width:310px;
+    margin-top:20px;
 }
 
-footer a {
-  display: block;
-  margin-bottom: 9px;
+.footer-column h4 {
+    font-size:13px;
+    margin-bottom:22px;
 }
 
-footer a:hover {
-  color: white;
+.footer-column a {
+    display:block;
+    color:#b7c2da;
+    font-size:12px;
+    margin-bottom:14px;
+    transition:.2s;
 }
 
-footer h3 {
-  margin-bottom: 15px;
-}
+.footer-column a:hover { color:white; }
 
 .footer-bottom {
-  border-top: 1px solid #34405a;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-  color: #8f9bb3;
-  font-size: .8rem;
+    max-width:1250px;
+    margin:50px auto 0;
+    padding-top:23px;
+    border-top:1px solid rgba(255,255,255,.13);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#a0aec9;
+    font-size:10px;
 }
 
-/* RESPONSIVE */
+/* REVEAL */
 
-@media(max-width: 900px) {
-  .hero-grid,
-  .about-grid,
-  .development-grid,
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-grid {
-    gap: 45px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .process-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.reveal {
+    opacity:0;
+    transform:translateY(24px);
+    transition:.75s ease;
 }
 
-@media(max-width: 600px) {
-  body {
-    padding-top: 120px;
-  }
-
-  header {
-    height: 120px;
-  }
-
-  .nav {
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .logo img {
-    width: 185px;
-    max-height: 55px;
-  }
-
-  .nav-links {
-    gap: 13px;
-    font-size: .73rem;
-  }
-
-  .nav-links .nav-button {
-    padding: 8px 12px;
-  }
-
-  .hero {
-    padding: 60px 0;
-  }
-
-  .hero h1 {
-    font-size: 3.1rem;
-  }
-
-  .hero-image {
-    height: 320px;
-  }
-
-  .hero-floating {
-    left: 0;
-  }
-
-  .section {
-    padding: 70px 0;
-  }
-
-  .services-grid,
-  .portfolio-grid,
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-card {
-    height: 300px;
-  }
-
-  .about-image {
-    height: 320px;
-  }
-
-  .pricing-card {
-    padding: 28px;
-  }
-
-  .pricing-card .price {
-    font-size: 3rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro-strip-inner {
-    gap: 14px;
-    font-size: .68rem;
-  }
+.reveal.visible {
+    opacity:1;
+    transform:translateY(0);
 }
 
-@media(prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+/* MOBILE */
+
+@media(max-width:900px) {
+    .hero-layout { grid-template-columns:1fr; }
+    .hero-visual { min-height:380px; }
+    .service-grid { grid-template-columns:repeat(2,1fr); }
+    .about-layout { grid-template-columns:1fr; }
+    .process-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:650px) {
+    .menu-toggle { display:block; }
+
+    .nav-links {
+        display:none;
+        position:absolute;
+        top:75px;
+        left:5%;
+        width:90%;
+        background:white;
+        padding:25px;
+        border:1px solid var(--border);
+        border-radius:9px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:22px;
+        box-shadow:0 15px 35px rgba(32,43,76,.1);
+    }
+
+    .nav-links.active { display:flex; }
+
+    .nav-button { text-align:center; }
+
+    .hero { padding-top:145px; min-height:auto; }
+    .hero h1 { letter-spacing:-3px; }
+    .hero-visual { transform:scale(.85); margin:-10px 0; }
+
+    section { padding:75px 6%; }
+
+    .service-grid { grid-template-columns:1fr; }
+    .price-panel { padding:35px 25px; flex-direction:column; align-items:flex-start; }
+    .price-number { font-size:60px; }
+    .process-grid { grid-template-columns:1fr 1fr; gap:30px 18px; }
+
+    .trust-inner { justify-content:center; }
+
+    .footer-layout { grid-template-columns:1fr 1fr; gap:35px 20px; }
+    .footer-brand { grid-column:1/-1; }
+
+    .footer-bottom { flex-direction:column; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+    .reveal { opacity:1; transform:none; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+<div class="background-grid"></div>
 
-    <a href="#" class="logo">
-      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+<header id="header">
+<nav>
+    <a href="#home" class="logo">
+        <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
     </a>
 
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#work">Our Work</a>
-      <a href="#contact" class="nav-button">Let's Talk ↗</a>
-    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
 
-  </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="https://www.hawthornedigital.co.uk/contact" class="nav-button">Get In Touch ↗</a></li>
+    </ul>
+</nav>
 </header>
 
-<!-- HERO -->
+<main>
 
-<section class="hero">
-  <div class="container hero-grid">
+<section class="hero" id="home">
+<div class="hero-layout">
 
     <div>
-      <div class="hero-tag">
-        <span></span>
-        Your digital partner
-      </div>
+        <div class="eyebrow">A new perspective on digital</div>
 
-      <h1>
-        Building better<br>
-        <em>digital ideas.</em>
-      </h1>
+        <h1>
+            PREMIUM<br>
+            DIGITAL.<br>
+            <span>WITHOUT<br>THE PREMIUM<br>PRICE.</span>
+        </h1>
 
-      <p class="hero-description">
-        Websites, custom coding and creative digital solutions
-        designed around your business. Professional quality,
-        personal service and prices that make sense.
-      </p>
+        <p class="hero-description">
+            We create modern websites and provide digital business
+            solutions that help businesses establish their presence,
+            connect with customers and move forward.
+        </p>
 
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">
-          Let's talk about your project ↗
-        </a>
+        <div class="buttons">
+            <a href="mailto:hello@hawthornedigital.co.uk" class="btn btn-primary">
+                Start Your Project ↗
+            </a>
+            <a href="#services" class="btn btn-secondary">
+                Discover Our Services
+            </a>
+        </div>
 
-        <a href="#services" class="btn btn-outline">
-          Explore our services
-        </a>
-      </div>
-
-      <p class="hero-location">
-        Staffordshire-based · Working with businesses across the UK
-      </p>
+        <div class="hero-note">
+            DESIGNED WITH PURPOSE · BUILT AROUND YOUR BUSINESS
+        </div>
     </div>
 
     <div class="hero-visual">
+        <div class="visual-ring"><span></span></div>
 
-      <div class="hero-image">
-        <img
-          src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=85"
-          alt="Website design displayed on a computer">
-      </div>
+        <div class="hero-core">
+            <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital logo">
+        </div>
 
-      <div class="hero-floating">
-        <small>Professional websites from</small>
-        <strong>£214.99</strong>
-        <span>Creative quality. Accessible pricing.</span>
-      </div>
+        <div class="visual-label label-top">
+            <strong>WEB DESIGN</strong>
+            <small>Created around your vision</small>
+        </div>
 
-      <div class="hero-decoration">✦</div>
-
+        <div class="visual-label label-bottom">
+            <strong>DIGITAL SOLUTIONS</strong>
+            <small>Designed for what's next</small>
+        </div>
     </div>
 
-  </div>
+</div>
 </section>
 
-<div class="intro-strip">
-  <div class="container intro-strip-inner">
-    <div>Web Design <span>✦</span></div>
-    <div>Custom Coding <span>✦</span></div>
-    <div>Digital Development <span>✦</span></div>
-    <div>Creative Solutions <span>✦</span></div>
-  </div>
+<div class="trust-strip">
+    <div class="trust-inner">
+        <span>Custom Website Design</span>
+        <span>Affordable Solutions</span>
+        <span>Personal Support</span>
+        <span>UK-Wide Services</span>
+    </div>
 </div>
 
-<!-- ABOUT -->
+<section class="services" id="services">
+<div class="container">
 
-<section class="section" id="about">
-  <div class="container about-grid">
-
-    <div class="about-image">
-      <img
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
-        alt="Creative team collaborating on a digital project">
-    </div>
-
-    <div class="about-copy">
-
-      <div class="section-label">A little about us</div>
-
-      <h2>Good people.<br>Great digital ideas.</h2>
-
-      <p>
-        At Hawthorne Digital, we believe every business deserves
-        a website and digital presence they can be proud of.
-      </p>
-
-      <p>
-        We combine creativity, technology and a personal approach
-        to deliver solutions that work for your business — whether
-        you're starting from scratch or looking to take things further.
-      </p>
-
-      <p>
-        From the first conversation to launch and beyond,
-        we're here to make the process straightforward.
-      </p>
-
-      <div class="about-points">
-        <div class="about-point"><span>✓</span> Personal service</div>
-        <div class="about-point"><span>✓</span> Clear pricing</div>
-        <div class="about-point"><span>✓</span> UK-wide support</div>
-        <div class="about-point"><span>✓</span> Tailored solutions</div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- SERVICES -->
-
-<section class="section services" id="services">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="section-label">What we do</div>
-      <h2>Your ideas.<br>Our digital expertise.</h2>
-      <p>
-        From a simple business website to custom-built digital
-        functionality, we bring your ideas to life.
-      </p>
-    </div>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="service-icon">✦</div>
-        <h3>Website Design</h3>
+    <div class="section-heading reveal">
+        <div class="eyebrow">Our expertise</div>
+        <h2>Everything starts with <span>a good idea.</span></h2>
         <p>
-          Modern, professional and responsive websites that
-          represent your business and make a lasting impression.
+            We offer a range of digital services designed to support
+            your business, strengthen your brand and make the most
+            of your online presence.
         </p>
-        <a href="#contact">Explore web design →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">&lt;/&gt;</div>
-        <h3>Custom Coding</h3>
-        <p>
-          HTML, CSS, JavaScript and bespoke functionality
-          developed around your specific requirements.
-        </p>
-        <a href="#development">Discover development →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">⌘</div>
-        <h3>Digital Development</h3>
-        <p>
-          Tailored digital projects, web applications and
-          functionality that go beyond standard templates.
-        </p>
-        <a href="#contact">Discuss your idea →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">▣</div>
-        <h3>Hosting & Domains</h3>
-        <p>
-          Website hosting, domain management and business
-          email services to help keep your business connected.
-        </p>
-        <a href="#contact">Find out more →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">⚙</div>
-        <h3>Website Support</h3>
-        <p>
-          Maintenance, updates and ongoing technical assistance
-          to help keep your website running smoothly.
-        </p>
-        <a href="https://www.bracketsupport.co.uk">Explore Bracket →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">◈</div>
-        <h3>Graphic Design</h3>
-        <p>
-          Creative branding, digital graphics and design
-          materials that help your business stand out.
-        </p>
-        <a href="#contact">Let's create →</a>
-      </div>
-
     </div>
 
-  </div>
-</section>
+    <div class="service-grid">
 
-<!-- CUSTOM DEVELOPMENT -->
-
-<section class="section development" id="development">
-  <div class="container development-grid">
-
-    <div class="development-copy">
-
-      <div class="section-label">Beyond the ordinary</div>
-
-      <h2>More than just<br>a pretty website.</h2>
-
-      <p>
-        Sometimes your idea needs something a little different.
-        That's where custom development comes in.
-      </p>
-
-      <p>
-        We can help bring unique functionality, interactive
-        experiences and tailored digital tools to life through
-        custom code and development.
-      </p>
-
-      <p>
-        Whether it's a feature for your website or a completely
-        new digital idea, let's explore what's possible.
-      </p>
-
-      <a href="#contact" class="btn btn-primary">
-        Discuss custom development ↗
-      </a>
-
-    </div>
-
-    <div class="code-window">
-
-      <div class="code-top">
-        <span></span><span></span><span></span>
-      </div>
-
-      <div class="code-content">
-        <div><span class="code-purple">const</span> project = {</div>
-        <div>&nbsp;&nbsp;brand: <span class="code-green">"Your business"</span>,</div>
-        <div>&nbsp;&nbsp;design: <span class="code-green">"Unique"</span>,</div>
-        <div>&nbsp;&nbsp;ideas: <span class="code-green">"Unlimited"</span>,</div>
-        <div>&nbsp;&nbsp;possibilities: <span class="code-green">"Endless"</span></div>
-        <div>};</div>
-        <br>
-        <div><span class="code-blue">buildSomethingBrilliant</span>(project);</div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- AFFORDABLE PRICING -->
-
-<section class="section pricing">
-  <div class="container pricing-grid">
-
-    <div class="pricing-copy">
-
-      <div class="section-label">Quality without the big price tag</div>
-
-      <h2>
-        Premium doesn't<br>
-        have to mean<br>
-        <span>expensive.</span>
-      </h2>
-
-      <p>
-        We want professional digital services to be accessible
-        to businesses of all sizes.
-      </p>
-
-      <p>
-        Our approach combines thoughtful design, practical
-        solutions and transparent quotes — helping you get
-        the right website without unnecessary expense.
-      </p>
-
-      <a href="#contact" class="btn btn-primary">
-        Get a tailored quote ↗
-      </a>
-
-    </div>
-
-    <div class="pricing-card">
-
-      <span class="badge">Affordable website solutions</span>
-
-      <h3>Start your digital journey</h3>
-
-      <div class="price">£214.99</div>
-
-      <p>
-        Website projects starting from this price.
-        Your final quote depends on the requirements
-        and features of your project.
-      </p>
-
-      <a href="#contact" class="btn">
-        Let's discuss your website
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-
-<section class="section" id="work">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="section-label">Creativity in action</div>
-      <h2>Digital ideas,<br>made real.</h2>
-      <p>
-        Every business has its own personality.
-        Your digital presence should reflect it.
-      </p>
-    </div>
-
-    <div class="portfolio-grid">
-
-      <div class="portfolio-card">
-        <img
-          src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
-          alt="Creative branding and design">
-        <div class="portfolio-info">
-          <small>DESIGN & CREATIVITY</small>
-          <h3>Designed to stand out.</h3>
+        <div class="service-card reveal">
+            <div class="service-icon">⌘</div>
+            <h3>Website Design</h3>
+            <p>Professionally designed websites that bring your brand to life and create a great experience for your users.</p>
         </div>
-      </div>
 
-      <div class="portfolio-card">
-        <img
-          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85"
-          alt="Software development and coding">
-        <div class="portfolio-info">
-          <small>WEB & DEVELOPMENT</small>
-          <h3>Built around your ideas.</h3>
+        <div class="service-card reveal">
+            <div class="service-icon">◈</div>
+            <h3>Website Hosting</h3>
+            <p>Reliable hosting solutions to keep your website accessible and performing smoothly.</p>
         </div>
-      </div>
+
+        <div class="service-card reveal">
+            <div class="service-icon">↗</div>
+            <h3>Website Support</h3>
+            <p>Ongoing maintenance, updates and technical assistance to keep your digital presence running.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <div class="service-icon">◎</div>
+            <h3>Domains & Email</h3>
+            <p>Professional domains and business email solutions to establish your identity online.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <div class="service-icon">✳</div>
+            <h3>Graphic Design</h3>
+            <p>Creative branding, business stationery and promotional designs that make your business stand out.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <div class="service-icon">⌬</div>
+            <h3>Digital Business Services</h3>
+            <p>Practical digital solutions tailored to your business requirements and ambitions.</p>
+        </div>
 
     </div>
-
-  </div>
+</div>
 </section>
 
-<!-- PROCESS -->
+<section class="price-section">
+<div class="price-panel reveal">
 
-<section class="section process">
-  <div class="container">
+    <div>
+        <div class="eyebrow">Professional doesn't have to mean expensive</div>
+        <h2>Your website.<br>Your next step.</h2>
+        <p>
+            Every business deserves a quality online presence.
+            Discover our affordable website solutions, with
+            transparent pricing and a personal approach.
+        </p>
+        <a href="mailto:hello@hawthornedigital.co.uk" class="btn">
+            Request a Quote ↗
+        </a>
+    </div>
 
-    <div class="section-heading">
-      <div class="section-label">How we work</div>
-      <h2>Simple. Collaborative.<br>Built around you.</h2>
-      <p>
-        We keep the process clear and personal
-        from the first conversation to launch.
-      </p>
+    <div class="price-number">
+        £99
+        <small>STARTING PRICE</small>
+    </div>
+
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">Our approach</div>
+        <h2>From first idea to <span>final result.</span></h2>
+        <p>We keep things simple, collaborative and transparent throughout every stage of your project.</p>
     </div>
 
     <div class="process-grid">
 
-      <div class="process-step">
-        <div class="process-number">01</div>
-        <h3>Let's Talk</h3>
-        <p>Tell us about your business, goals and ideas.</p>
-      </div>
+        <div class="process-card reveal">
+            <div class="process-number">01</div>
+            <h3>Let's Talk</h3>
+            <p>We get to know your business, ideas and requirements.</p>
+        </div>
 
-      <div class="process-step">
-        <div class="process-number">02</div>
-        <h3>Plan Together</h3>
-        <p>We discuss your requirements, approach and quote.</p>
-      </div>
+        <div class="process-card reveal">
+            <div class="process-number">02</div>
+            <h3>Plan & Design</h3>
+            <p>We develop a design that reflects your identity and vision.</p>
+        </div>
 
-      <div class="process-step">
-        <div class="process-number">03</div>
-        <h3>Create & Refine</h3>
-        <p>We build your project and work with your feedback.</p>
-      </div>
+        <div class="process-card reveal">
+            <div class="process-number">03</div>
+            <h3>Build & Refine</h3>
+            <p>We bring your project to life and keep you involved along the way.</p>
+        </div>
 
-      <div class="process-step">
-        <div class="process-number">04</div>
-        <h3>Launch & Support</h3>
-        <p>We bring your project to life and help you move forward.</p>
-      </div>
+        <div class="process-card reveal">
+            <div class="process-number">04</div>
+            <h3>Launch & Support</h3>
+            <p>Your finished project goes live, with ongoing support options available.</p>
+        </div>
 
     </div>
-
-  </div>
+</div>
 </section>
 
-<!-- CONTACT -->
+<section class="about" id="about">
+<div class="container about-layout">
 
-<section class="contact-section" id="contact">
-  <div class="container">
+    <div class="reveal">
+        <div class="eyebrow">Why Hawthorne Digital?</div>
 
-    <div class="section-label" style="color:#c8d8ff">
-      Your next idea starts here
-    </div>
-
-    <h2>Let's build something brilliant together.</h2>
-
-    <p>
-      Have an idea, need a website or want to explore
-      custom development? We'd love to hear from you.
-    </p>
-
-    <a href="mailto:hello@hawthornedigital.co.uk" class="btn">
-      hello@hawthornedigital.co.uk ↗
-    </a>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-        <img
-          src="/Hawthorne-Digital-logo.png"
-          alt="Hawthorne Digital"
-          class="footer-logo">
+        <h2>More than just<br><span>a digital service.</span></h2>
 
         <p>
-          Premium websites, custom coding and affordable
-          digital solutions for businesses across the UK.
+            We believe that great digital experiences begin with
+            understanding the people behind the business.
+            That's why our clients and partners are at the heart
+            of everything we do.
         </p>
-      </div>
 
-      <div>
-        <h3>Explore</h3>
-        <a href="#about">About Hawthorne</a>
+        <p>
+            From the first conversation to the finished result,
+            we work alongside you to deliver solutions that
+            reflect your business and support your ambitions.
+        </p>
+
+        <ul class="about-list">
+            <li>Personal service and support</li>
+            <li>Transparent and affordable pricing</li>
+            <li>Solutions designed around your requirements</li>
+            <li>Collaborative approach at every stage</li>
+            <li>Supporting businesses throughout the UK</li>
+        </ul>
+    </div>
+
+    <div class="about-graphic reveal">
+        <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+    </div>
+
+</div>
+</section>
+
+<section class="cta">
+<div class="container reveal">
+
+    <div class="eyebrow" style="justify-content:center">Let's get started</div>
+
+    <h2>READY TO MOVE<br><span>YOUR BUSINESS FORWARD?</span></h2>
+
+    <p>
+        Whether you're launching a new business, refreshing
+        your website or looking for ongoing digital support,
+        we're ready to help bring your ideas to life.
+    </p>
+
+    <a href="mailto:hello@hawthornedigital.co.uk" class="btn btn-primary">
+        Let's Talk About Your Project ↗
+    </a>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="footer-layout">
+
+    <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+            <img src="Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+        </a>
+
+        <p>
+            Premium websites without the premium price.
+            Digital solutions designed around the way
+            your business works.
+        </p>
+    </div>
+
+    <div class="footer-column">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
         <a href="#services">Our Services</a>
-        <a href="#development">Development</a>
-        <a href="#work">Our Work</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div>
-        <h3>Let's Connect</h3>
-        <a href="mailto:hello@hawthornedigital.co.uk">
-          hello@hawthornedigital.co.uk
-        </a>
-        <a href="https://www.hawthornedigital.co.uk">
-          Hawthorne Digital
-        </a>
-        <a href="https://www.bracketsupport.co.uk">
-          Bracket Support
-        </a>
-      </div>
-
+        <a href="#process">Our Process</a>
+        <a href="#about">About Us</a>
     </div>
 
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
-      <span>Premium Websites Without the Premium Price.</span>
+    <div class="footer-column">
+        <h4>Get In Touch</h4>
+        <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
+        <a href="https://www.hawthornedigital.co.uk">Website</a>
+        <a href="https://www.bracketsupport.co.uk">Bracket Support</a>
     </div>
 
-  </div>
+</div>
+
+<div class="footer-bottom">
+    <span>© <span id="year"></span> Hawthorne Digital. All rights reserved.</span>
+    <span>Designed with purpose. Built for business.</span>
+</div>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 25);
+});
+
+const toggle = document.getElementById('menuToggle');
+const links = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('active');
+    toggle.textContent = open ? '✕' : '☰';
+    toggle.setAttribute('aria-expanded', open);
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        links.classList.remove('active');
+        toggle.textContent = '☰';
+        toggle.setAttribute('aria-expanded', 'false');
+    });
+});
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
