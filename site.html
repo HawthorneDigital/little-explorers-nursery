@@ -140,19 +140,7 @@ nav a:hover,
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
     padding: 8px 0;
-}
-
-.dropdown-arrow {
-    font-size: 10px;
-    transition: transform .2s;
-}
-
-.nav-dropdown:hover .dropdown-arrow,
-.nav-dropdown.open .dropdown-arrow,
-.nav-dropdown:focus-within .dropdown-arrow {
-    transform: rotate(180deg);
 }
 
 .dropdown-menu {
@@ -270,10 +258,10 @@ section {
     color: white;
 }
 
-/* HERO — EXTRA SPACE BELOW NAV */
+/* HERO — REDUCED SPACE BELOW HEADER */
 
 .hero {
-    padding: 145px 0 100px;
+    padding: 90px 0 100px;
     background:
         radial-gradient(circle at 85% 20%, rgba(40,86,177,.09), transparent 28%),
         linear-gradient(180deg, #FFFFFF 0%, #F8FAFE 100%);
@@ -1062,7 +1050,7 @@ footer h4 {
     }
 
     .hero {
-        padding: 80px 0 65px;
+        padding: 55px 0 65px;
     }
 
     .hero-grid,
@@ -1192,7 +1180,7 @@ footer h4 {
 
             <div class="nav-dropdown" id="servicesDropdown">
                 <button class="services-trigger" id="servicesTrigger" aria-expanded="false">
-                    Services <span class="dropdown-arrow">▼</span>
+                    Services
                 </button>
 
                 <div class="dropdown-menu">
@@ -1586,7 +1574,6 @@ footer h4 {
         </div>
 
         <div class="contact-form reveal">
-            <!-- FormSubmit: activate email delivery after the first submission -->
             <form action="https://formsubmit.co/hello@hawthornedigital.co.uk" method="POST">
 
                 <input type="hidden" name="_subject" value="New Project Enquiry | Hawthorne Digital">
@@ -1760,7 +1747,11 @@ navigation.querySelectorAll('a').forEach(link => {
         navigation.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.textContent = '☰';
+    });
+});
 
+servicesDropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
         servicesDropdown.classList.remove('open');
         servicesTrigger.setAttribute('aria-expanded', 'false');
     });
